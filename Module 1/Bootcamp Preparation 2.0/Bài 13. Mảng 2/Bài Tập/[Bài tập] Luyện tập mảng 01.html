@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+        <script>
+            // Bài 1- Viết chương trình khởi tạo mảng số nguyên gồm 10 phần tử.
+            //     Chương trình thực hiện tính và hiển thị xem có bao nhiêu số nguyên lớn hơn hoặc bằng 10.
+
+            // let doDaiMang = parseInt(prompt("nhập số phần tử của mảng :"))
+            // let daySoNguyen = new Array(doDaiMang);
+            // let demSoLonHon10 = 0;
+            // let a = 0;
+            // while ( a < doDaiMang){
+            //     let soNguyen = parseInt(prompt("Nhập vào phần tử  " + a ));
+            //     daySoNguyen[a]=soNguyen;
+            //     a++;
+            // }
+            // for (let i=0; i<daySoNguyen.length; i++ ){
+            //     if (daySoNguyen[i]>=10){
+            //         demSoLonHon10 +=1;
+            //     }
+            // }document.write("có " + demSoLonHon10 + " số nguyên lớn hơn 10 ")
+
+            // Bài 2- Viết chương trình khởi tạo mảng số nguyên gồm 10 phần tử khác nhau.
+            //     Chương trình hiển thị ra được phần tử có giá trị lớn nhất trong mảng và vị trí của phần tử đó.
+
+            // let a=[];
+            // let n= parseInt(prompt("Số lượng phần tử:"));
+            // for(let i = 0; i < n; i++) {
+            //     a[i] = parseInt(prompt("Nhập phân tử " + i));
+            //     console.log(a[i]);
+            // }
+            // let max= a[0];
+            // let index=0;
+            // for(let i = 1; i < a.length; i++){
+            //     if(max < a[i])
+            //         max = a[i]
+            //     index= i
+            //     console.log(max)
+            // }
+            // alert("max: " + max + " at position " +index);
+
+            // Bài 3- Viết chương trình khởi tạo mảng số nguyên.
+            //     Hiển hiện giá trị lớn nhất trong mảng đó. In ra giá trị trung bình của các phần tử trong mảng.
+
+            // let a=[];
+            // let n= parseInt(prompt("Số lượng phần tử:"));
+            // for(let i = 0; i < n; i++) {
+            //     a[i] = parseInt(prompt("Nhập phân tử " + i));
+            //     console.log(a[i]);
+            // }
+            // let max= a[0];
+            // let sum=0;
+            // let trungBinh=0;
+            // let index=0;
+            // for(let i = 0; i < a.length; i++){
+            //     sum += a[i];
+            //     if(max < a[i]){
+            //         max = a[i]
+            //         index = i;
+            //     console.log(max)
+            //     }
+            // trungBinh = sum/(i+1);
+            // }
+            //
+            // document.write("max: " + max + " tại vị trí " + index + " giá trị trung bình của các phần tử trong mảng là " + trungBinh);
+
+            // Bài 4- Viết chương trình khởi tạo/nhập vào một mảng số nguyên và đảo ngược các phần tử trong mảng đó.
+
+            // let a=[];
+            // let n= parseInt(prompt("Số lượng phần tử:"));
+            // for(let i = 0; i < n; i++) {
+            //     a[i] = parseInt(prompt("Nhập phân tử " + i));
+            // }
+            //     a.reverse();
+            //     console.log(a);
+
+            // Bài 5- Viết chương trình đếm số nguyên âm trong một chuỗi
+
+            // let a=[];
+            // let n= parseInt(prompt("Số lượng phần tử:"));
+            // let soNguyenAm =0 ;
+            // for(let i = 0; i < n; i++) {
+            //     a[i] = parseInt(prompt("Nhập phân tử " + i));
+            //     console.log(a[i]);
+            //     if (a[i] < 0 ){
+            //         soNguyenAm += 1 ;
+            //     }
+            //
+            // }document.write("có " + soNguyenAm + " số nguyên âm ");
+
+            // Bài 6:
+
+            // let numberV= parseInt(prompt("Nhập vào một số nguyên V:"));
+            // let number= new Array(10);
+            // for(let i = 0; i < number.length; i++) {
+            //     number[i] = parseInt(prompt("Nhập phân tử của mảng " + i));
+            //     console.log(number);
+            // }
+            // let result = " ";
+            // for (let i = 0 ; i < number.length; i++){
+            //     if (numberV == number[i]) {
+            //         result = "V is in number";
+            //         break;
+            //     }else {
+            //         result = "V is not in number";
+            //     }
+            // }
+            // document.write(result);
+
+            // Bài 7
+            // let array = [3, 55, 55, 55, 7, 8, 55, 77, 55, 99];
+            // let numberV = parseInt(prompt('nhập số nguyên V:'));
+            // for (let i = 0; i < array.length; i++) {
+            //     if(numberV==array[i]) {
+            //         array.splice(i,1,0);
+            //     }
+            // }
+            // alert(array);
+
+            // Bài 8
+
+            // let array = new Array(5);
+            // for(let i = 0; i< array.length ; i++){
+            //     array[i] = prompt("Nhập phần tử thứ " + (i + 1));
+            // }
+            // alert("Mảng khi chưa sắp xếp: " + array);
+            // array.sort(function (a,b) {
+            //     return b- a
+            //
+            // });
+            // alert("Mảng sau khi được sắp xếp giảm dần: " + array);
+
+            // Bài 9:
+            // let a = new Array(10);
+            // let b = new Array(10);
+            // for (let i=0 ; i < a.length ; i++){
+            //     a[i]= parseInt(prompt("Nhập vào phần tử mảng a :"))
+            // }
+            // for (let j=0 ; j < b.length ; j++) {
+            //     b[j] = parseInt(prompt("Nhập vào phần tử mảng b :"))
+            // }
+            // let c = a.concat(b);
+            // document.write(c);
+
+
+
+
+
+
+
+
+
+
+        </script>
+
+</body>
+</html>

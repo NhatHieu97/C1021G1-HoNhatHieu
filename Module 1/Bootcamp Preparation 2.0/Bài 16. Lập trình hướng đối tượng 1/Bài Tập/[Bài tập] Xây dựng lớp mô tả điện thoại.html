@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+        <script>
+            class Mobile {
+                constructor(name) {
+                    this.Name = name;
+                    this.Battery = 0;
+                    this.Texting = "";
+                    this.Inbox = "";
+                    this.Outbox = "";
+                    this.Status = "off";
+                }
+                checkStatus() {
+                    this.Battery--;
+                    if (this.Status == "on") {
+                        alert("The " + this.Name + " is " + this.Status);
+                    } else {
+                        alert("You need to turn it on");
+                    }
+                }
+                turnOn() {
+                    this.Battery--;
+                    this.Status = "on";
+                    alert("The " + this.Name + " is " + this.Status);
+                }
+                turnOff() {
+                    this.Battery--;
+                    this.Status = "off";
+                    alert("The " + this.Name + " is " + this.Status);
+                }
+                checkBattery() {
+                    alert("Battery " + this.Name + " now is " + this.Battery + "%");
+                }
+                chargeBattery() {
+                    this.Battery = 100;
+                    alert("The " + this.Name + " is full 100%");
+                }
+                textMessage(text) {
+                    this.Battery--;
+                    this.Texting = text;
+                }
+
+                sendMessage(mobile) {
+                    this.Battery--;
+                    mobile.Inbox = this.Texting;
+                    this.Outbox = this.Texting;
+                    alert("The message done !");
+                }
+                checkInbox() {
+                    this.Battery--;
+                    if (this.Inbox == "") {
+                        alert("No message");
+                    } else {
+                        alert("You have message");
+                    }
+                }
+                showInbox() {
+                    alert(this.Inbox);
+                }
+                checkOutbox() {
+                    this.Battery--;
+                    if (this.Outbox == "") {
+                        alert("Outbox is empty");
+                    } else {
+                        alert("You have message in outbox");
+                    }
+                }
+            }
+
+
+            let nokia = new Mobile("Nokia");
+            let iphone = new Mobile("Iphone");
+            nokia.checkBattery();
+            nokia.chargeBattery();
+            nokia.checkStatus();
+            nokia.turnOn();
+            let nokiaMessage = prompt("Enter the message !");
+            nokia.textMessage(nokiaMessage);
+            nokia.sendMessage(iphone);
+            nokia.checkOutbox();
+            nokia.checkBattery();
+            nokia.turnOff();
+            iphone.checkBattery();
+            iphone.chargeBattery();
+            iphone.checkStatus();
+            iphone.turnOn();
+            iphone.checkInbox();
+            iphone.showInbox();
+            iphone.checkBattery();
+            iphone.turnOff();
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        </script>
+
+</body>
+</html>

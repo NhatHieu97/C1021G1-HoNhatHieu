@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+
+<body>
+<h1 style="margin: auto"> Bảng Cửu Chương</h1>
+<script>
+
+    let c; let a; let b;
+    c = "<table border='1' width='600' cellspacing='5' cellpadding='3'>"
+    for (a = 1; a < 10; a++) {
+        c = c + "<tr>";
+
+        for (b = 2; b < 10; b++) {
+            c = c + "<td>"+ b +"x" + a + "=" + a * b + "</td>";
+        }
+        c = c + "</tr>";
+    }
+    c = c + "</table>";
+    document.write(c);
+
+
+
+</script>
+
+</body>
+</html>

@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+            <script>
+                // Bài 1: Viết hàm tính bình phương của một số bất kỳ được đưa vào. Gọi hàm vừa xây dựng được.
+                // function tinhBinhPhuong(a) {
+                //
+                //     return a * a;
+                //     };
+                // let num = parseInt(prompt("nhập vào số a:"));
+                // let result = tinhBinhPhuong(num);
+                // alert("Bình phương 2 số là: "+result);
+
+                // Bài 2: Viết hàm tính diện tích, hàm tính chu vi hình tròn. Gọi hàm vừa xây dựng được
+                // function dienTich(r,pi) {
+                //     return pi *r*r;
+                // }
+                // function chuVi(r,pi) {
+                //     return r*2*pi;
+                // }
+                //
+                // let input = parseInt(prompt("Nhập r"));
+                // let pi = 3.14;
+                // let dt = dienTich(input,pi);
+                // let cv = chuVi(input,pi);
+                // alert("Diện tích là: "+dt);
+                // alert("chu vi là: "+ cv);
+
+                // Bài 3: Viết hàm tính giai thừa của một số nguyên bất kỳ được đưa vào. Gọi hàm vừa xây dựng được.
+
+                // function giaiThua(n) {
+                //     let gt =1 ;
+                //     for(let i = 1;i<=n;i++){
+                //         gt *= i;
+                //     }
+                //     return gt;
+                // }
+                //
+                // let input = parseInt(prompt("Nhập n"));
+                // let sum = giaiThua(input);
+                // alert(sum);
+
+                // Bài 4: Viết hàm kiểm tra xem ký tự nhập vào có phải là ký tự số không. Nếu là ký tự số hàm trả về true, ngược lại trả về false.
+                
+                // function kiemTraSoHayKiTu(a) {
+                //     if (a > 0 || a <0){
+                //         return true;
+                //     }else
+                //         return false;
+                // }
+                // let input= prompt("nhập:");
+                // let result=kiemTraSoHayKiTu(input);
+                // if (result){
+                //     alert("a là số");
+                // }else
+                //     alert("a là kí tự");
+
+                // Bài 5: Viết hàm nhận vào 3 số nguyên bất kỳ, trả về số nguyên có giá trị nhỏ nhất.
+                // function kiemTraSoBeNhat(a,b,c) {
+                //     if(a < b && a <c){
+                //         alert("a nhỏ nhất");
+                //     }else if(b < c){
+                //         alert("b nhỏ nhất");
+                //     }else{
+                //         alert("c nhỏ nhất");
+                //     }
+                //
+                // }
+                // let a = parseInt(prompt("Nhập a"));
+                // let b = parseInt(prompt("Nhập b"));
+                // let c = parseInt(prompt("Nhập c"));
+                //
+                // kiemTraSoBeNhat(a,b,c);
+
+                // Bài 6: Viết hàm nhận vào một số, kiểm tra xem nếu số đưa vào có phải là nguyên dương không. Nếu là nguyên dương trả về true, ngược lại trả về false.
+
+                // function kiemTraSoNguyenDuong(a) {
+                //     if(a >= 0){
+                //         return true;
+                //     }else {
+                //         return false;
+                //     }
+                // }
+                // let a = parseInt(prompt("Nhập a:"));
+                // let result = kiemTraSoNguyenDuong(a);
+                // if(result){
+                //     alert("a là số nguyên dương");
+                // }else{
+                //     alert("a là số nguyên âm");
+                // }
+
+                // Bài 7: Viết hàm truyền vào 2 số nguyên bất kì, thực hiện đổi chỗ hai số nguyên đó.
+
+                // function hoanDoi(a,b) {
+                //     let tmp = 0;
+                //     tmp = a;
+                //     a = b;
+                //     b = tmp ;
+                //     alert("sau khi hoán đổi: " + a + " " + b);
+                // }
+                // let a = parseInt(prompt("Nhập a"));
+                // let b = parseInt(prompt("Nhập b"));
+                // hoanDoi(a,b);
+
+                // Bài 8: Viết hàm truyền vào mảng số nguyên bất kỳ, sau đó đảo ngược mảng số nguyên đó.
+                //
+                // function daoNguocChuoi(a) {
+                //     a.reverse();
+                //     alert(a);
+                //     // return a;
+                // }
+                //
+                // let a = [1,2,4,6,8,6,3];
+                // daoNguocChuoi(a);
+
+                // Bài 9: Viết hàm truyền vào một mảng ký tự, và một ký tự bất kỳ, kiểm tra xem ký tự bất kỳ đó có nằm trong mảng không.
+                //     Nếu có trả về số lần xuất hiện của ký tự đó, nếu không trả về -1.
+
+
+                let n = parseInt(prompt("độ dài mảng"));
+                let array = new Array(n);
+                for (let i =0;i<array.length;i++) {
+                    array[i] = prompt("nhập phần tử mảng");
+                }
+                let kiTu = prompt("nhập một kí tự bất kì");
+                document.write(kiemTra(array,kiTu));
+                function kiemTra(array,kiTu) {
+                    let cnt = 0;
+                    let result;
+                    for (let i =0;i<array.length;i++) {
+                        if (array[i] === kiTu) {
+                            cnt++;
+                            result= cnt;
+                        }
+                    }
+                        if(cnt==0){
+                        result =  -1}
+
+                    return result;
+                }
+
+
+
+
+
+            </script>
+
+</body>
+</html>

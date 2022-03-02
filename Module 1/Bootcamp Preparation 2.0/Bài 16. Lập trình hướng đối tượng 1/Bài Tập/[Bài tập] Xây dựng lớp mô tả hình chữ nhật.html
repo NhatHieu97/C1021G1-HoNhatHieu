@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <script>
+        class Rectangle {
+            constructor(chieuDai, chieuRong) {
+                this.chieuDai= chieuDai;
+                this.chieuRong= chieuRong;
+            }
+            getChieudai(){
+                return this.chieuDai;
+            }
+            setChieudai(chieuDai){
+                this.chieuDai = chieuDai;
+            }
+            getChieurong(){
+                return this.chieuRong;
+            }
+            setChieurong(chieuRong){
+                this.chieuRong = chieuRong;
+            }
+            getDientich(chieuDai,chieuRong){
+                return this.getChieudai() * this.getChieurong();
+            }
+            getChuvi(){
+                return (this.getChieudai() + this.getChieurong()) * 2 ;
+            }
+            toString(){
+                return "chu vi là: " + this.getChuvi() + "; dien tich: " + this.getDientich()
+            }
+        }
+
+        let chieudai = parseInt(prompt("nhap chieu dai: "));
+        let chieurong = parseInt(prompt("nhap chieu rong: "));
+        let test = new Rectangle(chieudai,chieurong);
+        let result = test.toString();
+        console.log(result)
+
+
+
+
+
+
+
+
+
+    </script>
+
+</body>
+</html>

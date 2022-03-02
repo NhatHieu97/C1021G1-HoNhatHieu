@@ -1,0 +1,6 @@
+Max=a
+IF b>Max
+   Max=b
+IF c>Max
+   Max=c
+End

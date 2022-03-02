@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<!--        <button type="button" onclick="alertMessage()">Click Me!</button>-->
+<!--        </body>-->
+<!--        <script>-->
+<!--            function alertMessage() {-->
+<!--                alert("Xin chao");-->
+<!--            }-->
+<!--        </script>-->
+
+<!--Tính sô-->
+
+<!--            <script>-->
+<!--                function tang1DonVi(num) {-->
+<!--                    return num + 1;-->
+<!--                }-->
+
+<!--                let n = parseInt(prompt("enter a number"));-->
+<!--                let result = tang1DonVi(n);-->
+<!--                alert(result);-->
+<!--            </script>-->
+
+<!--So sánh tổng-->
+
+<!--                <script>-->
+<!--                    function soSanhVaTinhTong() {-->
+<!--                        if (a > b){-->
+<!--                            return "số thứ nhất lớn hơn số thứ 2"-->
+<!--                        }else-->
+<!--                            return a + b;-->
+<!--                    }-->
+<!--                    let a = parseInt(prompt("nhập số thứ nhất"));-->
+<!--                    let b = parseInt(prompt("nhập số thứ hai"));-->
+<!--                    alert(soSanhVaTinhTong(a,b));-->
+
+<!--                </script>-->
+
+<!--Tìm sao-->
+                    <form>
+                        <label>Enter Name of Star</label>
+                        <input type="text" id="inputStar" name="star">
+                        <input type="button" onclick="searchStar()" value="search">
+                        <p id="display"></p>
+                    </form>
+                    <script>
+                        function searchStar() {
+                            let star = document.getElementById("inputStar").value;
+                            let arrayStar = ['polaris', 'aldebaran', 'deneb', 'vega', 'altair', 'dubhe', 'regulus'];
+                            let constellation = ['ursa minor', 'tarurus', 'cygnus', 'lyra', 'aquila', 'ursa major', 'leo'];
+                            for (let i = 0; i < arrayStar.length; i++) {
+                                if (star === arrayStar[i]) {
+                                    document.getElementById("display").innerHTML = constellation[i];
+                                    break;
+                                } else {
+                                    document.getElementById("display").innerHTML = "không có ngôi sao bạn vừa tìm";
+                                }
+                            }
+                        }
+                    </script>
+
+
+
+
+
+
+</body>
+</html>

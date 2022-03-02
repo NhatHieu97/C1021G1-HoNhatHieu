@@ -1,0 +1,47 @@
+#top1 {
+    background: chartreuse;
+    height: 100px;
+    width: 100%;
+}
+
+#top2 {
+    background: orange;
+    height: 100px;
+    width: 100%;
+}
+#main {
+    /*border: 6px solid violet;*/
+    height: 600px ;
+    width: 60%;
+    float: left;
+
+}
+/*#mainvip{*/
+/*    border: 2px solid orange ;*/
+/*}*/
+#main1 {
+    background: blue;
+    height: 300px;
+    width: 100%;
+    float: left;
+
+}
+#main2 {
+    background: orangered;
+    height: 300px;
+    width: 100%;
+    float: left;
+
+}
+#main3 {
+    background: lightgreen;
+    height: 600px;
+    width: 40%;
+    float: left;
+}
+#bottom {
+    background: chartreuse;
+    height: 100px;
+    width: 100%;
+    clear: left;
+}

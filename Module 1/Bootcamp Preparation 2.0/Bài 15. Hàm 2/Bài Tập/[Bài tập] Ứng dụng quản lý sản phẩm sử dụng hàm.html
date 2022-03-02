@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<input type="text" id="sanPham" >
+<input type="button" value="Thêm" onclick="themSP();"></br>
+<label>
+    Số lượng: <a id = "soLuong"></a>
+</label>
+<p id="hienThi"></p>
+<script>
+    let danhSachSanPham = ["Nokia","iphone","Samsung"];
+
+    hienthi();
+    function themSP() {
+        let tenSP = document.getElementById("sanPham").value;
+        if(tenSP != ""){
+            danhSachSanPham.push(tenSP);
+            document.getElementById("sanPham").value = " ";
+        }else{
+            alert("ban can phai nhap ten sp");
+        }
+        hienthi();
+    }
+
+    function xoaSanPham(id) {
+        let check = confirm("Bạn có muốn xóa " + danhSachSanPham[id] + " hay không ");
+        if(check){
+            danhSachSanPham.splice(id,1);
+        }else {
+            alert("bạn không xóa sản phẩm này " + danhSachSanPham[id]);
+        }
+
+        hienthi();
+    }
+    function suaSanPham(id) {
+        let tenSPMoi = prompt("Nhập lại tên sản phẩm " + danhSachSanPham[id]);
+        if(tenSPMoi != null && tenSPMoi != ''){
+            danhSachSanPham[id] =  tenSPMoi;
+        }else{
+            alert("Bạn không sửa ");
+        }
+
+        hienthi();
+    }
+
+    function hienthi(){
+        let bangChuoi = '<table border="1px">\n' +
+            '    <tr>\n' +
+            '        <th>Số thứ tự</th>\n' +
+            '        <th>Tên sản phẩm</th>\n' +
+            '        <th>Chức năng sửa</th>\n' +
+            '        <th>Chức năng xóa</th>\n' +
+            '    </tr>';
+        for(let i= 0; i<danhSachSanPham.length;i++){
+            bangChuoi += '<tr>\n' +
+                '        <td>'+(i+1)+'</td>\n' +
+                '        <td>'+danhSachSanPham[i]+'</td>\n' +
+                '        <td><input type="button" value="Sửa" onclick="suaSanPham('+i+');"></td>\n' +
+                '        <td><input type="button" value="Xóa" onclick="xoaSanPham('+i+');"></td>\n' +
+                '\n' +
+                '    </tr>'
+        }
+        bangChuoi += '</table>'
+        document.getElementById("hienThi").innerHTML =bangChuoi;
+        document.getElementById("soLuong").innerHTML = danhSachSanPham.length;
+    }
+</script>
+</body>
+</html>

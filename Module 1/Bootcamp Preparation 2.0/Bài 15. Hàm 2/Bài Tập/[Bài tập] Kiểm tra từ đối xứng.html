@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    function kiemTra(a) {
+        for(let i = 0; i < a.length / 2;i++){
+            if(a[i] != a[a.length - 1-i]){
+                return 0;
+            }
+        }
+        return 1;
+    }
+    let input = prompt("Nhập: ");
+    if(kiemTra(input) == 0){
+        alert("Không đối xứng");
+    }else{
+        alert("Đối xứng");
+    }
+
+
+</script>
+
+</body>
+</html>

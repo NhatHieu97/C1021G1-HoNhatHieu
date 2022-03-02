@@ -1,0 +1,4 @@
+Input VNĐ
+$ = 23000 * VNĐ
+Display VNĐ
+End

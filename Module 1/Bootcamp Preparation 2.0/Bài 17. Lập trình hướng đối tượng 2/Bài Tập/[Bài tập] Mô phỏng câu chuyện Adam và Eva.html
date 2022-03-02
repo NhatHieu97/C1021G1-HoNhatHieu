@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+        <script>
+            class Apple{
+                constructor(weight) {
+                    this.weight = 10;
+                }
+                getWeight(){
+                    return this.weight;
+                }
+                decrease(){
+                    this.weight = this.weight - 1;
+                }
+            }
+            class Human {
+                constructor(name, sex, weight) {
+                    this.name = name;
+                    this.sex = sex;
+                    this.weight = weight;
+                }
+
+                getName() {
+                    return this.name;
+                }
+
+                setName(value) {
+                    return this.name;
+                }
+                getSex() {
+                    return this.Sex;
+                }
+                setSex(value){
+                    this.Sex = value;
+                }
+                getWweight(){
+                    return this.weight;
+                }
+                setWeight(value) {
+                    this.weight = value;
+                }
+
+                setSay(text) {
+                    alert(this.name + " nói: " + text);
+                }
+
+                eatingApple(apple) {
+                    if (apple.getWeight() > 0) {
+                        this.weight++;
+                        console.log("weight of apple is : " + apple.getWeight());
+                        console.log("i have ate a apple. my current weight is : " + this.weight);
+                        apple.decrease();
+                        console.log("current weight of apple is : " + apple.getWeight());
+                    }
+
+                }
+            }
+
+            let apple = new Apple(10);
+            let adam = new Human("adam","man",60);
+            let eva = new Human("eva","girl",40);
+            eva.setSay("hello man")
+            adam.setSay("hello girl");
+            adam.eatingApple(apple);
+
+
+
+
+
+
+
+
+
+        </script>
+
+</body>
+</html>

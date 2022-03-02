@@ -1,0 +1,1 @@
+SELECT * FROM quan_li_sinh_vien.class;

@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<p id="hienThi"></p>
+<script>
+    let bangMang= new Array(12);
+    for (let i=0;i<bangMang.length;i++){
+        bangMang[i]=new Array(12);
+        for (let j=0;j<bangMang[i].length;j++){
+            bangMang[i][j]=""
+        }
+    }
+    let kiemTraNguoiChoi=true;
+    hienThi();
+    /// Hàm hiện thị bàn cơ
+    function hienThi(){
+        let bangChuoi='<table border="1">';
+        for (let i=0;i<bangMang.length-2;i++){
+            bangChuoi+=' <tr>';
+            for (let j=0;j<bangMang[i].length-2;j++){
+                bangChuoi+=' <td height="20" width="20" onclick="choi('+i+','+j+')">'+bangMang[i][j]+'</td>'
+            }
+            bangChuoi+='</tr>';
+        }
+        document.getElementById("hienThi").innerHTML=bangChuoi
+    }
+    function choi(i,j) {
+        if (kiemTraNguoiChoi&&!kiemTraDaChoi(i,j)){
+            bangMang[i][j]="X";
+            kiemTraNguoiChoi=false;
+            if (kiemTraChienThang()){
+                alert("Người chơi số 1 chiến thắng");
+            }
+        }else if (!kiemTraNguoiChoi&&!kiemTraDaChoi(i,j)){
+            bangMang[i][j]="O";
+            kiemTraNguoiChoi=true;
+            if (kiemTraChienThang()){
+                alert("Người chơi số 2 chiến thắng");
+            }
+        }
+        hienThi();
+    }
+    function kiemTraDaChoi(i,j) {
+        if (bangMang[i][j]!==""){
+            alert("Ô này đã có người chơi. Chọn lại đi ban")
+            return true;
+        }else {
+            return false;
+        }
+    }
+    function kiemTraChienThang() {
+        for (let i=0;i<bangMang.length;i++){
+            for (let j=0;j<bangMang[i].length;j++){
+                if (bangMang[i][j]==="X"){
+                    if (bangMang[i][j]==="X"&&bangMang[i][j+1]==="X"&&bangMang[i][j+2]==="X"){
+                        return true;
+                    }
+                    if (bangMang[i][j]==="X"&&bangMang[i+1][j]==="X"&&bangMang[i+2][j]==="X"){
+                        return true;
+                    }
+                    if (bangMang[i][j]==="X"&&bangMang[i+1][j+1]==="X"&&bangMang[i+2][j+2]==="X"){
+                        return true;
+                    }
+                    if (bangMang[i][j]==="X"&&bangMang[i-1][j+1]==="X"&&bangMang[i-2][j+2]==="X"){
+                        return true;
+                    }
+                }else {
+                    if (bangMang[i][j]==="O"&&bangMang[i][j+1]==="O"&&bangMang[i][j+2]==="O"){
+                        return true;
+                    }
+                    if (bangMang[i][j]==="O"&&bangMang[i+1][j]==="O"&&bangMang[i+2][j]==="O"){
+                        return true;
+                    }
+                    if (bangMang[i][j]==="O"&&bangMang[i+1][j+1]==="O"&&bangMang[i+2][j+2]==="O"){
+                        return true;
+                    }
+                    if (bangMang[i][j]==="O"&&bangMang[i-1][j+1]==="O"&&bangMang[i-2][j+2]==="O"){
+                        return true;
+                    }
+                }
+            }
+        }
+    }
+</script>
+</body>
+</html>

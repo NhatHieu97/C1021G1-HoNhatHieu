@@ -1,0 +1,5 @@
+use quan_li_sinh_vien;
+SELECT * FROM student WHERE Name_Student like 'h%';
+update student
+set ID_Class = 2
+where Name_Student = 'Hung'

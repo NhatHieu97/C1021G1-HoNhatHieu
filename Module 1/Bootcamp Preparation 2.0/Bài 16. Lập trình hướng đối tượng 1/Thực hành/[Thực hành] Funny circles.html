@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<canvas id="myCanvas" width="1368px" height="768px" style="border:1px solid #d3d3d3;">
+    <script>
+        class Circle {
+            constructor (x,y,radius){
+                this.x = x;
+                this.y = y;
+                this.radius = radius;
+            }
+
+            getRandomHex(){
+                return Math.floor(Math.random()*255);
+            }
+
+            getRandomColor(){
+                var red = this.getRandomHex();
+                var green = this.getRandomHex();
+                var blue = this.getRandomHex();
+                return "rgb(" + red + "," + blue + "," + green +")";
+            }
+
+            createCircle(){
+                var ctx = document.getElementById("myCanvas").getContext("2d");
+                var radius = Math.floor(Math.random() * 80);
+                var color = this.getRandomColor();
+                var x = Math.random() * window.innerWidth;
+                var y = Math.random() * window.innerHeight;
+                var circle= new Circle(x, y, radius);
+                ctx.beginPath();
+                ctx.arc(circle.x, circle.y, circle.radius, 0, 2 * Math.PI);
+                ctx.fillStyle = color;
+                ctx.fill();
+            }
+
+            createMultipleCircle(){
+                for(let i = 0; i < 30; i++){
+                    this.createCircle();
+                }
+            }
+        }
+        let test = new Circle();
+        let create = test.createMultipleCircle();
+        document.getElementById("myCanvas").innerHTML = create;
+
+
+    </script>
+</body>
+</html>

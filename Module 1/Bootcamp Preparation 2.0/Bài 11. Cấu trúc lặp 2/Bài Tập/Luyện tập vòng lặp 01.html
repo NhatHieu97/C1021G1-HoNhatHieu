@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+        <script>
+            // Bài 1: Sử dụng vòng lặp để đếm từ 1 đến 100. Khi số là 99, hiển thị hộp thoại thông báo là đã hoàn thành.
+            // for (let i = 1; i <= 100; i++){
+            //     if (i==99){
+            //         console.log('Hoàn Thành')
+            //         break;
+            //     }
+            //     console.log(i)}
+            // Bài 2: Sử dụng hàm prompt() để lấy thông tin nhiệt độ hiện tại được nhập bởi người truy cập. Nếu nhiệt độ
+            // nhập vào trên 100, yêu cầu người dùng giảm nhiệt độ. Nếu nhiệt độ dưới 20, yêu cầu người dùng tăng nhiệt độ.
+
+            // while (1){
+            //     let a = parseInt(prompt("nhap thong tin nhiet do"));
+            //     console.log(a);
+            //     if (a > 100) {
+            //         alert("Giảm nhiệt độ");
+            //     } else if (20 < a && a < 100) {
+            //         alert("Nhiệt độ bình thường");
+            //     } else {
+            //         alert("Tăng nhiệt độ")
+            //     }
+            // }
+            // Bài 3: Hiển thị ra 20 số trong dãy fibonacci đầu tiên
+
+            // let n = parseInt(prompt("Nhập vào số lượng Fibonacci:"));
+            // let a = 1;
+            // let b = 1;
+            // for (let i = 1; i < n ; i++) {
+            //     document.write(a + "<br>");
+            //     let c = a + b;
+            //     a = b;
+            //     b = c;
+            // }
+            // Bài 4: Tìm số đầu tiên trong dãy fibonacci chia hết cho 5.
+
+            // let n = parseInt(prompt("Nhập vào số lượng Fibonacci:"));
+            // for (let i = 1; i < n ; i++) {
+            //     if (i % 5===0){
+            //         alert (i)
+            //         break;
+            //     }
+            // }
+            // Bài 5: Tính tổng của 20 số đầu tiên trong dãy fibonacci.
+            // let n = parseInt(prompt("Nhập vào số lượng Fibonacci:"));
+            // let a = 1;
+            // let b = 1;
+            // let d = 0;
+            // for (let i = 1; i < n ; i++) {
+            //     document.write(a + "<br>");
+            //     d += a;
+            //     let c = a + b;
+            //     a = b;
+            //     b = c;
+            // }
+            // document.write(d)
+            // Bài 6: Tính tổng của 30 số chia hết cho 7 đầu tiên trong các số tự nhiên.
+            // let count = 0;
+            // let n = 0;
+            // let sum = 0;
+            // while (count<30) {
+            //     count++;
+            //     n = n + 7;
+            //     sum += n;
+            // }document.write("Tổng của dãy "+ count +" chữ số tự nhiên chia hết cho 7 đầu tiên là:" + sum)
+
+            // Bài 7: Hãy viết một chương trình in ra các số từ 1 đến 100. Nhưng nếu số chia hết cho 3 thì in ra "Fizz", 5
+            // thì in ra "Buzz" thay vì in ra số đó. Và nếu số đó chia hết cho cả 3 và 5 thì in ra chữ "FizzBuzz".
+
+            // for (i=1;i<=100;i++){
+            //     if (i%3===0 && i%5===0 ){
+            //         document.write('FizzBuzz'+"<br>")}
+            //     else {
+            //         if (i % 3 === 0) {
+            //             document.write('Fizz' + "<br>")
+            //         } else if (i%5===0) {
+            //             document.write('Buzz' + "<br>")
+            //         }else {
+            //             document.write(i + "<br>")
+            //         }
+            //     }}
+            // Bài 8:
+            function selectarea() {
+                let random;
+                let nhap;
+                let area = parseInt(prompt("Nhập khoảng dự đoán 1 hoặc 2 hoặc 3"));
+                let count = 0;
+                if(area===1){
+                    alert("Khoảng lựa chọn từ 1-30");
+                    random = Math.floor(Math.random()*30);
+                    console.log(random);
+                }else if(area===2) {
+                    alert("Khoảng lựa chọn từ 31-60");
+                    random = Math.floor(Math.random() * 30) + 30;
+                    console.log(random);
+                }
+                else if(area===3) {
+                    alert("Khoảng lựa chọn từ 61-90");
+                    random = Math.floor(Math.random() * 30) + 60;
+                    console.log(random);
+                }
+                while (count < 3) {
+                    if (area===1){
+                        while (1){
+                            nhap = parseInt(prompt("Nhập giá trị dự đoán từ 1-30"));
+                            if(nhap>0&&nhap<=30){
+                                break;
+                            }
+                        }
+                    }
+                    else if (area===2){
+                        while (1){
+                            nhap = parseInt(prompt("Nhập giá trị dự đoán từ 31-60"));
+                            if(nhap>30&&nhap<=60){
+                                break;
+                            }
+                        }
+                    }
+                    else if (area===3){
+                        while (1){
+                            nhap = parseInt(prompt("Nhập giá trị dự đoán từ 1-30"));
+                            if(nhap>60&&nhap<90){
+                                break;
+                            }
+                        }
+                    }
+                    if (nhap === random) {
+                        alert("Chúc mừng bạn đã đoán đúng");
+                        break;
+                    } else if (nhap > random) {
+                        alert("Kết quả dự đoán bé hơn của bạn");
+                    } else if (nhap < random) {
+                        alert("Kết quả dự đoán lớn hơn của bạn");
+                    }
+                    count++;
+                }
+
+            }
+        </script>
+        <form>
+            <h2>Game đoán số ngẫu nhiên</h2><!--    Dùng để làm bài tập 8-->
+            <input type="button" name="play" value="Play" id="b1" onclick="selectarea()"/>
+        </form>
+
+</body>
+</html>

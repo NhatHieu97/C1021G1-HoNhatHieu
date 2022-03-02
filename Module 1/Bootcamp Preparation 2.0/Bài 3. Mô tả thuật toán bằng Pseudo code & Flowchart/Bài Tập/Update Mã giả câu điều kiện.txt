@@ -1,0 +1,8 @@
+Input N
+IF N >=0 và N <=100 
+    IF N >=75 Display A
+    Else if N >=60 Display B
+    Else if N >=45 Display C
+    Else if N >=35 Display D
+    Else Display E
+End

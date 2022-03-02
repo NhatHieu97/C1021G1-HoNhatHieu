@@ -1,0 +1,86 @@
+
+h1{
+    text-align: center;
+    color: red;
+}
+body{
+    box-sizing: border-box;
+}
+.div{
+    width: 840px;
+    margin:0 50%;
+    transform: translateX(-50%);
+    height: 200px;
+}
+.body{
+    width: 130px;
+    height: 180px;
+    float: left;
+    overflow: hidden;
+    margin: 5px;
+}
+.div-idol{
+    width: 130px;
+    height: 180px;
+    width: 60%;
+    height: auto;
+    text-align: justify;
+    float: right;
+    margin-left: 50px;
+}
+img{
+    margin: 5px;
+}
+.div-jsoo{
+    width: auto;
+    height: 180px;
+    margin: 0 10px;
+}
+.div-irene{
+    width: auto;
+    height: 180px;
+    margin: 0px;
+}
+.div-lisa{
+    width: auto;
+    height: 180px;
+    margin: 0px;
+}
+.div-nancy{
+    width: auto;
+    height: 120px;
+    margin: 0 5px;
+}
+.div-yoona{
+    width: auto;
+    height: 120px;
+    margin: 0 10px;
+}
+.div-rose{
+    width: auto;
+    height: 180px;
+    margin: 0px;
+}
+
+
+.float-left{
+    float: left;
+    margin: 10px;
+}
+
+img{
+    width: 130px;
+    height: auto;
+}
+.tieude {
+    color: red;
+}
+.position-container{
+    position: relative;
+}
+.position-element{
+    position: absolute;
+    transition: 1s;
+    opacity: 0;
+}
+

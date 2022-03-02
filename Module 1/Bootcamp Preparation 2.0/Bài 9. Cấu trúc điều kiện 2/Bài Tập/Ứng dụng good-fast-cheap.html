@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+        <form>
+            <td><h1>Ứng dụng good-fast-cheap</h1></td>
+            <br>
+            <td>
+                <label><input onclick="showMessage1()" id="good"  type="checkbox"name="good">Good</label>
+                <br>
+                <label><input onclick="showMessage2()" id="cheap" type="checkbox"name="cheap">Cheap</label>
+                <br>
+                <label><input onclick="showMessage3()" id="fast" type="checkbox"name="fast">Fast</label>
+        </form>
+        <script>
+                function showMessage1() {
+                    let good = document.getElementById("good").checked;
+                    let cheap = document.getElementById("cheap").checked;
+                    let fast = document.getElementById("fast").checked;
+                    if (good && cheap) {
+                        document.getElementById("fast").checked = false;
+                    }
+                }
+                function showMessage2() {
+                    let good = document.getElementById("good").checked;
+                    let cheap = document.getElementById("cheap").checked;
+                    let fast = document.getElementById("fast").checked;
+                    if (cheap && fast ){
+                        document.getElementById("good").checked=false;
+                    }
+                }
+
+                function showMessage3() {
+                    let good = document.getElementById("good").checked;
+                    let cheap = document.getElementById("cheap").checked;
+                    let fast = document.getElementById("fast").checked;
+                    if (good && fast ){
+                        document.getElementById("good").checked=false;
+                    }
+                }
+
+
+
+            
+            
+            
+            
+            
+            
+            
+        </script>
+
+
+
+
+
+
+</body>
+</html>

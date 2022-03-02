@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<p>Số Nguyên tố là </p>
+<br>
+<script>
+    let number = parseInt(prompt("nhap so:" )) ;
+    let count = 0 ;
+    let n = 2;
+    let i;
+    let check
+    while (count<number){
+        check = true
+        for (i =2 ; i <= Math.sqrt(n); i++){
+            if (n%i===0){
+                check = false
+                break;
+            }
+        } if (check){
+            document.write(n)
+            document.write("<br>")
+            count++
+        } ;
+        n++
+    }
+</script>
+</body>
+</html>
+
+
+
+
+

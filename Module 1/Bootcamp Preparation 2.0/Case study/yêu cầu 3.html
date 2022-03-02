@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+        // bài 1
+        // let n = parseInt(prompt("nhập số lượng phần tử mảng: "));
+        // let b = new Array(n);
+        // let a = [];
+        // let sum = 0;
+        // for(let i = 0; i < b.length; i++){
+        //     b[i] = parseInt(prompt("nhập phần tử vào mảng: "));
+        //     sum = sum + b[i];
+        //     a.push(sum);
+        // }
+        // console.log(a);
+
+
+
+        // bài 2
+        //
+        // let x1 = parseInt(prompt("nhập số lượng phần tử mảng x1: "));
+        // let x2 = parseInt(prompt("nhập số lượng phần tử mảng x2: "));
+        // let array1 = new Array(x1);
+        // let array2 = new Array(x2);
+        // let arrayNew = [];
+        //
+        // for(let i = 0; i < array1.length; i++) {
+        //     array1[i] = parseInt(prompt("nhập phần tử vào mảng: "+ i));
+        // }
+        // console.log(array1)
+        // for(let i = 0; i < array2.length; i++) {
+        //     array2[i] = parseInt(prompt("nhập phần tử vào mảng: "+ i));
+        // }
+        // console.log(array2)
+        //
+        // for(let i = 0; i < array2.length; i++){
+        //     for(let j = 0; j < array1.length; j++)
+        //     if(array2[i] == array1[j]){
+        //         array2.splice(i,1)
+        //         arrayNew.push(array2[j])
+        //     }
+        // }
+        // console.log(array2);
+
+        // bài 3
+
+
+        //
+        // let tuSo = [5,2,5];
+        // let mauSo = [6,3,4];
+        // let max = Math.max(tuSo[0]/mauSo[0],tuSo[1]/mauSo[1],tuSo[2]/mauSo[2]);
+        // // console.log("Max :"+ max)
+        // for(let i = 0; i < tuSo.length;i++){
+        //     if(tuSo[i]/mauSo[i] === max){
+        //         console.log("Index :"+ i + " Phân số đó là: "+ tuSo[i] + "/"+ mauSo[i]);
+        //         break;
+        //     }
+        // }
+        // bài 4
+
+        // let chuSo = [1,2,3,4,5,6,7,8,9,10];
+        // let kiTu = ["môt","hai","ba","bốn","năm","sáu","bảy","tám","chín","mười"];
+        // let a = prompt("nhập a: ");
+        // let b = a.split("");
+        // let c = []
+        // for(let i = 0; i < b.length; i++){
+        //     for(let j = 0; j < chuSo.length; j++){
+        //         if(b[i] == chuSo[j]){
+        //             c.push(kiTu[j]);
+        //         }
+        //     }
+        // }
+        // console.log(c.join(" "))
+
+        // bài 5
+
+        // confirm("Vui lòng lựa chọn theo số thứ tụ nước uống:\n " +
+        //     "1. Cafe\n" +
+        //     "2. Cam vắt\n" +
+        //     "3. Nước ép cà rốt\n" +
+        //     "4. Nước ép cà chua\n" +
+        //     "5. Nước lọc\n" +
+        //     "6. Nước dừa\n" +
+        //     "7. Thoát gọi món\n");
+        // let order = 0;
+        // let quantity = 0;
+        // let total = 0;
+        // let number = [1, 2, 3, 4, 5, 6, 7];
+        // let price = ["8000", "20000", "15000", "16000", "5000", "12000"]
+        // order = parseInt(prompt("nhập số thứ tự số nước uống đã chon: " + "số 7 thoát gọi món"))
+        // for (let i = 0; i <= number.length - 1; i++) {
+        //     if (order == number[i]) {
+        //         alert("giá của sản phẩm là: " + price[i]);
+        //         quantity = parseInt(prompt("nhập vào số lượng:"))
+        //         total += price[i] * quantity;
+        //     } else if (order == 7) {
+        //         confirm("Vui lòng lựa chọn theo số thứ tụ nước uống:\n " +
+        //             "1. Cafe\n" +
+        //             "2. Cam vắt\n" +
+        //             "3. Nước ép cà rốt\n" +
+        //             "4. Nước ép cà chua\n" +
+        //             "5. Nước lọc\n" +
+        //             "6. Nước dừa\n" +
+        //             "7. Thoát gọi món\n");
+        //         break;
+        //
+        //     }
+        // }
+        // while (!(order === 7)) {
+        //     alert("Số tiền cần trả là: " + total + " VND")
+        // }
+
+        // Bài 5
+
+        confirm("Vui lòng lựa chọn theo số thứ tụ nước uống:\n " +
+            "1. Cafe\n" +
+            "2. Cam vắt\n" +
+            "3. Nước ép cà rốt\n" +
+            "4. Nước ép cà chua\n" +
+            "5. Nước lọc\n" +
+            "6. Nước dừa\n" +
+            "7. Thoát gọi món\n");
+        let order = 0;
+        let quantity = 0;
+        let total = 0;
+        let number = [1, 2, 3, 4, 5, 6, 7];
+        let price = ["8000", "20000", "15000", "16000", "5000", "12000"]
+        order = parseInt(prompt("nhập số thứ tự số nước uống đã chon: " + "số 7 thoát gọi món"))
+        for (let i = 0; i <= number.length - 1; i++) {
+            if (order == number[i]) {
+                alert("giá của sản phẩm là: " + price[i]);
+                quantity = parseInt(prompt("nhập vào số lượng:"))
+                total += price[i] * quantity;
+            } else if (order == 7) {
+                confirm("Vui lòng lựa chọn theo số thứ tụ nước uống:\n " +
+                    "1. Cafe\n" +
+                    "2. Cam vắt\n" +
+                    "3. Nước ép cà rốt\n" +
+                    "4. Nước ép cà chua\n" +
+                    "5. Nước lọc\n" +
+                    "6. Nước dừa\n" +
+                    "7. Thoát gọi món\n");
+                break;
+
+            }
+        }
+        while (!(order === 7)) {
+            alert("Số tiền cần trả là: " + total + " VND")
+        }
+
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</script>
+
+</body>
+</html>
