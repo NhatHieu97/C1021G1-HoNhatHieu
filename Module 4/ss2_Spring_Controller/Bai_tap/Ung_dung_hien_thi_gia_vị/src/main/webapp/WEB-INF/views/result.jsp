@@ -12,7 +12,9 @@
     <title>Result</title>
 </head>
 <body>
-<c:forEach var = "result" items="${condiment}"><h2>${result}</h2></c:forEach>
+<c:forEach var = "result" items="${condiment}">
+    <h2>${result}</h2>
+</c:forEach>
 
 </body>
 </html>
