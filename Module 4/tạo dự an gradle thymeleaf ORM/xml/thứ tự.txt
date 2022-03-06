@@ -1,0 +1,62 @@
+b1: mở intellij ->thêm dự án bằng gradle
+b: thêm <dependency>
+
+ compile group: 'javax.servlet', name: 'javax.servlet-api', version: '3.1.0'
+    compile group: 'org.springframework', name: 'spring-core', version: '4.3.17.RELEASE'
+    compile group: 'org.springframework', name: 'spring-context', version: '4.3.17.RELEASE'
+    compile group: 'org.springframework', name: 'spring-beans', version: '4.3.17.RELEASE'
+    compile group: 'org.springframework', name: 'spring-web', version: '4.3.17.RELEASE'
+    compile group: 'org.springframework', name: 'spring-webmvc', version: '4.3.17.RELEASE'
+    compile group: 'javax.servlet', name: 'jstl', version: '1.2'
+
+    compile group: 'org.thymeleaf', name: 'thymeleaf-spring4', version: '3.0.9.RELEASE'
+    compile group: 'nz.net.ultraq.thymeleaf', name: 'thymeleaf-layout-dialect', version: '1.2'
+
+    compile group: 'org.hibernate', name: 'hibernate-core', version: '5.4.3.Final'
+    compile group: 'mysql', name: 'mysql-connector-java', version: '8.0.11'
+     
+bấm biểu tượng load lại dữ liệu
+
+Thêm 3 file cấu hình WEB-INF vào webapp
+
+Thêm hibernate.conf.xml vào thư mục resouces
+
+Thêm Lớp ConnectionUtil vào thư mục repository để tạo các đối tượng sessionFactory và entityManager
+
+sesionFatory viết code thuần, entityManery viết code bằng typeQuery
+
+
+
+Thêm @Entity để thêm nảng vào CSDL. Mặc Định tên class sẽ là tên bảng. Nếu muốn thay đổi tên bảng sử dụng thêm @Table(name="abc") để đổi tên
+
+Thêm id bằng @id để làm khoá chính 
+@GeneratedValue(strategy=GenerationType.Auto) để id tự tăng
+@Column ="id"để đánh dáu id là cột khoá 
+
+Thêm thẻ mapping vào thư mục hibernate.conf.xml
+
+b4: sử dụng các file java để config,
+b5. tạo controller các file html để hiện dự liệu.
+b6. thêm thư viện <html lang="en" xmlns:th="http://www.thymeleaf.org"> vào trong file html muốn viết thymeleaf
+b7 thêm thư viên để bind obj néu cần 
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
+
+Những hàn động liên quan đến thay đổi cơ sở dữ liệu cần transaction
+vidu tạo mới đối tượng
+Public void save(Customer customer){
+Transaction transaction = null;
+Session session = null;
+try{
+session = ConectionUtil.sessionFactory.openSession();
+transaction = session.beginTransaction();
+session.save(customer);
+transaction.commit();
+}catch(Exception e){
+if(transaction!=null){
+transaction.rollback();
+}finally{
+if(session!=null){
+session.close();}}
+}
+}
+
