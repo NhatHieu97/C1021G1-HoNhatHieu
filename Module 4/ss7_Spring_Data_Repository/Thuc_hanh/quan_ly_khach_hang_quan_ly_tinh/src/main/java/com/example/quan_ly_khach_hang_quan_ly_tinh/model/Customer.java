@@ -10,7 +10,7 @@ public class Customer {
     private Long id;
     private String firstName;
     private String lastName;
-    @ManyToOne
+    @ManyToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "province_id", referencedColumnName = "id")
     private Province province;
 

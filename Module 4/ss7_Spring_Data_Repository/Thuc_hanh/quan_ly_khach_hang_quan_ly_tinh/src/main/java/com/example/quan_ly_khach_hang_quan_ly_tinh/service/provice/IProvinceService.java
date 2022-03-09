@@ -5,12 +5,16 @@ import com.example.quan_ly_khach_hang_quan_ly_tinh.model.Province;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 
-public interface IProviceService {
+import java.util.List;
+
+public interface IProvinceService {
+    List<Province> findAll();
+
     Page<Province> findAll(Pageable pageable);
 
-    Province findById(int id);
+    Province findById(Long id);
 
     void save(Province province);
 
-    void deleteById(Integer id);
+    void deleteById(Long id);
 }

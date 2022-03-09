@@ -5,8 +5,11 @@ import com.example.quan_ly_khach_hang_quan_ly_tinh.repository.ICustomerRepositor
 import com.example.quan_ly_khach_hang_quan_ly_tinh.service.customer.ICustomerService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
-import org.springframework.data.domain.Pageable;
 
+import org.springframework.data.domain.Pageable;
+import org.springframework.stereotype.Service;
+
+@Service
 public class CustomerServiceImpl implements ICustomerService {
     @Autowired
     private ICustomerRepository customerRepository;
@@ -17,7 +20,7 @@ public class CustomerServiceImpl implements ICustomerService {
     }
 
     @Override
-    public Customer findById(int id) {
+    public Customer findById(Long id) {
         return customerRepository.findById(id).orElse(null);
     }
 
@@ -27,7 +30,12 @@ public class CustomerServiceImpl implements ICustomerService {
     }
 
     @Override
-    public void deleteById(Integer id) {
+    public void deleteById(Long id) {
         customerRepository.deleteById(id);
+    }
+
+    @Override
+    public Page<Customer> findByFirstNameContaining(String name, Pageable pageable) {
+        return customerRepository.findByFirstNameContaining(name, pageable);
     }
 }
