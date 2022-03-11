@@ -10,7 +10,7 @@ public class Customer {
     private Long id;
     private String firstName;
     private String lastName;
-    @ManyToOne(cascade = CascadeType.ALL)
+    @ManyToOne
     @JoinColumn(name = "province_id", referencedColumnName = "id")
     private Province province;
 
@@ -32,6 +32,7 @@ public class Customer {
     public String toString() {
         return String.format("Customer[id=%d, firstName='%s', lastName='%s']", id, firstName, lastName);
     }
+
 
     public Long getId() {
         return id;

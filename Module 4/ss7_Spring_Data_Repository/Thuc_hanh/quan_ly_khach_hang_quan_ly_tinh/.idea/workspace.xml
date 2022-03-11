@@ -5,27 +5,37 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="3f2cbbbf-adb9-4ed8-b4ef-12a816c85017" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/quan_ly_khach_hang_quan_ly_tinh/controller/CustomerController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/quan_ly_khach_hang_quan_ly_tinh/controller/ProvinceController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/quan_ly_khach_hang_quan_ly_tinh/service/provice/impl/ProvinceServiceImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/customer/create.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/customer/delete.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/customer/edit.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/customer/list.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/province/create.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/province/delete.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/province/edit.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/province/list.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../ss5_Thao_tac_voi_CSDL_va_ORM/Thuc_hanh/customer-management" beforeDir="false" afterPath="$PROJECT_DIR$/../../../ss5_Thao_tac_voi_CSDL_va_ORM/Thuc_hanh/customer-management" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Tao_ung_dung_block/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Tao_ung_dung_block/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../ss8_Validation/Bai_tap/Validate_form/src/main/java/vn/codegym/config/AppConfiguration.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../ss8_Validation/Bai_tap/Validate_form/src/main/java/vn/codegym/controller/UserController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../ss8_Validation/Bai_tap/Validate_form/src/main/java/vn/codegym/model/User.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../ss8_Validation/Bai_tap/Validate_form/src/main/java/vn/codegym/repository/UserRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../ss8_Validation/Bai_tap/Validate_form/src/main/java/vn/codegym/service/UserService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../ss8_Validation/Bai_tap/Validate_form/src/main/java/vn/codegym/service/impl/UserImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../ss8_Validation/Bai_tap/Validate_form/src/main/resources/templates/create.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../ss8_Validation/Bai_tap/Validate_form/src/main/resources/templates/delete.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../ss8_Validation/Bai_tap/Validate_form/src/main/resources/templates/edit.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../ss8_Validation/Bai_tap/Validate_form/src/main/resources/templates/layout.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../ss8_Validation/Bai_tap/Validate_form/src/main/resources/templates/list.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../ss8_Validation/Bai_tap/Validate_form/src/main/resources/validation-message.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../ss8_Validation/Thuc_hanh/Custom_Validation/src/main/java/com/example/config/AppConfiguration.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../ss8_Validation/Thuc_hanh/Custom_Validation/src/main/java/com/example/controller/PhoneController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../ss8_Validation/Thuc_hanh/Custom_Validation/src/main/java/com/example/model/PhoneNumber.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../ss8_Validation/Thuc_hanh/Custom_Validation/src/main/resources/templates/index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../ss8_Validation/Thuc_hanh/Custom_Validation/src/main/resources/templates/result.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../ss8_Validation/Thuc_hanh/Custom_Validation/src/main/resources/validation-message.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../ss8_Validation/Thuc_hanh/Validating_Form_Input/src/main/java/vn/codegym/controller/UserController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../ss8_Validation/Thuc_hanh/Validating_Form_Input/src/main/java/vn/codegym/model/User.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../ss8_Validation/Thuc_hanh/Validating_Form_Input/src/main/resources/templates/index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../ss8_Validation/Thuc_hanh/Validating_Form_Input/src/main/resources/templates/result.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../0. tạo dự an gradle thymeleaf ORM/java JPA/config/AppConfiguration.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../0. tạo dự an gradle thymeleaf ORM/java JPA/config/AppConfiguration.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/quan_ly_khach_hang_quan_ly_tinh/controller/ProvinceController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/quan_ly_khach_hang_quan_ly_tinh/controller/ProvinceController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/quan_ly_khach_hang_quan_ly_tinh/model/Customer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/quan_ly_khach_hang_quan_ly_tinh/model/Customer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/quan_ly_khach_hang_quan_ly_tinh/repository/ICustomerRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/quan_ly_khach_hang_quan_ly_tinh/repository/ICustomerRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/quan_ly_khach_hang_quan_ly_tinh/repository/IProviceRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/quan_ly_khach_hang_quan_ly_tinh/repository/IProviceRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/quan_ly_khach_hang_quan_ly_tinh/service/customer/ICustomerService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/quan_ly_khach_hang_quan_ly_tinh/service/customer/ICustomerService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/quan_ly_khach_hang_quan_ly_tinh/service/customer/impl/CustomerServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/quan_ly_khach_hang_quan_ly_tinh/service/customer/impl/CustomerServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/quan_ly_khach_hang_quan_ly_tinh/service/provice/IProviceService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/quan_ly_khach_hang_quan_ly_tinh/service/provice/IProvinceService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/quan_ly_khach_hang_quan_ly_tinh/service/provice/impl/ProviceServiceImpl.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/quan_ly_khach_hang_quan_ly_tinh/model/Province.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/quan_ly_khach_hang_quan_ly_tinh/model/Province.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/quan_ly_khach_hang_quan_ly_tinh/service/provice/IProvinceService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/quan_ly_khach_hang_quan_ly_tinh/service/provice/IProvinceService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/quan_ly_khach_hang_quan_ly_tinh/service/provice/impl/ProvinceServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/quan_ly_khach_hang_quan_ly_tinh/service/provice/impl/ProvinceServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/customer/create.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/customer/create.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/province/delete.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/province/delete.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -42,6 +52,7 @@
       <list>
         <option value="Interface" />
         <option value="Class" />
+        <option value="HTML File" />
       </list>
     </option>
   </component>
@@ -55,6 +66,7 @@
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="RequestMappingsPanelOrder0" value="0" />
     <property name="RequestMappingsPanelOrder1" value="1" />
     <property name="RequestMappingsPanelWidth0" value="75" />
@@ -62,7 +74,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../../ss6-JPA/Bai_tap/Tao_ung_dung_block" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
@@ -88,7 +100,9 @@
       <updated>1646721658139</updated>
       <workItem from="1646721660989" duration="7488000" />
       <workItem from="1646746498584" duration="6906000" />
-      <workItem from="1646796794722" duration="8089000" />
+      <workItem from="1646796794722" duration="13090000" />
+      <workItem from="1646896756660" duration="41000" />
+      <workItem from="1646904327451" duration="1852000" />
     </task>
     <servers />
   </component>

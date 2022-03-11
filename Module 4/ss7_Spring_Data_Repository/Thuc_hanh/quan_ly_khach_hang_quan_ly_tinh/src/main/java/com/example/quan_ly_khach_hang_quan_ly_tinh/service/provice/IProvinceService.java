@@ -17,4 +17,7 @@ public interface IProvinceService {
     void save(Province province);
 
     void deleteById(Long id);
+
+    void remove(Province province);
+
 }

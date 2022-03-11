@@ -1,4 +1,4 @@
-package com.example.config;
+package vn.codegym.config;
 
 
 import org.springframework.context.ApplicationContextAware;
@@ -16,8 +16,8 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter
 @Configuration
 @EnableWebMvc
 @EnableTransactionManagement// khai bao dung transaction
-@EnableJpaRepositories("com.example.repository")
-@ComponentScan("com.example")
+@EnableJpaRepositories("vn.codegym.repository")
+@ComponentScan("vn.codegym")
 public class AppConfiguration {
     @Bean
     public MessageSource messageSource() {

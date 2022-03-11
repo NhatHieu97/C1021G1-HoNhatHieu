@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.servlet.ModelAndView;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import java.util.List;
 
@@ -83,10 +84,11 @@ public class ProvinceController {
     }
 
     @PostMapping("/delete-province")
-    public String deleteProvince(@ModelAttribute("province") Province province) {
-        iProvinceService.deleteById(province.getProvince_id());
-        return "redirect:provinces";
+    public String deleteProvince(@ModelAttribute Province province) {
+        iProvinceService.deleteById(province.getId());
+        return "redirect:/provinces";
     }
+
 //
 //    @GetMapping("/view-province/{id}")
 //    public ModelAndView viewProvince(@PathVariable("id") Long id){

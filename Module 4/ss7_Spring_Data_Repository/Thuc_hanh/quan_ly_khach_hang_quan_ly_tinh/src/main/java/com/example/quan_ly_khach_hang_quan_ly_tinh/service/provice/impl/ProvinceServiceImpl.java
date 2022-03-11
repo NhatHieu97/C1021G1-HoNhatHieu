@@ -39,4 +39,9 @@ public class ProvinceServiceImpl implements IProvinceService {
     public void deleteById(Long id) {
         proviceRepository.deleteById(id);
     }
+
+    @Override
+    public void remove(Province province) {
+        proviceRepository.delete(province);
+    }
 }
