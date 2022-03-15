@@ -6,13 +6,15 @@
 <body>
 <center>
     <h1>My User</h1>
+    <a href="/create-user">Create new User</a>
+
 </center>
-<a href="/create-user">Create new User</a>
+
 <center>
 <!--    <p style="color: green" th:text="${message}"></p>-->
 </center>
 
-<table id="user">
+<table id="user" style="width: 50%;margin: auto">
     <tr>
         <th>ID</th>
         <th>First Name</th>
@@ -37,10 +39,11 @@
         </tr>
     </th:block>
 </table>
-<a th:if="${user.hasPrevious()}" th:href="@{/user(page = ${user.number - 1}, keyword = ${keywordAfterCheck})}">Previous</a>
-<span th:text="${user.number + 1}"></span>/<span th:text="${user.totalPages}"></span>
-<a th:if="${user.hasNext()}" th:href="@{/user(page = ${user.number + 1}, keyword = ${keywordAfterCheck})}">Next</a>
-
-<footer th:replace="/layout :: footer"></footer>
+<center>
+    <a th:if="${user.hasPrevious()}" th:href="@{/user(page = ${user.number - 1})}">Previous</a>
+    <span th:text="${user.number + 1}"></span>/<span th:text="${user.totalPages}"></span>
+    <a th:if="${user.hasNext()}" th:href="@{/user(page = ${user.number + 1})}">Next</a>
+    <footer th:replace="/layout :: footer"></footer>
+</center>
 </body>
 </html>

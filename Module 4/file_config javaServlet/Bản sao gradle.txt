@@ -1,0 +1,5 @@
+các bước tạo project:
+1. thêm thư mục WEB-INF vào webapp.(nếu đổi tên thành static thì phải đổi cả trong file xml trong web-inf)
+2.thêm thư mục config vào mục java.
+3. thêm thư mục static vào webapp.
+4 Thêm link boostrap jquery js và datatable vào file.

@@ -15,11 +15,11 @@ public class User implements Validator {
     private Integer id;
 
     @NotBlank(message = "name not empty")
-    @Size(min = 3,max = 45,message = "length from 5 to 45")
+    @Size(min = 3,max = 45,message = "length from 3 to 45")
     private String firstName;
 
     @NotBlank(message = "name not empty")
-    @Size(min = 3,max = 45,message = "length from 5 to 45")
+    @Size(min = 3,max = 45,message = "length from 3 to 45")
     private String lastName;
 
     @Pattern(regexp = "(0)[0-9]{9}", message = "Wrong Format - 0XXXXXXXXX")
