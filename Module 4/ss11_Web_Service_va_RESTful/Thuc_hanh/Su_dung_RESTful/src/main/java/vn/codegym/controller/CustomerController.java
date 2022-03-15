@@ -63,7 +63,7 @@ public class CustomerController {
 
         currentCustomer.setFirstName(customer.getFirstName());
         currentCustomer.setLastName(customer.getLastName());
-        
+
 
         customerService.save(currentCustomer);
         return new ResponseEntity<>(currentCustomer, HttpStatus.OK);
