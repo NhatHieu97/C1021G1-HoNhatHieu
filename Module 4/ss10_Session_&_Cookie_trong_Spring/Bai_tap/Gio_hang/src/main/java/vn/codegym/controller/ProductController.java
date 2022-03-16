@@ -35,13 +35,13 @@ public class ProductController {
         return new ModelAndView("product/list","productlist",productService.findAll());
     }
 
-//    @GetMapping("/add/{id}")
-//    public ModelAndView showDetail(@PathVariable Long id, HttpServletResponse response){
-//        Cookie cookie = new Cookie("idProduct", id + "");
-//        cookie.setMaxAge(60*60*24*1);
-//        cookie.setPath("/");
-//        return new ModelAndView("product/detail","product", productService.findById(id));
-//    }
+    @GetMapping("/add/{id}")
+    public ModelAndView showDetail(@PathVariable Long id, HttpServletResponse response){
+        Cookie cookie = new Cookie("idProduct", id + "");
+        cookie.setMaxAge(60*60*24*1);
+        cookie.setPath("/");
+        return new ModelAndView("product/detail","product", productService.findById(id));
+    }
 //    @GetMapping("add/{id}")
 //    public String addToCart(@PathVariable Long id, @SessionAttribute ("cart") CartDto cart){
 //        Product productOptional = productService.findById(id);
