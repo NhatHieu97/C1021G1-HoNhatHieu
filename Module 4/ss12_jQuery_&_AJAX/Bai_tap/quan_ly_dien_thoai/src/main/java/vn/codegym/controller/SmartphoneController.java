@@ -53,8 +53,7 @@ public class SmartphoneController {
         smartphones.setModel(smartphone.getModel());
         smartphones.setPrice(smartphone.getPrice());
         smartphones.setProducer(smartphone.getProducer());
-        return new ResponseEntity<>(HttpStatus.OK);
+        return new ResponseEntity<>(smartphones,HttpStatus.OK);
     }
 
 }
-

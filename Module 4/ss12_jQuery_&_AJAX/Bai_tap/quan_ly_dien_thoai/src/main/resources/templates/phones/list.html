@@ -51,8 +51,7 @@
                         <td >${smartphone.producer}</td>
                         <td >${smartphone.model}</td>
                         <td >${smartphone.price}</td>` +
-                        `<td>
-
+                `<td>
                             <button class="deleteSmartphone" onclick="deleteSmarthone(${smartphone.id})">Delete</button>
                           </td>
                     </tr>`;
@@ -77,7 +76,7 @@
                     document.getElementById('smartphoneList').innerHTML = content;
                 }
 
-                })
+            })
 
         }
 
@@ -89,17 +88,17 @@
             //         url: "/smartphones",
             //         //xử lý khi thành công
             //         success: function (data) {
-                    // hien thi danh sach o day
-                    let content = '    <tr>\n' +
-                        '        <td>Producer</td>\n' +
-                        '        <td>Model</td>\n' +
-                        '        <td>Price</td>\n' +
-                        '        <td>Delete</td>\n' +
-                        '    </tr>';
-                    for (let i = 0; i < data.length; i++) {
-                        content += getSmartphone(data[i]);
-                    }
-                    document.getElementById('smartphoneList').innerHTML = content;
+            // hien thi danh sach o day
+            let content = '    <tr>\n' +
+                '        <td>Producer</td>\n' +
+                '        <td>Model</td>\n' +
+                '        <td>Price</td>\n' +
+                '        <td>Delete</td>\n' +
+                '    </tr>';
+            for (let i = 0; i < data.length; i++) {
+                content += getSmartphone(data[i]);
+            }
+            document.getElementById('smartphoneList').innerHTML = content;
             //     }
             // });
         }
@@ -121,6 +120,59 @@
 
                 });
                 //chặn sự kiện mặc định của thẻ
+                event.preventDefault();
+            });
+        })
+
+        function updateSmartphone() {
+
+            let id = $('#id-input').val();
+            let producer = $('#producer-input').val();
+            let model = $('#model-input').val();
+            let price = $('#price-input').val();
+            let newSmartphone = {
+                id:id,
+                producer: producer,
+                model: model,
+                price: price
+            };
+            console.log(newSmartphone);
+            $.ajax({
+                headers: {
+                    'Accept': 'application/json',
+                    'Content-Type': 'application/json'
+                },
+                contentType:'application/json;charset=utf-8',
+                type: "PUT",
+                data: JSON.stringify(newSmartphone),
+                url: `/smartphones/`+id,
+                success: function () {
+                    location.reload();
+                }
+
+            });
+
+            event.preventDefault();
+        }
+
+        $(document).ready(function () {
+            $('.editSmartphone').click(function (event) {
+                let a = $(this);
+                let smartphoneId = a.attr("href");
+                $('#id-input').val(smartphoneId);
+                let producer = $('#producer-input');
+                producer.val(a.parent().parent().children()[0].innerText);
+                let model = $('#model-input');
+                model.val(a.parent().parent().children()[1].innerText);
+                let price = $('#price-input');
+                price.val(a.parent().parent().children()[2].innerText);
+                let inputForm = $('#input-form');
+                inputForm.attr("display","block");
+                $.ajax({
+                    type: "PUT",
+                    url: `/smartphones/${smartphoneId}`,
+                    success: successHandler
+                });
                 event.preventDefault();
             });
         })
@@ -161,9 +213,17 @@
             <td th:text="${smartphone.producer}"></td>
             <td th:text="${smartphone.model}"></td>
             <td th:text="${smartphone.price}"></td>
-            <td><a class="deleteSmartphone" th:href="${smartphone.getId()}">Delete</a></td>
+            <td><a class="deleteSmartphone" th:href="${smartphone.getId()}">Delete</a>
+                <input type="button" class="editSmartphone" th:href="${smartphone.getId()}" value="Edit"></td>
         </tr>
     </th:block>
 </table>
+<form id="input-form">
+    <input type="hidden" id="id-input" value="">
+    <input type="text" id="producer-input" value="">
+    <input type="text" id="model-input" value="">
+    <input type="text" id="price-input" value="">
+    <input type="button" value="Save" onclick="updateSmartphone()">
+</form>
 </body>
 </html>
