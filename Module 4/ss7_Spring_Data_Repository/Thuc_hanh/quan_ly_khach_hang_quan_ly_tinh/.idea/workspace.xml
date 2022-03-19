@@ -5,13 +5,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="3f2cbbbf-adb9-4ed8-b4ef-12a816c85017" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/../../../ss12_jQuery_&amp;_AJAX/Thuc_hanh/Su_dung_jquery_tao_hieu_ung/src/main/resources/templates/list.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../ss12_jQuery_&amp;_AJAX/Thuc_hanh/quan_ly_dien_thoai/src/main/java/vn/codegym/controller/SmartphoneController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../ss12_jQuery_&amp;_AJAX/Thuc_hanh/quan_ly_dien_thoai/src/main/java/vn/codegym/model/Smartphone.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../ss12_jQuery_&amp;_AJAX/Thuc_hanh/quan_ly_dien_thoai/src/main/java/vn/codegym/repository/SmartphoneRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../ss12_jQuery_&amp;_AJAX/Thuc_hanh/quan_ly_dien_thoai/src/main/java/vn/codegym/service/SmartphoneService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../ss12_jQuery_&amp;_AJAX/Thuc_hanh/quan_ly_dien_thoai/src/main/java/vn/codegym/service/impl/SmartphoneImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../ss12_jQuery_&amp;_AJAX/Thuc_hanh/quan_ly_dien_thoai/src/main/resources/templates/phones/list.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../../Module 3/CaseStudy/Casestudy1/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../CaseStudy/casestudy/src/main/java/com/example/casestudy/repository/customer/ICustomerRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../CaseStudy/casestudy/src/main/java/com/example/casestudy/service/ICustomerService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../CaseStudy/casestudy/src/main/java/com/example/casestudy/service/impl/CustomerService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../ss14_Bao_mat_ung_dung_spring_MVC/Bai_tap/ung_dung_blog_security/src/main/resources/templates/list.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../Module 3/CaseStudy/Casestudy1/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../Module 3/CaseStudy/Casestudy1/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../ss14_Bao_mat_ung_dung_spring_MVC/Bai_tap/ung_dung_blog_security/src/main/java/vn/codegym/controller/BlogController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../ss14_Bao_mat_ung_dung_spring_MVC/Bai_tap/ung_dung_blog_security/src/main/java/vn/codegym/controller/BlogController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../ss14_Bao_mat_ung_dung_spring_MVC/Bai_tap/ung_dung_blog_security/src/main/java/vn/codegym/service/impl/BlogService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../ss14_Bao_mat_ung_dung_spring_MVC/Bai_tap/ung_dung_blog_security/src/main/java/vn/codegym/service/impl/BlogService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../ss14_Bao_mat_ung_dung_spring_MVC/Bai_tap/ung_dung_blog_security/src/main/java/vn/codegym/service/impl/CategoryService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../ss14_Bao_mat_ung_dung_spring_MVC/Bai_tap/ung_dung_blog_security/src/main/java/vn/codegym/service/impl/CategoryService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -85,6 +87,9 @@
       <workItem from="1647417312612" duration="727000" />
       <workItem from="1647421696155" duration="2298000" />
       <workItem from="1647436259720" duration="1738000" />
+      <workItem from="1647654664164" duration="1456000" />
+      <workItem from="1647658038192" duration="338000" />
+      <workItem from="1647659805128" duration="1456000" />
     </task>
     <servers />
   </component>

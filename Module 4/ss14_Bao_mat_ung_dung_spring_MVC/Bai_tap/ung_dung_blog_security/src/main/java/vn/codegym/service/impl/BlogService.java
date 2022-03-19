@@ -3,10 +3,11 @@ package vn.codegym.service.impl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
+import org.springframework.stereotype.Service;
 import vn.codegym.model.Blog;
 import vn.codegym.repository.IBlogRepository;
 import vn.codegym.service.IBlogService;
-
+@Service
 public class BlogService implements IBlogService {
     @Autowired
     private IBlogRepository iBlogRepository;

@@ -6,50 +6,37 @@ import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.Sort;
 import org.springframework.data.web.PageableDefault;
+import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.servlet.ModelAndView;
 import vn.codegym.model.Blog;
 import vn.codegym.model.Category;
 import vn.codegym.service.IBlogService;
 import vn.codegym.service.ICategoryService;
+import vn.codegym.service.impl.BlogService;
+import vn.codegym.service.impl.CategoryService;
 
 import java.util.Date;
-
+@Controller
 public class BlogController {
     @Autowired
-    private IBlogService iBlogService;
+    private BlogService iBlogService;
     @Autowired
-    ICategoryService categoryService;
-    private  boolean isSortByTime = false;
+    CategoryService categoryService;
+
     @RequestMapping
-    public String display(@RequestParam(required = false,defaultValue = "abc") String sort , Model model){
+    public ModelAndView display(@RequestParam(defaultValue = "") String search, @PageableDefault(value = 3) Pageable pageable,Model model){
 
-        Pageable sortedByPriceDesc =
-                PageRequest.of(0, 3, Sort.by("time").descending());
-        Pageable sortedByPriceAsc =
-                PageRequest.of(0, 3, Sort.by("time").ascending());
-        if(!sort.contains("abc")){
-            isSortByTime = !isSortByTime;
-        }
-        if(isSortByTime){
-            model.addAttribute("sort","true");
+        Page<Blog> blogPage;
+        if(search != null){
+            blogPage = iBlogService.search(search,pageable);
         }else{
-            model.addAttribute("sort","false");
+            blogPage = iBlogService.findAll(pageable);
         }
-        if(isSortByTime){
-            Page<Blog> blogList = iBlogService.findAll(sortedByPriceDesc);
-            model.addAttribute("listBlog",blogList);
-        }else{
-            Page<Blog> blogList = iBlogService.findAll(sortedByPriceAsc);
-            model.addAttribute("listBlog",blogList);
-        }
-
-
-
-        return "/home";
-        // }
-
-
+        ModelAndView modelAndView = new ModelAndView("list", "blog", blogPage);
+//        model.addAttribute("category",categoryService.findAll(pageable));
+        return modelAndView;
     }
     @GetMapping("/show-create-form")
     public String showCreateForm( Model model,@PageableDefault(size = 10)Pageable pageable){
