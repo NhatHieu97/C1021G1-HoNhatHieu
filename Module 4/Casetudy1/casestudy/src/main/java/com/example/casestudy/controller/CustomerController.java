@@ -2,6 +2,7 @@ package com.example.casestudy.controller;
 
 import com.example.casestudy.model.person.customer.Customer;
 
+import com.example.casestudy.model.person.employee.Employee;
 import com.example.casestudy.service.customer.ICustomerService;
 import com.example.casestudy.service.customer.ICustomerTypeService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -77,5 +78,13 @@ public class CustomerController {
     public String updateCustomer(@ModelAttribute Customer customer){
         customerService.save(customer);
         return ("redirect:/customer/list");
+    }
+
+    @GetMapping("/delete")
+    public String delete(@RequestParam Long id , RedirectAttributes redirectAttributes){
+         Customer customer1= customerService.findById(id);
+        customerService.remove(customer1);
+        redirectAttributes.addFlashAttribute("message","Xóa Thành Công");
+        return "redirect:/customer/list";
     }
 }

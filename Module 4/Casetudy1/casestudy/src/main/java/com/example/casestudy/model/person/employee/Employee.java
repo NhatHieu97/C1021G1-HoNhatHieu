@@ -22,7 +22,7 @@ public class Employee  {
     @JoinColumn(name="education_degree_id", referencedColumnName = "idEducationDegree")
     @JsonBackReference
     private EmployeeEducationDegree employeeEducationDegree;
-    @OneToOne
+    @OneToOne(cascade = {CascadeType.PERSIST, CascadeType.MERGE})
     @JoinColumn(name="user_name", referencedColumnName = "userName")
     @JsonBackReference
     private UserName userName;

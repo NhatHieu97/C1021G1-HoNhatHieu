@@ -44,8 +44,8 @@
     </div>
 </div>
 <center>
-    <h1><span style="font-family: 'Gamja Flower'; color: red">Edit Customer</span></h1>
-    <a style="margin-bottom: 10px" class="btn btn-primary" href="/">Back My Customer</a>
+    <h1><span style="font-family: 'Gamja Flower'; color: red">Edit Employee</span></h1>
+    <a style="margin-bottom: 10px" class="btn btn-primary" href="/">Back My Employee</a>
 </center>
 
 
@@ -56,9 +56,9 @@
 
 <div class="container" align="center">
     <div id="form" >
-        <form action="#" th:action="@{/edit-customer}" th:object="${customer}"
+        <form action="#" th:action="@{/edit-employee}" th:object="${employees}"
               method="POST" novalidate="novalidate">
-            <input type="hidden" th:field="*{idCustomer}"/>
+            <input type="hidden" th:field="*{idEmployee}"/>
             <div>
                 <label>Name :</label>
                 <input type="text" th:field="*{name}"/>
@@ -66,13 +66,6 @@
             <div>
                 <label>Birthday :</label>
                 <input type="text" th:field="*{birthday}"/>
-            </div>
-            <div>
-                <label>Gender :</label>
-                <select name="" id="" th:field="*{gender}">
-                    <option value="true">Male</option>
-                    <option value="false">Female</option>
-                </select>
             </div>
             <div>
                 <label>ID Card :</label>
@@ -91,15 +84,44 @@
                 <input type="text" th:field="*{address}"/>
             </div>
             <div>
-                <label>Customer Type :</label>
-                <select th:field="*{customerType.idCustomerType}">
-                    <option th:each="p : ${customerTypes}"
-                            th:value="${p.idCustomerType}"
-                            th:text="${p.nameCustomerType}"
-                            th:selected="(${p.idCustomerType} == *{customerType.idCustomerType})">
+                <label>Salary :</label>
+                <input type="text" th:field="*{salary}"/>
+            </div>
+            <div>
+                <label>UserName :</label>
+                <input type="text" th:field="*{userName.userName}"/>
+            </div>
+            <div>
+                <label>Employee Position :</label>
+                <select th:field="*{employeePosition.idPosition}">
+                    <option th:each="p : ${employeePositions}"
+                            th:value="${p.idPosition}"
+                            th:text="${p.namePosition}"
+                            th:selected="(${p.idPosition} == *{employeePosition.idPosition})">
                     </option>
                 </select>
             </div>
+            <div>
+                <label>Employee Division :</label>
+                <select th:field="*{employeeDivision.idDivision}">
+                    <option th:each="p : ${employeeDividions}"
+                            th:value="${p.idDivision}"
+                            th:text="${p.nameDivision}"
+                            th:selected="(${p.idDivision} == *{employeeDivision.idDivision})">
+                    </option>
+                </select>
+            </div>
+            <div>
+                <label>Employee Education Degree :</label>
+                <select th:field="*{employeeEducationDegree.idEducationDegree}">
+                    <option th:each="p : ${employeeEducations}"
+                            th:value="${p.idEducationDegree}"
+                            th:text="${p.nameEducationDegree}"
+                            th:selected="(${p.idEducationDegree} == *{employeeEducationDegree.idEducationDegree})">
+                    </option>
+                </select>
+            </div>
+
             <input type="submit" value="Modify">
         </form>
     </div>

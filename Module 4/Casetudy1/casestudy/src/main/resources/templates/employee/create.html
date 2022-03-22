@@ -46,7 +46,7 @@
   </div>
 </div>
 <center>
-  <h1><span style="font-family: 'Optima'; color: red">Create new Employee</span></h1>
+  <h1><span style="font-family: 'Gamja Flower'; color: red">Create new Employee</span></h1>
   <a style="margin-bottom: 10px" class="btn btn-primary" href="/">Back My Employee</a>
 </center>
 
@@ -83,10 +83,30 @@
         <td><input type="text" th:field="*{salary}"/></td>
       </tr>
       <tr>
+        <td>UserName :</td>
+        <td><input type="text" th:field="*{userName.userName}" ></td>
+      </tr>
+      <tr>
         <td>Employee Position :</td>
         <td>
           <select th:field="*{employeePosition.idPosition}">
-            <option th:each="p : ${customerType}" th:value="${p.idCustomerType}" th:text="${p.nameCustomerType}"></option>
+            <option th:each="p : ${employeePosition}" th:value="${p.idPosition}" th:text="${p.namePosition}"></option>
+          </select>
+        </td>
+      </tr>
+      <tr>
+        <td>Employee Division :</td>
+        <td>
+          <select th:field="*{employeeDivision.idDivision}">
+            <option th:each="p : ${employeeDividion}" th:value="${p.idDivision}" th:text="${p.nameDivision}"></option>
+          </select>
+        </td>
+      </tr>
+      <tr>
+        <td>Employee Education Degree :</td>
+        <td>
+          <select th:field="*{employeeEducationDegree.idEducationDegree}">
+            <option th:each="p : ${employeeEducation}" th:value="${p.idEducationDegree}" th:text="${p.nameEducationDegree}"></option>
           </select>
         </td>
       </tr>
@@ -108,5 +128,121 @@
   </center>
 </form>
 <footer th:replace="/layout :: footer"></footer>
+<div class="container-fluid">
+  <div class="row">
+    <footer class="bg-light text-center text-lg-start">
+      <!-- Grid container -->
+      <div class="container p-4">
+        <!--Grid row-->
+        <div class="row">
+          <!--Grid column-->
+          <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
+            <ul class="list-unstyled mb-0">
+              <li>
+                <img width="430px" class="img-lazyload" data-src="" alt="Logo PNJ"
+                     src="https://furamavietnam.com/wp-content/uploads/2019/02/Ariyana-Tourism-Complex-02-2.png"
+                     style=" margin-left: 0px; opacity: 1;">
+              </li>
+              <li>
+                                <span>Furama is a premier base for exploring one of Asia’s most exciting new destinations. Just a short drive from Danang lay four UNESCO-listed World Heritage Sites:
+                                </span>
+              </li>
+            </ul>
+          </div>
+          <!--Grid column-->
+
+          <!--Grid column-->
+          <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
+
+            <ul class="list-unstyled">
+              <li>
+                <span><b>Về Furama</b></span>
+                <br>
+                <span>
+                                    Câu chuyện Furama
+                                    <br>
+                                    Tuyển dụng
+                                    <br>
+                                </span>
+              </li>
+            </ul>
+          </div>
+
+          <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
+
+            <ul class="list-unstyled mb-0">
+              <li>
+                <span><b>DỊCH VỤ CHĂM SÓC KHÁCH HÀNG</b></span>
+                <br>
+                <span>
+                                    News
+                                    <br>
+                                    Rack Rate
+                                    <br>
+                                    Lifestyle Blog
+                                    <br>
+                                    Work with us
+                                    <br>
+                                    Contact us
+                                </span>
+                <br>
+                <span><b>PHƯƠNG THỨC THANH TOÁN</b></span>
+                <br>
+                <br>
+                <img width="25%" class="img-lazyload icon-visa" data-src="" alt="" style="opacity: 1;"
+                     src="https://www.pnj.com.vn/design/themes/pnjrovski/media/images/payments/visa.svg">
+                <img width="25%" class="img-lazyload icon-visa" data-src="" alt="" style="opacity: 1;"
+                     src="https://www.pnj.com.vn/design/themes/pnjrovski/media/images/payments/mastercard.svg">
+                <img width="25%" class="img-lazyload icon-visa" data-src="" alt="" style="opacity: 1;"
+                     src="https://www.pnj.com.vn/design/themes/pnjrovski/media/images/payments/jcb.svg">
+                <img width="25%" class="img-lazyload icon-visa" data-src="" alt="" style="opacity: 1;"
+                     src="https://www.pnj.com.vn/design/themes/pnjrovski/media/images/payments/thanhtoantienmat.svg">
+                <img width="25%" class="img-lazyload icon-visa" data-src="" alt="" style="opacity: 1;"
+                     src="https://www.pnj.com.vn/design/themes/pnjrovski/media/images/payments/internetBanking.svg">
+                <img width="25%" class="img-lazyload icon-visa" data-src="" alt="" style="opacity: 1;"
+                     src="https://www.pnj.com.vn/design/themes/pnjrovski/media/images/payments/tragop.svg">
+              </li>
+            </ul>
+          </div>
+
+          <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
+
+            <ul class="list-unstyled">
+              <li>
+                <span><b>KẾT NỐI VỚI CHÚNG TÔI</b></span>
+                <br>
+                <br>
+                <img width="15%" class="img-lazyload icon-visa" data-src="" alt="" style="opacity: 1;"
+                     src="https://cdn.pnj.io/images/image-update/footer/facebook.svg">
+                <img width="15%" class="img-lazyload icon-visa" data-src="" alt="" style="opacity: 1;"
+                     src="https://cdn.pnj.io/images/image-update/footer/instagram.svg">
+                <img width="15%" class="img-lazyload icon-visa" data-src="" alt="" style="opacity: 1;"
+                     src="https://cdn.pnj.io/images/image-update/footer/youtube.svg">
+                <br>
+                <span><b>QUAN TÂM ZALO OA PNJ</b></span>
+                <br>
+                <span>Nhận các thông tin khuyến mãi hấp dẫn</span>
+                <br>
+                <br>
+                <img width="15%" class="img-lazyload icon-visa" data-src="" alt="" style="opacity: 1;"
+                     src="https://sp.zalo.me/static/follow/images/logo_white_s_2x.png">
+              </li>
+            </ul>
+          </div>
+          <!--Grid column-->
+        </div>
+        <!--Grid row-->
+      </div>
+      <!-- Grid container -->
+
+      <!-- Copyright -->
+      <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
+        © 2020 Copyright:
+        <a class="text-dark" href="https://mdbootstrap.com/">Hồ Nhật Hiếu</a>
+      </div>
+      <!-- Copyright -->
+    </footer>
+  </div>
+</div>
 </body>
 </html>

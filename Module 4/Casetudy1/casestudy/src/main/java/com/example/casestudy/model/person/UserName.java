@@ -29,6 +29,11 @@ public class UserName {
     public UserName() {
     }
 
+    public UserName(String userName, String password) {
+        this.userName = userName;
+        this.password = password;
+    }
+
     public UserName(String userName, String password, Employee employee, List<Role> roles) {
         this.userName = userName;
         this.password = password;

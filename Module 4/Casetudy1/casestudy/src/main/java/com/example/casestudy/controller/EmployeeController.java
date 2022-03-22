@@ -1,5 +1,6 @@
 package com.example.casestudy.controller;
 
+import com.example.casestudy.model.person.UserName;
 import com.example.casestudy.model.person.customer.Customer;
 import com.example.casestudy.model.person.employee.Employee;
 import com.example.casestudy.repository.employee.IEmployeePositionRepository;
@@ -33,7 +34,7 @@ public class EmployeeController {
 
 
     @GetMapping("/employee/list")
-    public ModelAndView showListCustomer(@RequestParam(defaultValue = "") String search, @PageableDefault(value = 5)
+    public ModelAndView showListEmployee(@RequestParam(defaultValue = "") String search, @PageableDefault(value = 5)
             Pageable pageable) {
 
         Page<Employee> employeePage;
@@ -55,32 +56,43 @@ public class EmployeeController {
         modelAndView.addObject("employeePosition",employeePositionService.findAll());
         return modelAndView;
     }
-//
-//    @PostMapping("/create-customer")
-//    public String saveCustomer(Customer customer, RedirectAttributes redirectAttributes) {
-//        customerService.save(customer);
-//        redirectAttributes.addFlashAttribute("message", "New customer created successfully");
-//        return ("redirect:/customer/list");
-//    }
-//
-//    @GetMapping("/edit-customer/{id}")
-//    public ModelAndView showEditForm(@PathVariable Long id) {
-//        Customer customer = customerService.findById(id);
-//        if (customer != null) {
-//            ModelAndView modelAndView = new ModelAndView("/customer/edit");
-//            modelAndView.addObject("customerTypes",customerTypeService.findAll());
-//            modelAndView.addObject("customer", customer);
-//            return modelAndView;
-//
-//        } else {
-//            ModelAndView modelAndView = new ModelAndView("/error.404");
-//            return modelAndView;
-//        }
-//    }
-//
-//    @PostMapping("/edit-customer")
-//    public String updateCustomer(@ModelAttribute Customer customer){
-//        customerService.save(customer);
-//        return ("redirect:/customer/list");
-//    }
+
+    @PostMapping("/create-employee")
+    public String saveEmployee(Employee employee, RedirectAttributes redirectAttributes) {
+//        UserName userName1 = new UserName(userName,"123");
+//        employee.setUserName(userName1);
+        employeeService.save(employee);
+        redirectAttributes.addFlashAttribute("message", "New customer created successfully");
+        return ("redirect:/employee/list");
+    }
+
+    @GetMapping("/edit-employee/{id}")
+    public ModelAndView showEditForm(@PathVariable Long id) {
+        Employee employee = employeeService.findById(id);
+        if (employee != null) {
+            ModelAndView modelAndView = new ModelAndView("/employee/edit");
+            modelAndView.addObject("employeeDividions",employeeDividionService.findAll());
+            modelAndView.addObject("employeeEducations",employeeEducationService.findAll());
+            modelAndView.addObject("employeePositions",employeePositionService.findAll());
+            modelAndView.addObject("employees", employee);
+            return modelAndView;
+
+        } else {
+            ModelAndView modelAndView = new ModelAndView("/error.404");
+            return modelAndView;
+        }
+    }
+
+    @PostMapping("/edit-employee")
+    public String updateEmployee(@ModelAttribute Employee employee){
+        employeeService.save(employee);
+        return ("redirect:/employee/list");
+    }
+    @GetMapping("/delete-employee")
+    public String delete(@RequestParam Long id , RedirectAttributes redirectAttributes){
+        Employee employee= employeeService.findById(id);
+        employeeService. remove(employee);
+        redirectAttributes.addFlashAttribute("message","Xóa Thành Công");
+        return "redirect:/employee/list";
+    }
 }
