@@ -34,8 +34,8 @@
         </tr>
     </th:block>
 </table>
-<a th:href="@{/(page=${customers.number - 1})}" th:if="${customers.hasPrevious()}">previous</a>
-<span th:text="${customers.number + 1 +  '/' + customers.totalPages}" ></span>
-<a th:href="@{/(page=${customers.number +    1})}" th:if="${customers.hasNext()}">next</a>
+<a th:href="@{/(page=${customers.number -1})}" th:if="${customers.hasPrevious()}">previous</a>
+<span th:text="${customers.number +1 +  '/' + customers.totalPages}" ></span>
+<a th:href="@{/(page=${customers.number +1})}" th:if="${customers.hasNext()}">next</a>
 </body>
 </html>

@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="/layout :: head">
+    <meta http-equiv="Content-Type" content="text/html" charset="UTF-8"/>
+<!--    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"-->
+<!--          integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">-->
+<!--    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">-->
+    <!-- CSS only -->
+
+    <title>Title</title>
+    <link rel="stylesheet" href="/static/assert/bootstrap413/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/static/assert/datatables/css/dataTables.bootstrap4.min.css">
+
+</head>
+
+<body>
+<div class="container-fluid m-4" >
+    <div class="row">
+        <div class="col-12">
+            <div align="center">
+                <img width="5%" class="ty-pict cm-image"
+                     src="https://furamavietnam.com/wp-content/uploads/2018/08/logo@2x.png" alt="Việt Nam"
+                     title="Việt Nam">
+            </div>
+            <nav style="z-index: 100" class="navbar navbar-light bg-light position-sticky ">
+                <div style="width: 100%" class="container-fluid ">
+                    <div style="width: 100%" class="row ">
+                        <div style="top:0px" class=" container-fluid col-8 d-flex justify-content-around">
+                            <div style="width: 100%" class="row">
+                                <div class="col-12 d-flex justify-content-around button">
+                                    <a href="/" class="navbar-brand menu"><span style="font-family: 'Times New Roman'">Home</span></a>
+                                    <a th:href="@{/employee/list}" class="navbar-brand menu"><span style="font-family: 'Times New Roman'">Employee</span></a>
+                                    <a th:href="@{/customer/list}" class="navbar-brand menu"><span style="font-family: 'Times New Roman'">Customer</span></a>
+                                    <a href="#" class="navbar-brand menu"><span style="font-family: 'Times New Roman'">Service</span></a>
+                                    <a href="#" class="navbar-bran  d menu"><span style="font-family: 'Times New Roman'">Contract</span></a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-4">
+                            <form class="d-flex justify-content-between">
+                                <input style="border-radius: 50px" class="form-control me-2" type="search"
+                                       placeholder="Search"
+                                       aria-label="Search">
+                                <button class="btn btn-outline-success" type="submit">Search</button>
+                            </form>
+                        </div>
+                    </div>
+
+                </div>
+            </nav>
+        </div>
+    </div>
+</div>
+
+<center>
+    <h1><span style="font-family: 'Optima'; color: red">Employee</span></h1>
+    <a style="margin-bottom: 10px" class="btn btn-primary" href="/create-employee">Create new Employee</a>
+</center>
+
+<table id="myBlog">
+    <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Birthday</th>
+        <th>Card</th>
+        <th>Phone</th>
+        <th>Email</th>
+        <th>Address</th>
+        <th>Salary</th>
+        <th>Name Division</th>
+        <th>Name Education Dergee</th>
+        <th>Name Position</th>
+        <th>Action</th>
+    </tr>
+    <th:block th:each="employee : ${employees}">
+        <tr>
+            <td th:text="${employee.idEmployee}"></td>
+            <td th:text="${employee.name}"></td>
+            <td th:text="${employee.birthday}"></td>
+            <td th:text="${employee.idCard}"></td>
+            <td th:text="${employee.phone}"></td>
+            <td th:text="${employee.email}"></td>
+            <td th:text="${employee.address}"></td>
+            <td th:text="${employee.salary}"></td>
+            <td th:text="${employee.employeePosition.namePosition}"></td>
+            <td th:text="${employee.employeeDivision.nameDivision}"></td>
+            <td th:text="${employee.employeeEducationDegree.nameEducationDegree}"></td>
+            <td>
+                <a th:href="@{/edit-customer/__${employee.idEmployee}__ }"><i class="material-icons" style="font-size:24px;color:#2fff00">edit</i></a>
+                <a th:href="@{/delete-customer/__${employee.idEmployee}__ }"><i class="material-icons" style="font-size:24px;color:red">delete</i></a>
+        </tr>
+    </th:block>
+</table>
+<a th:href="@{/employee/list(page=${employees.number -1})}" th:if="${employees.hasPrevious()}">Previous</a>
+<span th:text="${employees.number +1 +  '/' + employees.totalPages}" ></span>
+<a th:href="@{/customer/list(page=${employees.number +1})}" th:if="${employees.hasNext()}">Next</a>
+</table>
+<center>
+    <div class="notify">
+        <!--/*@thymesVar id="message" type="com.codegym.controller.MyBlogController"*/-->
+        <div th:if="${message}">
+            <span th:text="${message}"></span>
+        </div>
+    </div>
+</center>
+<footer th:replace="/layout :: footer"></footer>
+
+
+<script src="/static/assert/jquery/jquery-3.5.1.min.js"></script>
+<script src="/static/assert/bootstrap413/js/popper.min.js"></script>
+<script src="/static/assert/datatables/js/jquery.dataTables.min.js"></script>
+<script src="/static/assert/datatables/js/dataTables.bootstrap4.min.js"></script>
+<script src="/static/assert/bootstrap413/js/bootstrap.min.js"></script>
+<script src="/static/assert/bootstrap413/js/bootstrap.bundle.js"></script>
+
+
+</body>
+</html>

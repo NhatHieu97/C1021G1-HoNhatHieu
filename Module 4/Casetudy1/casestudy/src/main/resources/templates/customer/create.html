@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="/layout :: head">
+  <meta http-equiv="Content-Type" content="text/html" charset="UTF-8" />
+  <title>Create New Post</title>
+</head>
+<body>
+<div class="container-fluid m-4" >
+  <div class="row">
+    <div class="col-12">
+      <div align="center">
+        <img width="5%" class="ty-pict cm-image"
+             src="https://furamavietnam.com/wp-content/uploads/2018/08/logo@2x.png" alt="Việt Nam"
+             title="Việt Nam">
+      </div>
+      <nav style="z-index: 100" class="navbar navbar-light bg-light position-sticky ">
+        <div style="width: 100%" class="container-fluid ">
+          <div style="width: 100%" class="row ">
+            <div style="top:0px" class=" container-fluid col-8 d-flex justify-content-around">
+              <div style="width: 100%" class="row">
+                <div class="col-12 d-flex justify-content-around button">
+                  <a href="/" class="navbar-brand menu"><span style="font-family: 'Times New Roman'">Home</span></a>
+                  <a href="employee/list" class="navbar-brand menu"><span style="font-family: 'Times New Roman'">Employee</span></a>
+                  <a href="customer/list" class="navbar-brand menu"><span style="font-family: 'Times New Roman'">Customer</span></a>
+                  <a href="#" class="navbar-brand menu"><span style="font-family: 'Times New Roman'">Service</span></a>
+                  <a href="#" class="navbar-bran  d menu"><span style="font-family: 'Times New Roman'">Contract</span></a>
+                </div>
+              </div>
+            </div>
+            <div class="col-4">
+              <form class="d-flex justify-content-between">
+                <input style="border-radius: 50px" class="form-control me-2" type="search"
+                       placeholder="Search"
+                       aria-label="Search">
+                <button class="btn btn-outline-success" type="submit">Search</button>
+              </form>
+            </div>
+
+
+          </div>
+
+        </div>
+      </nav>
+    </div>
+  </div>
+</div>
+<center>
+  <h1><span style="font-family: 'Optima'; color: red">Create new Customer</span></h1>
+  <a style="margin-bottom: 10px" class="btn btn-primary" href="/">Back My Customer</a>
+</center>
+
+<form th:action="@{/create-customer}" th:object="${customer}" method="post">
+  <div class="container">
+    <table id="myBlog">
+
+      <tr>
+        <td>Name :</td>
+        <td><input type="text" th:field="*{name}"/></td>
+      </tr>
+      <tr>
+        <td>Birthday :</td>
+        <td><input type="text" th:field="*{birthday}"/></td>
+      </tr>
+      <tr>
+        <td>Gender :</td>
+        <td>
+          <select name="" id="" th:field="*{gender}">
+            <option value="true">Male</option>
+            <option value="false">Female</option>
+          </select>
+        </td>
+      </tr>
+      <tr>
+        <td>ID Card :</td>
+        <td><input type="text" th:field="*{idCard}"/></td>
+      </tr>
+      <tr>
+        <td>Phone :</td>
+        <td><input type="text" th:field="*{phone}"/></td>
+      </tr>
+      <tr>
+        <td>Email :</td>
+        <td><input type="text" th:field="*{email}"/></td>
+      </tr>
+      <tr>
+        <td>Address :</td>
+        <td><input type="text" th:field="*{address}"/></td>
+      </tr>
+      <tr>
+        <td>Customer Type :</td>
+        <td>
+          <select th:field="*{customerType.idCustomerType}">
+            <option th:each="p : ${customerType}" th:value="${p.idCustomerType}" th:text="${p.nameCustomerType}"></option>
+          </select>
+        </td>
+      </tr>
+      <tr>
+        <td></td>
+        <td><input type="submit" value="Create new post"></td>
+      </tr>
+    </table>
+  </div>
+
+
+  <center>
+    <div class="notify">
+      <!--/*@thymesVar id="message" type="com.codegym.controller.MyBlogController"*/-->
+      <div th:if="${message}">
+        <span th:text="${message}"></span>
+      </div>
+    </div>
+  </center>
+</form>
+<footer th:replace="/layout :: footer"></footer>
+</body>
+</html>

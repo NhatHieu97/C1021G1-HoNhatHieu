@@ -1,6 +1,6 @@
 package com.example.casestudy.config;
 
-import com.example.casestudy.service.impl.MyUserDetailServiceImpl;
+import com.example.casestudy.service.MyUserDetailServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
