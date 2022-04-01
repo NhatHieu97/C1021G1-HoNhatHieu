@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="/layout :: head">
+    <meta http-equiv="Content-Type" content="text/html" charset="UTF-8" />
+</head>
+<body>
+
+<center>
+    <h1><span style="font-family: 'Gamja Flower'; color: red">Edit Product</span></h1>
+    <a style="margin-bottom: 10px" class="btn btn-primary" href="/">Back My Product</a>
+</center>
+
+<div th:if="${message}">
+    <span th:text="${message}"></span>
+</div>
+
+<div class="container" align="center">
+    <div id="form" >
+        <form action="#" th:action="@{/create}" th:object="${producDto}"
+              method="POST" novalidate="novalidate">
+            <input type="hidden" th:field="*{idProduct}"/>
+            <div>
+                <label>Name :</label>
+                <input type="text" th:field="*{nameProduct}"/>
+<!--                <div style="color: red" th:if="${#fields.hasErrors('name')}" th:errors="*{name}"></div>-->
+            </div>
+            <div>
+                <label>Chi Phí :</label>
+                <input type="text" th:field="*{costProduct}"/>
+                <!--                <div style="color: red" th:if="${#fields.hasErrors('name')}" th:errors="*{name}"></div>-->
+            </div>
+            <div>
+                <label>Loại sản phẩm :</label>
+                <select class="form-control" th:field="*{productType.id}">
+                    <option th:each="p : ${productTypes}"
+                            th:value="${p.id}"
+                            th:text="${p.name}"
+                            th:selected="(${p.id} == *{productType.id})">
+                    </option>
+                </select>
+            </div>
+            <input type="submit" value="Modify">
+        </form>
+    </div>
+</div>
+<footer th:replace="/layout :: footer"></footer>
+</body>
+</html>

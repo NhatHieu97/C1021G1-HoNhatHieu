@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="/layout :: head">
+    <meta http-equiv="Content-Type" content="text/html" charset="UTF-8"/>
+    <title>Create New Post</title>
+</head>
+<body>
+
+<div class="snowflakes" aria-hidden="true">
+    <div class="snowflake">❅</div>
+    <div class="snowflake">❆</div>
+    <div class="snowflake">❅</div>
+    <div class="snowflake">❆</div>
+    <div class="snowflake">❅</div>
+    <div class="snowflake">❆</div>
+    <div class="snowflake">❅</div>
+    <div class="snowflake">❆</div>
+    <div class="snowflake">❅</div>
+    <div class="snowflake">❆</div>
+    <div class="snowflake">❅</div>
+    <div class="snowflake">❆</div>
+</div>
+<div class="container-fluid m-4">
+    <div class="row">
+        <div class="col-12">
+            <div align="center">
+                <img width="5%" class="ty-pict cm-image"
+                     src="https://furamavietnam.com/wp-content/uploads/2018/08/logo@2x.png" alt="Việt Nam"
+                     title="Việt Nam">
+            </div>
+            <div style="font-size: 50px" class="title"><b><i><span
+                    style="font-family: 'Gamja Flower'">Welcome to FURAMA</span></i></b></div>
+
+            <nav style="z-index: 100" class="navbar navbar-light bg-light position-sticky ">
+                <div style="width: 100%" class="container-fluid ">
+                    <div style="width: 100%" class="row ">
+                        <div style="top:0px" class=" container-fluid col-8 d-flex justify-content-around">
+                            <div style="width: 100%" class="row">
+                                <div class="col-12 d-flex justify-content-around button">
+                                    <a href="/" class="navbar-brand menu"><span style="font-family: 'Times New Roman'">Home</span></a>
+                                    <a href="employee/list" class="navbar-brand menu"><span
+                                            style="font-family: 'Times New Roman'">Employee</span></a>
+                                    <a href="customer/list" class="navbar-brand menu"><span
+                                            style="font-family: 'Times New Roman'">Customer</span></a>
+                                    <a href="#" class="navbar-brand menu"><span style="font-family: 'Times New Roman'">Service</span></a>
+                                    <a href="#" class="navbar-bran  d menu"><span
+                                            style="font-family: 'Times New Roman'">Contract</span></a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-4">
+                            <form class="d-flex justify-content-between">
+                                <input style="border-radius: 50px" class="form-control me-2" type="search"
+                                       placeholder="Search"
+                                       aria-label="Search">
+                                <button class="btn btn-outline-success" type="submit">Search</button>
+                            </form>
+                        </div>
+
+
+                    </div>
+
+                </div>
+            </nav>
+        </div>
+    </div>
+</div>
+<center>
+    <h1><span style="font-family: 'Gamja Flower'; color: red">Create new Service</span></h1>
+    <a style="margin-bottom: 10px" class="btn btn-primary" href="/">Back My Service</a>
+</center>
+
+<form th:action="@{/create-service-house}" th:object="${serviceDto}" method="post">
+    <div class="container">
+        <table id="myBlog">
+
+            <tr>
+                <td>Name :</td>
+                <td><input type="text" th:field="*{name}"/></td>
+                <td style="color: red" th:if="${#fields.hasErrors('name')}" th:errors="*{name}"></td>
+            </tr>
+            <tr>
+                <td>Service Area :</td>
+                <td><input class="form-control" type="text" th:field="*{serviceArea}"/></td>
+            </tr>
+            <tr>
+                <td>Service Cost :</td>
+                <td><input type="text" th:field="*{serviceCost}"/></td>
+                <td style="color: red" th:if="${#fields.hasErrors('serviceCost')}" th:errors="*{serviceCost}"></td>
+            </tr>
+            <tr>
+                <td>Service Max People :</td>
+                <td><input type="text" th:field="*{serviceMaxPeople}"/></td>
+                <td style="color: red" th:if="${#fields.hasErrors('serviceMaxPeople')}"
+                    th:errors="*{serviceMaxPeople}"></td>
+
+            </tr>
+            <tr>
+                <td>Standard Room :</td>
+                <td><input type="text" th:field="*{standardRoom}"/></td>
+                <!--        <td style="color: red" th:if="${#fields.hasErrors('email')}" th:errors="*{email}"></td>-->
+
+            </tr>
+            <tr>
+                <td>Description Other Convenience :</td>
+                <td><input type="text" th:field="*{descriptionOtherConvenience}"/></td>
+                <!--        <td style="color: red" th:if="${#fields.hasErrors('address')}" th:errors="*{address}"></td>-->
+            </tr>
+
+            <tr>
+                <td>Pool Area :</td>
+                <td><input type="text" th:field="*{poolArea}"/></td>
+                <!--        <td style="color: red" th:if="${#fields.hasErrors('address')}" th:errors="*{address}"></td>-->
+            </tr>
+            <tr>
+                <td>Number Of Floors :</td>
+                <td><input type="text" th:field="*{numberOfFloors}"/></td>
+                <td style="color: red" th:if="${#fields.hasErrors('numberOfFloors')}"
+                    th:errors="*{numberOfFloors}"></td>
+            </tr>
+
+            <tr>
+                <td>Rent Type Name :</td>
+              <td>
+                <select class="form-control" th:field="*{rentType.rentTypeId}">
+                  <option value="2"> House</option>
+                </select>
+              </td>
+
+<!--                <select class="form-control" th:field="*{rentType.rentTypeId}">-->
+<!--                    <option th:each="p : ${rentTypes}" th:value="${p.rentTypeId}" th:text="${p.rentTypeName}"></option>-->
+<!--                </select>-->
+
+            </tr>
+                  <tr>
+                    <td>Service Type Name  :</td>
+                    <td>
+                      <select class="form-control" th:field="*{serviceType.serviceTypeId}">
+                        <option th:each="p : ${serviceTypes}" th:value="${p.serviceTypeId}" th:text="${p.serviceTypeName}"></option>
+                      </select>
+                    </td>
+                  </tr>
+                  <tr>
+            <td></td>
+            <td><input type="submit" value="Create new post"></td>
+            </tr>
+        </table>
+    </div>
+
+
+    <center>
+        <div class="notify">
+            <!--/*@thymesVar id="message" type="com.codegym.controller.MyBlogController"*/-->
+            <div th:if="${message}">
+                <span th:text="${message}"></span>
+            </div>
+        </div>
+    </center>
+</form>
+<footer th:replace="/layout :: footer"></footer>
+<div class="container-fluid">
+    <div class="row">
+        <footer class="bg-light text-center text-lg-start">
+            <!-- Grid container -->
+            <div class="container p-4">
+                <!--Grid row-->
+                <div class="row">
+                    <!--Grid column-->
+                    <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
+                        <ul class="list-unstyled mb-0">
+                            <li>
+                                <img width="430px" class="img-lazyload" data-src="" alt="Logo PNJ"
+                                     src="https://furamavietnam.com/wp-content/uploads/2019/02/Ariyana-Tourism-Complex-02-2.png"
+                                     style=" margin-left: 0px; opacity: 1;">
+                            </li>
+                            <li>
+                                <span>Furama is a premier base for exploring one of Asia’s most exciting new destinations. Just a short drive from Danang lay four UNESCO-listed World Heritage Sites:
+                                </span>
+                            </li>
+                        </ul>
+                    </div>
+                    <!--Grid column-->
+
+                    <!--Grid column-->
+                    <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
+
+                        <ul class="list-unstyled">
+                            <li>
+                                <span><b>Về Furama</b></span>
+                                <br>
+                                <span>
+                                    Câu chuyện Furama
+                                    <br>
+                                    Tuyển dụng
+                                    <br>
+                                </span>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
+
+                        <ul class="list-unstyled mb-0">
+                            <li>
+                                <span><b>DỊCH VỤ CHĂM SÓC KHÁCH HÀNG</b></span>
+                                <br>
+                                <span>
+                                    News
+                                    <br>
+                                    Rack Rate
+                                    <br>
+                                    Lifestyle Blog
+                                    <br>
+                                    Work with us
+                                    <br>
+                                    Contact us
+                                </span>
+                                <br>
+                                <span><b>PHƯƠNG THỨC THANH TOÁN</b></span>
+                                <br>
+                                <br>
+                                <img width="25%" class="img-lazyload icon-visa" data-src="" alt="" style="opacity: 1;"
+                                     src="https://www.pnj.com.vn/design/themes/pnjrovski/media/images/payments/visa.svg">
+                                <img width="25%" class="img-lazyload icon-visa" data-src="" alt="" style="opacity: 1;"
+                                     src="https://www.pnj.com.vn/design/themes/pnjrovski/media/images/payments/mastercard.svg">
+                                <img width="25%" class="img-lazyload icon-visa" data-src="" alt="" style="opacity: 1;"
+                                     src="https://www.pnj.com.vn/design/themes/pnjrovski/media/images/payments/jcb.svg">
+                                <img width="25%" class="img-lazyload icon-visa" data-src="" alt="" style="opacity: 1;"
+                                     src="https://www.pnj.com.vn/design/themes/pnjrovski/media/images/payments/thanhtoantienmat.svg">
+                                <img width="25%" class="img-lazyload icon-visa" data-src="" alt="" style="opacity: 1;"
+                                     src="https://www.pnj.com.vn/design/themes/pnjrovski/media/images/payments/internetBanking.svg">
+                                <img width="25%" class="img-lazyload icon-visa" data-src="" alt="" style="opacity: 1;"
+                                     src="https://www.pnj.com.vn/design/themes/pnjrovski/media/images/payments/tragop.svg">
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
+
+                        <ul class="list-unstyled">
+                            <li>
+                                <span><b>KẾT NỐI VỚI CHÚNG TÔI</b></span>
+                                <br>
+                                <br>
+                                <img width="15%" class="img-lazyload icon-visa" data-src="" alt="" style="opacity: 1;"
+                                     src="https://cdn.pnj.io/images/image-update/footer/facebook.svg">
+                                <img width="15%" class="img-lazyload icon-visa" data-src="" alt="" style="opacity: 1;"
+                                     src="https://cdn.pnj.io/images/image-update/footer/instagram.svg">
+                                <img width="15%" class="img-lazyload icon-visa" data-src="" alt="" style="opacity: 1;"
+                                     src="https://cdn.pnj.io/images/image-update/footer/youtube.svg">
+                                <br>
+                                <span><b>QUAN TÂM ZALO OA PNJ</b></span>
+                                <br>
+                                <span>Nhận các thông tin khuyến mãi hấp dẫn</span>
+                                <br>
+                                <br>
+                                <img width="15%" class="img-lazyload icon-visa" data-src="" alt="" style="opacity: 1;"
+                                     src="https://sp.zalo.me/static/follow/images/logo_white_s_2x.png">
+                            </li>
+                        </ul>
+                    </div>
+                    <!--Grid column-->
+                </div>
+                <!--Grid row-->
+            </div>
+            <!-- Grid container -->
+
+            <!-- Copyright -->
+            <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
+                © 2020 Copyright:
+                <a class="text-dark" href="https://mdbootstrap.com/">Hồ Nhật Hiếu</a>
+            </div>
+            <!-- Copyright -->
+        </footer>
+    </div>
+</div>
+</body>
+</html>

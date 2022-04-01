@@ -6,6 +6,21 @@
 </head>
 
 <body>
+
+<div class="snowflakes" aria-hidden="true">
+  <div class="snowflake">❅</div>
+  <div class="snowflake">❆</div>
+  <div class="snowflake">❅</div>
+  <div class="snowflake">❆</div>
+  <div class="snowflake">❅</div>
+  <div class="snowflake">❆</div>
+  <div class="snowflake">❅</div>
+  <div class="snowflake">❆</div>
+  <div class="snowflake">❅</div>
+  <div class="snowflake">❆</div>
+  <div class="snowflake">❅</div>
+  <div class="snowflake">❆</div>
+</div>
 <div class="container-fluid m-4" >
   <div class="row">
     <div class="col-12">
@@ -14,6 +29,8 @@
              src="https://furamavietnam.com/wp-content/uploads/2018/08/logo@2x.png" alt="Việt Nam"
              title="Việt Nam">
       </div>
+      <div style="font-size: 50px" class="title"><b><i><span style="font-family: 'Gamja Flower'">Welcome to FURAMA</span></i></b> </div>
+
       <nav style="z-index: 100" class="navbar navbar-light bg-light position-sticky ">
         <div style="width: 100%" class="container-fluid ">
           <div style="width: 100%" class="row ">
@@ -50,46 +67,54 @@
   <a style="margin-bottom: 10px" class="btn btn-primary" href="/">Back My Employee</a>
 </center>
 
-<form th:action="@{/create-employee}" th:object="${employee}" method="post">
+<form th:action="@{/create-employee}" th:object="${employeeDto}" method="post">
   <div class="container">
     <table id="myBlog">
 
       <tr>
         <td>Name :</td>
         <td><input type="text" th:field="*{name}"/></td>
+        <td style="color: red" th:if="${#fields.hasErrors('name')}" th:errors="*{name}"></td>
       </tr>
       <tr>
         <td>Birthday :</td>
-        <td><input type="text" th:field="*{birthday}"/></td>
+        <td><input class="form-control" type="date" th:field="*{birthday}"/></td>
+        <td style="color: red" th:if="${#fields.hasErrors('birthday')}" th:errors="*{birthday}"></td>
       </tr>
       <tr>
         <td>ID Card :</td>
         <td><input type="text" th:field="*{idCard}"/></td>
+        <td style="color: red" th:if="${#fields.hasErrors('idCard')}" th:errors="*{idCard}"></td>
       </tr>
       <tr>
         <td>Phone :</td>
         <td><input type="text" th:field="*{phone}"/></td>
+        <td style="color: red" th:if="${#fields.hasErrors('phone')}" th:errors="*{phone}"></td>
       </tr>
       <tr>
         <td>Email :</td>
         <td><input type="text" th:field="*{email}"/></td>
+        <td style="color: red" th:if="${#fields.hasErrors('email')}" th:errors="*{email}"></td>
       </tr>
       <tr>
         <td>Address :</td>
         <td><input type="text" th:field="*{address}"/></td>
+        <td style="color: red" th:if="${#fields.hasErrors('address')}" th:errors="*{address}"></td>
       </tr>
       <tr>
         <td>Salary :</td>
         <td><input type="text" th:field="*{salary}"/></td>
+        <td style="color: red" th:if="${#fields.hasErrors('salary')}" th:errors="*{salary}"></td>
       </tr>
       <tr>
         <td>UserName :</td>
-        <td><input type="text" th:field="*{userName.userName}" ></td>
+        <td><input type="text" th:field="*{userName}" ></td>
+        <td style="color: red" th:if="${#fields.hasErrors('userName')}" th:errors="*{userName}"></td>
       </tr>
       <tr>
         <td>Employee Position :</td>
         <td>
-          <select th:field="*{employeePosition.idPosition}">
+          <select class="form-control" th:field="*{employeePosition.idPosition}">
             <option th:each="p : ${employeePosition}" th:value="${p.idPosition}" th:text="${p.namePosition}"></option>
           </select>
         </td>
@@ -97,7 +122,7 @@
       <tr>
         <td>Employee Division :</td>
         <td>
-          <select th:field="*{employeeDivision.idDivision}">
+          <select class="form-control" th:field="*{employeeDivision.idDivision}">
             <option th:each="p : ${employeeDividion}" th:value="${p.idDivision}" th:text="${p.nameDivision}"></option>
           </select>
         </td>
@@ -105,7 +130,7 @@
       <tr>
         <td>Employee Education Degree :</td>
         <td>
-          <select th:field="*{employeeEducationDegree.idEducationDegree}">
+          <select class="form-control" th:field="*{employeeEducationDegree.idEducationDegree}">
             <option th:each="p : ${employeeEducation}" th:value="${p.idEducationDegree}" th:text="${p.nameEducationDegree}"></option>
           </select>
         </td>

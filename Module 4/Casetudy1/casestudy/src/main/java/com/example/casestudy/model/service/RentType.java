@@ -1,24 +1,37 @@
 package com.example.casestudy.model.service;
 
+import com.fasterxml.jackson.annotation.JsonManagedReference;
+
+import javax.persistence.*;
+import java.util.List;
+
+@Entity
 public class RentType {
-    private int rentTypeId;
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long rentTypeId;
     private String rentTypeName;
     private double rentTypeCost;
+
+    @OneToMany(mappedBy = "rentType", cascade = CascadeType.ALL)
+    @JsonManagedReference
+    private List<Service> serviceList;
 
     public RentType() {
     }
 
-    public RentType(int rentTypeId, String rentTypeName, double rentTypeCost) {
+    public RentType(Long rentTypeId, String rentTypeName, double rentTypeCost, List<Service> serviceList) {
         this.rentTypeId = rentTypeId;
         this.rentTypeName = rentTypeName;
         this.rentTypeCost = rentTypeCost;
+        this.serviceList = serviceList;
     }
 
-    public int getRentTypeId() {
+    public Long getRentTypeId() {
         return rentTypeId;
     }
 
-    public void setRentTypeId(int rentTypeId) {
+    public void setRentTypeId(Long rentTypeId) {
         this.rentTypeId = rentTypeId;
     }
 
@@ -36,5 +49,13 @@ public class RentType {
 
     public void setRentTypeCost(double rentTypeCost) {
         this.rentTypeCost = rentTypeCost;
+    }
+
+    public List<Service> getServiceList() {
+        return serviceList;
+    }
+
+    public void setServiceList(List<Service> serviceList) {
+        this.serviceList = serviceList;
     }
 }

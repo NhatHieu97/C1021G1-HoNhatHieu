@@ -5,6 +5,21 @@
   <title>Create New Post</title>
 </head>
 <body>
+
+<div class="snowflakes" aria-hidden="true">
+  <div class="snowflake">❅</div>
+  <div class="snowflake">❆</div>
+  <div class="snowflake">❅</div>
+  <div class="snowflake">❆</div>
+  <div class="snowflake">❅</div>
+  <div class="snowflake">❆</div>
+  <div class="snowflake">❅</div>
+  <div class="snowflake">❆</div>
+  <div class="snowflake">❅</div>
+  <div class="snowflake">❆</div>
+  <div class="snowflake">❅</div>
+  <div class="snowflake">❆</div>
+</div>
 <div class="container-fluid m-4" >
   <div class="row">
     <div class="col-12">
@@ -13,6 +28,8 @@
              src="https://furamavietnam.com/wp-content/uploads/2018/08/logo@2x.png" alt="Việt Nam"
              title="Việt Nam">
       </div>
+      <div style="font-size: 50px" class="title"><b><i><span style="font-family: 'Gamja Flower'">Welcome to FURAMA</span></i></b> </div>
+
       <nav style="z-index: 100" class="navbar navbar-light bg-light position-sticky ">
         <div style="width: 100%" class="container-fluid ">
           <div style="width: 100%" class="row ">
@@ -49,17 +66,19 @@
   <a style="margin-bottom: 10px" class="btn btn-primary" href="/">Back My Customer</a>
 </center>
 
-<form th:action="@{/create-customer}" th:object="${customer}" method="post">
+<form th:action="@{/create-customer}" th:object="${customerDto}" method="post">
   <div class="container">
     <table id="myBlog">
 
       <tr>
         <td>Name :</td>
         <td><input type="text" th:field="*{name}"/></td>
+        <td style="color: red" th:if="${#fields.hasErrors('name')}" th:errors="*{name}"></td>
       </tr>
       <tr>
         <td>Birthday :</td>
-        <td><input type="text" th:field="*{birthday}"/></td>
+        <td><input class="form-control" type="date" th:field="*{birthday}"/></td>
+        <td style="color: red" th:if="${#fields.hasErrors('birthday')}" th:errors="*{birthday}"></td>
       </tr>
       <tr>
         <td>Gender :</td>
@@ -73,23 +92,29 @@
       <tr>
         <td>ID Card :</td>
         <td><input type="text" th:field="*{idCard}"/></td>
+        <td style="color: red" th:if="${#fields.hasErrors('idCard')}" th:errors="*{idCard}"></td>
       </tr>
       <tr>
         <td>Phone :</td>
         <td><input type="text" th:field="*{phone}"/></td>
+        <td style="color: red" th:if="${#fields.hasErrors('phone')}" th:errors="*{phone}"></td>
+
       </tr>
       <tr>
         <td>Email :</td>
         <td><input type="text" th:field="*{email}"/></td>
+        <td style="color: red" th:if="${#fields.hasErrors('email')}" th:errors="*{email}"></td>
+
       </tr>
       <tr>
         <td>Address :</td>
         <td><input type="text" th:field="*{address}"/></td>
+        <td style="color: red" th:if="${#fields.hasErrors('address')}" th:errors="*{address}"></td>
       </tr>
       <tr>
         <td>Customer Type :</td>
         <td>
-          <select th:field="*{customerType.idCustomerType}">
+          <select class="form-control" th:field="*{customerType.idCustomerType}">
             <option th:each="p : ${customerType}" th:value="${p.idCustomerType}" th:text="${p.nameCustomerType}"></option>
           </select>
         </td>

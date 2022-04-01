@@ -9,6 +9,21 @@
 </head>
 
 <body>
+
+<div class="snowflakes" aria-hidden="true">
+    <div class="snowflake">❅</div>
+    <div class="snowflake">❆</div>
+    <div class="snowflake">❅</div>
+    <div class="snowflake">❆</div>
+    <div class="snowflake">❅</div>
+    <div class="snowflake">❆</div>
+    <div class="snowflake">❅</div>
+    <div class="snowflake">❆</div>
+    <div class="snowflake">❅</div>
+    <div class="snowflake">❆</div>
+    <div class="snowflake">❅</div>
+    <div class="snowflake">❆</div>
+</div>
 <div class="container-fluid m-4" >
     <div class="row">
         <div class="col-12">
@@ -17,6 +32,8 @@
                      src="https://furamavietnam.com/wp-content/uploads/2018/08/logo@2x.png" alt="Việt Nam"
                      title="Việt Nam">
             </div>
+            <div style="font-size: 50px" class="title"><b><i><span style="font-family: 'Gamja Flower'">Welcome to FURAMA</span></i></b> </div>
+
             <nav style="z-index: 100" class="navbar navbar-light bg-light position-sticky ">
                 <div style="width: 100%" class="container-fluid ">
                     <div style="width: 100%" class="row ">
@@ -51,8 +68,16 @@
     <h1><span style="font-family: 'Optima'; color: red">Employee</span></h1>
     <a style="margin-bottom: 10px" class="btn btn-primary" href="/create-employee">Create new Employee</a>
 </center>
+<center>
+    <div class="notify">
+        <!--/*@thymesVar id="message" type="com.codegym.controller.MyBlogController"*/-->
+        <div th:if="${message}">
+            <span th:text="${message}"></span>
+        </div>
+    </div>
+</center>
 
-<table id="myBlog">
+<table class="table-font-size" id="myBlog">
     <tr>
         <th>ID</th>
         <th>Name</th>

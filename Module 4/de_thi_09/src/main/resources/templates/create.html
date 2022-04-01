@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="/layout :: head"></head>
+<body>
+<center>
+  <h1>Thêm mới giao dịch</h1>
+</center>
+<div class="container" id="form" >
+    <div class="row">
+        <div class="col-12" align="center">
+            <form th:action="@{/create-transaction}" th:object="${transactionDto}"
+                  method="POST" novalidate="novalidate">
+
+                <div>
+                    <label>Mã giao dịch</label>
+                    <input readonly type="text" th:field="*{maGiaoDich}"/>
+                    <div style="color: red" th:if="${#fields.hasErrors('maGiaoDich')}" th:errors="*{maGiaoDich}"></div>
+                </div>
+                <div>
+                    <label>Tên Khách Hàng</label>
+                    <select class="form-control" th:field="*{customer.maKhachHang}">
+                        <option th:each="p : ${customerList}"
+                                th:value="${p.maKhachHang}"
+                                th:text="${p.tenKhachHang}"
+                                th:selected="(${p.maKhachHang} == *{customer.maKhachHang})">
+                        </option>
+                    </select>
+                </div>
+                <div>
+                    <label>Loại bất động sản</label>
+                    <select class="form-control"  th:field="*{transactionType.id}">
+                        <option th:each="item:${transactionTypeList}" th:value="${item.id}"
+                                th:text="${item.name}"></option>
+                    </select>
+<!--                    <input type="radio" th:field="*{loaiDichVu}" value=false/><label>Đất</label>-->
+<!--                    <input type="radio" th:field="*{loaiDichVu}" value=true/><label>Nhà Đất</label>-->
+                </div>
+                <div>
+                    <label>Ngày giao dich</label>
+                    <input type="date" th:field="*{ngayGiaoDich}"/>
+                    <div style="color: red" th:if="${#fields.hasErrors('ngayGiaoDich')}" th:errors="*{ngayGiaoDich}"></div>
+                </div>
+                <div>
+                    <label>Đơn giá (VNĐ)</label>
+                    <input type="text" th:field="*{donGia}"/>
+                    <div style="color: red" th:if="${#fields.hasErrors('donGia')}" th:errors="*{donGia}"></div>
+                </div>
+                <div>
+                    <label>Diện tích (m2)</label>
+                    <input type="text" th:field="*{dienTich}"/>
+                    <div style="color: red" th:if="${#fields.hasErrors('dienTich')}" th:errors="*{dienTich}"></div>
+                </div>
+                <div class="d-flex justify-content-around">
+                    <div>
+                        <input  type="submit" value="Lưu">
+                    </div>
+                    <div>
+                        <button><a  href="/list">Hủy</a></button>
+                    </div>
+                </div>
+
+
+            </form>
+        </div>
+
+    </div>
+
+</div>
+<footer th:replace="/layout :: footer"></footer>
+</body>
+</html>

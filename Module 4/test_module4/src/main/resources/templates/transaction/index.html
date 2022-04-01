@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
+          rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
+          crossorigin="anonymous">
+    <link rel="stylesheet" href="/assert/bootstrap413/css/bootstrap.min.css">
+</head>
+<body>
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-6 ">
+            <a class="btn btn-success" th:href="@{/transaction/create}">Add new transaction</a>
+        </div>
+        <div class="col-6 ">
+            <form th:action="@{/transaction/list}">
+                <div class="row">
+                    <div class="col-3">
+                        <p>
+                            <input th:value="${searchName}" class="form-control" type="text" name="search" id="search" placeholder="Mời nhập tên">
+                        </p>
+                    </div>
+                    <div class="col-lg-3">
+                        <p>
+                            <select  class="form-control"  th:name="transactionTypes">
+                                <option value="">---Select---</option>
+                                <option th:each="item:${transactionTypes}" th:value="${item.name}"
+                                        th:text="${item.name}"></option>
+                            </select>
+                        </p>
+                    </div>
+                    <div class="col-3">
+                        <button class="btn btn-success" type="submit">Search Name</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+
+</div>
+
+<div class="container-fluid">
+
+    <div class="row">
+        <!--        Table list - Start-->
+        <div class="mx-auto col-12">
+            <table id="customer_table" class="table table-striped p-2">
+                <thead>
+                <tr>
+                    <th scope="col">Code transaction</th>
+                    <th scope="col">Name customer</th>
+                    <th scope="col">Date transaction</th>
+                    <th scope="col">Transaction type</th>
+                    <th scope="col">Price</th>
+                    <th scope="col">Area</th>
+                    <th scope="col">Information</th>
+                </tr>
+                </thead>
+                <tbody>
+                <th:block th:each="transaction : ${transactions}">
+                    <tr>
+                        <td th:text="${transaction.code}"></td>
+                        <td th:text="${transaction.customer.name}"></td>
+                        <td th:text="${#dates.format(transaction.date,'dd-MM-YYYY')}"></td>
+                        <td th:text="${transaction.transactionType.name}"></td>
+                        <td th:text="${transaction.price+'$'}"></td>
+                        <td th:text="${transaction.area}"></td>
+                        <td>
+                            <button class="btn btn-warning"><a
+                                    th:href="@{/transaction/search/{id}(id=${transaction.id})}">View</a>
+                            </button>
+                        </td>
+
+                        <td>
+                            <button class="btn btn-warning"><a
+                                    th:href="@{/transaction/edit/{id}(id=${transaction.id})}">Edit</a>
+                            </button>
+                        </td>
+                    </tr>
+                </th:block>
+                </th:block:forEach>
+                </tbody>
+            </table>
+        </div>
+        <!--        Table list - end-->
+        <!--        Phân trang -ST -->
+        <div class="container col-4 mx-auto">
+            <div class="mx-auto" style="width: 200px">
+                <ul class="pagination">
+                    <li class="page-item">
+                        <a class="page-link" th:href="@{'/transaction/list'(page=${transactions.number - 1},search=${searchName}, transactionTypes=${searchTypeTransaction})}"
+                           th:if="${transactions.hasPrevious()}">Previous</a>
+                    </li>
+
+                    <li class="page-item"><a class="page-link"
+                                             th:href="@{'/transaction/list'(page=${transactions.number - 1},search=${searchName}, transactionTypes=${searchTypeTransaction})}"
+                                             th:if="${transactions.hasPrevious()}" th:text="${transactions.number}"></a>
+                    </li>
+
+                    <li class="page-item active">
+                        <a class="page-link" th:href="@{'/transaction/list'(page=${transactions.number},search=${searchName}, transactionTypes=${searchTypeTransaction})}"
+                           th:text="${transactions.number+1}">2 <span class="sr-only">(current)</span></a>
+                    </li>
+
+                    <li class="page-item"><a class="page-link"
+                                             th:href="@{'/transaction/list'(page=${transactions.number+1},search=${searchName}, transactionTypes=${searchTypeTransaction})}"
+                                             th:if="${transactions.hasNext()}" th:text="${transactions.number+2}"></a>
+                    </li>
+                    <li class="page-item">
+                        <a class="page-link" th:href="@{'/transaction/list'(page=${transactions.number + 1},search=${searchName}, transactionTypes=${searchTypeTransaction})}"
+                           th:if="${transactions.hasNext()}">Next</a>
+                    </li>
+                </ul>
+            </div>
+            <!--        Phân trang -End -->
+        </div>
+
+    </div>
+    <div class="row">
+        <div class="col-lg-6 mx-auto">
+            <!--Message star-->
+            <div class="col-4 mx-auto">
+                <th:block th:if="${message}">
+                    <p th:text="${message}"></p>
+                </th:block>
+            </div>
+            <!--Message end-->
+        </div>
+    </div>
+</div>
+
+<!--Boostrap -Modal -STArt-->
+<script src="/assert/jquery/jquery-3.5.1.min.js"></script>
+<script src="/assert/bootstrap413/js/popper.min.js"></script>
+<script src="/assert/datatables/js/jquery.dataTables.min.js"></script>
+<script src="/assert/datatables/js/dataTables.bootstrap4.min.js"></script>
+<script src="/assert/bootstrap413/js/bootstrap.min.js"></script>
+<script src="/assert/bootstrap413/js/bootstrap.bundle.js"></script>
+<!--Boostrap -Modal -End-->
+
+
+<script>
+    function deleteCustomer(target) {
+        document.getElementById("id-employee").value = target.id;
+        document.getElementById("name-employee").innerText = target.value;
+
+    }
+
+    function submitFormDelete() {
+        document.getElementById("form-delete").submit();
+    }
+</script>
+
+<script>
+    $(document).ready(function () {
+        $('#customer_table').DataTable();
+    });
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+            crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"
+        integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB"
+        crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js"
+        integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13"
+        crossorigin="anonymous"></script>
+
+
+</script>
+
+</body>
+</html>

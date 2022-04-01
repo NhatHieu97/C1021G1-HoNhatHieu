@@ -1,7 +1,14 @@
 package com.example.casestudy.model.service;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+
+import javax.persistence.*;
+
+@Entity
 public class Service {
-    private int idService;
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long idService;
     private String name;
     private int serviceArea;
     private double serviceCost;
@@ -10,18 +17,21 @@ public class Service {
     private String descriptionOtherConvenience;
     private double poolArea;
     private int numberOfFloors;
-    private int rentTypeId;
-    private int serviceTypeId;
-    private String rentTypeName;
-    private double renTypeCost;
-    private String serviceTypeName;
 
+    @ManyToOne
+    @JoinColumn(name = "rentType_id",referencedColumnName = "rentTypeId")
+    @JsonBackReference
+    private RentType rentType;
 
+    @ManyToOne
+    @JoinColumn(name = "serviceType_id",referencedColumnName = "serviceTypeId")
+    @JsonBackReference
+    private ServiceType serviceType;
 
     public Service() {
     }
 
-    public Service(int idService, String name, int serviceArea, double serviceCost, int serviceMaxPeople, String standardRoom, String descriptionOtherConvenience, double poolArea, int numberOfFloors, int rentTypeId, int serviceTypeId, String rentTypeName, double renTypeCost, String serviceTypeName) {
+    public Service(Long idService, String name, int serviceArea, double serviceCost, int serviceMaxPeople, String standardRoom, String descriptionOtherConvenience, double poolArea, int numberOfFloors, RentType rentType, ServiceType serviceType) {
         this.idService = idService;
         this.name = name;
         this.serviceArea = serviceArea;
@@ -31,18 +41,15 @@ public class Service {
         this.descriptionOtherConvenience = descriptionOtherConvenience;
         this.poolArea = poolArea;
         this.numberOfFloors = numberOfFloors;
-        this.rentTypeId = rentTypeId;
-        this.serviceTypeId = serviceTypeId;
-        this.rentTypeName = rentTypeName;
-        this.renTypeCost = renTypeCost;
-        this.serviceTypeName = serviceTypeName;
+        this.rentType = rentType;
+        this.serviceType = serviceType;
     }
 
-    public int getIdService() {
+    public Long getIdService() {    
         return idService;
     }
 
-    public void setIdService(int idService) {
+    public void setIdService(Long idService) {
         this.idService = idService;
     }
 
@@ -110,43 +117,19 @@ public class Service {
         this.numberOfFloors = numberOfFloors;
     }
 
-    public int getRentTypeId() {
-        return rentTypeId;
+    public RentType getRentType() {
+        return rentType;
     }
 
-    public void setRentTypeId(int rentTypeId) {
-        this.rentTypeId = rentTypeId;
+    public void setRentType(RentType rentType) {
+        this.rentType = rentType;
     }
 
-    public int getServiceTypeId() {
-        return serviceTypeId;
+    public ServiceType getServiceType() {
+        return serviceType;
     }
 
-    public void setServiceTypeId(int serviceTypeId) {
-        this.serviceTypeId = serviceTypeId;
-    }
-
-    public String getRentTypeName() {
-        return rentTypeName;
-    }
-
-    public void setRentTypeName(String rentTypeName) {
-        this.rentTypeName = rentTypeName;
-    }
-
-    public double getRenTypeCost() {
-        return renTypeCost;
-    }
-
-    public void setRenTypeCost(double renTypeCost) {
-        this.renTypeCost = renTypeCost;
-    }
-
-    public String getServiceTypeName() {
-        return serviceTypeName;
-    }
-
-    public void setServiceTypeName(String serviceTypeName) {
-        this.serviceTypeName = serviceTypeName;
+    public void setServiceType(ServiceType serviceType) {
+        this.serviceType = serviceType;
     }
 }
