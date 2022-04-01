@@ -1,13 +1,13 @@
-let sum = 0;
-let count = 0;
-for (let i = 1; i < 30; i++) {
-    sum += fibonacci(i);
-    count++;
+function fibonaccii(num) {
+    let a = 1;
+    let b = 0;
+    let temp;
+    while (num >= 0) {
+        temp = a;
+        a = a + b;
+        num--;
+    }
+    return b;
 }
-function fibonacci(num) {
-    if (num <= 1)
-        return 1;
-    return fibonacci(num - 1) + fibonacci(num - 2);
-}
-console.log("Tổng số fibonacci: " + sum + "Số lần: " + count);
+console.log(fibonaccii(10));
 //# sourceMappingURL=main.js.map

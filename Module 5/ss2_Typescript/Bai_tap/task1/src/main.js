@@ -1,6 +1,3 @@
-
-
-
 // @ts-ignore
 // function fibonacci(num) {
 //     if (num <= 1)
@@ -16,19 +13,15 @@
 // }
 //
 // console.log(sum)
-
-function fibonacci(num: number) {
-    let a = 1;
-    let b = 0;
-    let temp = 0;
-    while (num >= 0){
+function fibonaccii(num) {
+    var a = 1;
+    var b = 0;
+    var temp;
+    while (num >= 0) {
         temp = a;
         a = a + b;
-        b = temp;
         num--;
     }
     return b;
-
 }
-
-console.log(fibonacci(10));
+fibonaccii(10);
