@@ -1,0 +1,38 @@
+<div *ngIf="isShowForm">
+  <div>
+    <input placeholder="English" [(ngModel)]="newEn"/>
+  </div>
+  <div>
+    <input placeholder="Vietnamese" [(ngModel)]="newVn"/>
+  </div>
+  <br>
+  <br>
+  <button (click)="addWord();">
+    Thêm từ mới
+  </button>
+  <br><br>
+  <select [(ngModel)]="filterStatus">
+    <option value="XEM_TAT_CA">xem tất cả</option>
+    <option value="XEM_DA_NHO">xem từ đã nhớ</option>
+    <option value="XEM_CHUA_NHO">xem từ chưa nhớ</option>
+  </select>
+</div>
+<button (click)="isShowForm = true" *ngIf="!isShowForm">
+  Thêm từ mới
+</button>
+
+<br>
+<br>
+<div *ngFor="let wordes of arrWords" >
+  <div class="word" *ngIf="getShowStatus(wordes.memorized)">
+    <h4 [ngStyle]="{color: wordes.memorized? 'green' : 'red'}">
+      {{ wordes.en }}
+    </h4>
+    <p>{{ wordes.vn }}</p>
+    <button (click)="removeForm(wordes.id)">xóa</button>
+    <button (click)="wordes.memorized = !wordes.memorized">
+      {{ wordes.memorized ? 'đã thuộc' : 'chưa thuộc' }}
+    </button>
+  </div>
+
+</div>

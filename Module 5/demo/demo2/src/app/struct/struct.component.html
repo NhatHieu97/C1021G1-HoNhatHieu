@@ -1,0 +1,11 @@
+<p *ngIf="iShow">
+  hieu
+</p>
+<ul>
+  <li *ngFor="let subject of arrSubject">
+    <p>{{ subject }}}</p>
+  </li>
+</ul>
+<button (click)="iShow = !iShow">
+  toggle
+</button>

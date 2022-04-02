@@ -1,1 +1,1 @@
-declare function fibonaccii(num: number): number;
+declare function fibonacci(num: number): number;

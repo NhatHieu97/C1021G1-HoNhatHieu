@@ -1,0 +1,49 @@
+
+<form>
+  <table border="1">
+    <tr>
+      <td colspan="4"> <input type="text" id="display"></td>
+    </tr>
+    <tr>
+      <td style="color: blue;"> <input type="button" value="1" id="number1"
+                                       onclick="display.value += this.value"> </td>
+      <td style="color: blue;"> <input type="button" value="2" id="number2"
+                                       onclick="display.value += this.value"> </td>
+      <td style="color: blue;"> <input type="button" value="3" id="number3"
+                                       onclick="display.value += this.value"> </td>
+      <td style="color: blue;"> <input type="button" value="+" id="add" onclick="display.value += this.value">
+      </td>
+    </tr>
+    <tr>
+      <td style="color: blue;"> <input type="button" value="4" id="number4"
+                                       onclick="display.value += this.value"> </td>
+      <td style="color: blue;"> <input type="button" value="5" id="number5"
+                                       onclick="display.value += this.value"> </td>
+      <td style="color: blue;"> <input type="button" value="6" id="number6"
+                                       onclick="display.value += this.value"> </td>
+      <td style="color: blue;"> <input type="button" value="-" id="sub" onclick="display.value += this.value">
+      </td>
+    </tr>
+    <tr>
+      <td style="color: blue;"> <input type="button" value="7" id="number7"
+                                       onclick="display.value += this.value"> </td>
+      <td style="color: blue;"> <input type="button" value="8" id="number8"
+                                       onclick="display.value += this.value"> </td>
+      <td style="color: blue;"> <input type="button" value="9" id="number9"
+                                       onclick="display.value += this.value"> </td>
+      <td style="color: blue;"> <input type="button" value="*" id="mul" onclick="display.value += this.value">
+      </td>
+    </tr>
+    <tr>
+      <td style="color: blue;"> <input type="button" value="c" id="numberc"
+                                       onclick="display.value=display.value.substr(0,display.value.length-1)"> </td>
+      <td style="color: blue;"> <input type="button" value="0" id="number0"
+                                       onclick="display.value += this.value"> </td>
+      <td style="color: blue;"> <input type="button" value="=" id="number"
+                                       onclick="display.value = eval(display.value)"> </td>
+      <td style="color: blue;"> <input type="button" value="/" id="div" onclick="display.value += this.value">
+      </td>
+    </tr>
+  </table>
+</form>
+
