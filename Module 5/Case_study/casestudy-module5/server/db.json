@@ -1,0 +1,26 @@
+{
+  "customer": [
+    {
+      "id": 4,
+      "name": "Hồ Nhật Hiếu",
+      "dateOfBirth": "15/11/1997",
+      "email": "honhathieu@gmail.com,",
+      "address": "Quảng Nam",
+      "customerType": {
+        "id": 1,
+        "name": "Gold"
+      }
+    },
+    {
+      "id": 5,
+      "name": "Hồ Nhật Hiếu",
+      "dateOfBirth": "15/11/1997",
+      "email": "honhathieu@gmail.com,",
+      "address": "Quảng Nam",
+      "customerType": {
+        "id": 1,
+        "name": "Gold"
+      }
+    }
+  ]
+}

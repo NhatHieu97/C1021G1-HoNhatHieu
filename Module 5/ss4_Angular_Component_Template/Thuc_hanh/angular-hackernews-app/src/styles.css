@@ -1,0 +1,157 @@
+/* You can add global styles to this file, and also import other style files */
+/* You can add global styles to this file, and also import other style files */
+/* You can add global styles to this file, and also import other style files */
+@import "~bootstrap/dist/css/bootstrap.css";
+* {
+  padding: 0;
+  margin: 0;
+}
+.button{
+  padding: 10px;
+  display: flex;
+  justify-content:center;
+
+}
+a.menu{
+  position:relative;
+  padding: 1px 30px;
+  margin: 0px 10px;
+  color: #21ABFF;
+  text-decoration:none;
+  letter-spacing:2px;
+  text-transform: uppercase;
+  transition: 0,5s;
+  font-size: 20px;
+}
+a.menu:before{
+  content:‘’;
+  position: absolute;
+  left : 0px;
+  top:0px;
+  width:10px;
+  height:10px;
+  border-top: 2px solid #21EBFF;
+  border-left: 2px solid #21EBFF;
+  transition:0.3s
+}
+a.menu:after{
+  content:‘’;
+  position: absolute;
+  right : 0px;
+  bottom:0px;
+  width:10px;
+  height:10px;
+  border-bottom: 2px solid #21EBFF;
+  border-right: 2px solid #21EBFF;
+  transition:0.3s
+}
+a.menu:hover{
+  background: #21EBFF;
+  color: #111;
+  box-shadow:0px 0px 50px #21EBFF;
+  transition-delay:0.3s;
+}
+a.menu:hover:before{
+  width:100%;
+  height:100%;
+}
+a.menu:hover:after {
+  width: 100%;
+  height: 100%;
+}
+.nave{
+  background: #033a0f;
+}
+
+div.title {
+  width: 100%;
+  height: 100px;
+
+  animation: example 7s infinite;
+}
+
+@keyframes example {
+
+  0%   {color:red; left:100%; top:0px; transform: translate(70%, 0);}
+  25%  {color:yellow; left:200px; top:0px;}
+  50%  {color:blue; left:200px; top:200px; transform: translate(0px, 0);}
+  75%  {color: #550080; left:0px; top:200px;}
+  100% {color: #2fff00; left:-100%; top:0px;transform: translate(70%, 0);}
+}
+
+@-webkit-keyframes snowflakes-fall {
+  0% {top:-10%}
+  100% {top:100%}
+}
+@-webkit-keyframes snowflakes-shake {
+  0%,100% {-webkit-transform:translateX(0);transform:translateX(0)}
+  50% {-webkit-transform:translateX(80px);transform:translateX(80px)}
+}
+@keyframes snowflakes-fall {
+  0% {top:-10%}
+  100% {top:100%}
+}
+@keyframes snowflakes-shake {
+  0%,100%{ transform:translateX(0)}
+  50% {transform:translateX(80px)}
+}
+.snowflake {
+  color: #fff;
+  font-size: 1em;
+  font-family: Arial, sans-serif;
+  text-shadow: 0 0 5px #000;
+  position:fixed;
+  top:-10%;
+  z-index:9999;
+  -webkit-user-select:none;
+  -moz-user-select:none;
+  -ms-user-select:none;
+  user-select:none;
+  cursor:default;
+  -webkit-animation-name:snowflakes-fall,snowflakes-shake;
+  -webkit-animation-duration:10s,3s;
+  -webkit-animation-timing-function:linear,ease-in-out;
+  -webkit-animation-iteration-count:infinite,infinite;
+  -webkit-animation-play-state:running,running;
+  animation-name:snowflakes-fall,snowflakes-shake;
+  animation-duration:10s,3s;
+  animation-timing-function:linear,ease-in-out;
+  animation-iteration-count:infinite,infinite;
+  animation-play-state:running,running;
+}
+.snowflake:nth-of-type(0){
+  left:1%;-webkit-animation-delay:0s,0s;animation-delay:0s,0s
+}
+.snowflake:nth-of-type(1){
+  left:10%;-webkit-animation-delay:1s,1s;animation-delay:1s,1s
+}
+.snowflake:nth-of-type(2){
+  left:20%;-webkit-animation-delay:6s,.5s;animation-delay:6s,.5s
+}
+.snowflake:nth-of-type(3){
+  left:30%;-webkit-animation-delay:4s,2s;animation-delay:4s,2s
+}
+.snowflake:nth-of-type(4){
+  left:40%;-webkit-animation-delay:2s,2s;animation-delay:2s,2s
+}
+.snowflake:nth-of-type(5){
+  left:50%;-webkit-animation-delay:8s,3s;animation-delay:8s,3s
+}
+.snowflake:nth-of-type(6){
+  left:60%;-webkit-animation-delay:6s,2s;animation-delay:6s,2s
+}
+.snowflake:nth-of-type(7){
+  left:70%;-webkit-animation-delay:2.5s,1s;animation-delay:2.5s,1s
+}
+.snowflake:nth-of-type(8){
+  left:80%;-webkit-animation-delay:1s,0s;animation-delay:1s,0s
+}
+.snowflake:nth-of-type(9){
+  left:90%;-webkit-animation-delay:3s,1.5s;animation-delay:3s,1.5s
+}
+.snowflake:nth-of-type(10){
+  left:25%;-webkit-animation-delay:2s,0s;animation-delay:2s,0s
+}
+.snowflake:nth-of-type(11){
+  left:65%;-webkit-animation-delay:4s,2.5s;animation-delay:4s,2.5s
+}

@@ -1,0 +1,56 @@
+{
+  "customer": [
+    {
+      "id": 1,
+      "name": "Hồ Nhật Hiếu",
+      "dateOfBirth": "2019-11-11",
+      "idCard": "Quảng Nam",
+      "phoneNumber": "8",
+      "email": "honhathieu@gmail.com",
+      "address": "Đà nẵng",
+      "typeCustomer": "Diamond"
+    },
+    {
+      "id": 2,
+      "name": "Nguyễn Anh Hoàng",
+      "dateOfBirth": "2019-11-11",
+      "idCard": "Quảng Nam",
+      "phoneNumber": "8",
+      "email": "honhathieu@gmail.com",
+      "address": "Đà nẵng",
+      "typeCustomer": "Diamond"
+    }
+  ,
+    {
+      "id": 3,
+      "name": "Đăng Duy Linh",
+      "dateOfBirth": "2019-11-11",
+      "idCard": "Quảng Nam",
+      "phoneNumber": "8",
+      "email": "honhathieu@gmail.com",
+      "address": "Đà nẵng",
+      "typeCustomer": "Diamond"
+    }
+  ,
+    {
+      "id": 4,
+      "name": "Hồ Nhật Hiếu",
+      "dateOfBirth": "2019-11-11",
+      "idCard": "Quảng Nam",
+      "phoneNumber": "8",
+      "email": "honhathieu@gmail.com",
+      "address": "Đà nẵng",
+      "typeCustomer": "Diamond"
+    }
+  ],
+  "customerType": [
+    {
+      "id": 1,
+      "name": "Gold"
+    },
+    {
+      "id": 2,
+      "name": "Diamond"
+    }
+  ]
+}

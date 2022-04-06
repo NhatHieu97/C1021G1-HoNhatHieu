@@ -1,0 +1,37 @@
+<a style="margin-bottom: 10px" class="btn btn-primary" href="#">Create new Customer</a>
+<table id="myBlog">
+    <thead>
+      <th>Id</th>
+      <th>Name</th>
+      <th>Date of birth</th>
+      <th>Email</th>
+      <th>Address</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </thead>
+    <thbody>
+      <tr *ngFor="let customer of customerList">
+        <th scope="row">{{customer.id}}</th>
+        <td>{{customer.name}}</td>
+        <td>{{customer.dateOfBirth}}</td>
+        <td>{{customer.email}}</td>
+        <td>{{customer.address}}</td>
+        <td>
+          <button class="btn btn-success"><i class="fas fa-align-justify"></i>
+          </button>
+        </td>
+        <td>
+          <button class="btn btn-warning"><i class="fas fa-edit"></i>
+          </button>
+        </td>
+        <td>
+          <button class="btn btn-danger"><i class="far fa-trash-alt"></i>
+          </button>
+        </td>
+      </tr>
+    </thbody>
+
+
+</table>
+

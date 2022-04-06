@@ -7,8 +7,13 @@ import { FormComponent } from './form/form.component';
 import { FooterComponent } from './footer/footer.component';
 import { BodyComponent } from './home/body/body.component';
 import { HeaderComponent } from './header/header.component';
-import { EmployeeComponent } from './home/employee/employee.component';
-import { CustomerComponent } from './home/customer/customer.component';
+import { EmployeeComponent } from './home/employees/employee/employee.component';
+import { CustomerComponent } from './home/customers/customer/customer.component';
+import { ListHouseComponent } from './home/service/house/list-house/list-house.component';
+import { ListRoomComponent } from './home/service/room/list-room/list-room.component';
+import { ListVillaComponent } from './home/service/villa/list-villa/list-villa.component';
+import { CreateCustomerComponent } from './home/customers/create-customer/create-customer.component';
+import {FormsModule} from '@angular/forms';
 
 
 @NgModule({
@@ -20,11 +25,17 @@ import { CustomerComponent } from './home/customer/customer.component';
     HeaderComponent,
     EmployeeComponent,
     CustomerComponent,
+    ListHouseComponent,
+    ListRoomComponent,
+    ListVillaComponent,
+    CreateCustomerComponent,
+
 
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
