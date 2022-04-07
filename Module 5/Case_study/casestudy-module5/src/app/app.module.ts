@@ -13,9 +13,10 @@ import { ListHouseComponent } from './home/service/house/list-house/list-house.c
 import { ListRoomComponent } from './home/service/room/list-room/list-room.component';
 import { ListVillaComponent } from './home/service/villa/list-villa/list-villa.component';
 import { CreateCustomerComponent } from './home/customers/create-customer/create-customer.component';
-import {FormsModule} from '@angular/forms';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {HttpClientModule} from '@angular/common/http';
 import { DeleteCustomerComponent } from './home/customers/delete-customer/delete-customer.component';
+import { DetailCustomerComponent } from './home/customers/detail-customer/detail-customer.component';
 
 
 @NgModule({
@@ -31,14 +32,16 @@ import { DeleteCustomerComponent } from './home/customers/delete-customer/delete
     ListRoomComponent,
     ListVillaComponent,
     CreateCustomerComponent,
-    DeleteCustomerComponent
+    DeleteCustomerComponent,
+    DetailCustomerComponent
   ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    FormsModule,
-    HttpClientModule
-  ],
+    imports: [
+        BrowserModule,
+        AppRoutingModule,
+        FormsModule,
+        HttpClientModule,
+        ReactiveFormsModule
+    ],
   providers: [],
   bootstrap: [AppComponent]
 })

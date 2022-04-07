@@ -24,6 +24,14 @@ export class CustomerService {
       return this.http.get<ICustomer[]>(this.baseURL);
   }
 
+  save(customer): Observable<ICustomer> {
+    return this.http.post<ICustomer>(this.baseURL , JSON.stringify(customer))
+  }
+
+  findById(id): Observable<ICustomer> {
+    return this.http.get<ICustomer>(this.baseURL + '/' + id).pipe();
+  }
+
 
   delete(id) {
     return this.http.delete<ICustomer>(this.baseURL + '/' + id).pipe();

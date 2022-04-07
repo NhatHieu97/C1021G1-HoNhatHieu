@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {ICustomer} from "../../../model/ICustomer";
 import {CustomerService} from "../../../service/customer.service";
+import {FormBuilder, FormGroup} from '@angular/forms';
 // import {FormBuilder, FormGroup} from '@angular/forms';
 
 @Component({
@@ -11,30 +12,32 @@ import {CustomerService} from "../../../service/customer.service";
 export class CustomerComponent implements OnInit {
   customerId: number;
   customerList: ICustomer[];
+  formValue: FormGroup;
+
   // public formGroup: FormGroup;
 
   constructor(
     private customerService: CustomerService,
-    // private formBuilder: FormBuilder
+    private formBuilder: FormBuilder
   ) {
   }
 
   ngOnInit(): void {
-      this.customerService.getAll().subscribe(value => {
-        this.customerList= value;
+    this.customerService.getAll().subscribe(value => {
+      this.customerList = value;
+    })
+    {
+      this.formValue = this.formBuilder.group({
+        id: [''],
+        name: [''],
+        dateOfBirth: [''],
+        idCard: '',
+        phoneNumber: [''],
+        email: [''],
+        address: [''],
+        customerType: ['']
       })
-        // {
-        //   this.formGroup = this.formBuilder.group({
-        //     id: '',
-        //     name: '',
-        //     dateOfBirth: '',
-        //     idCard: '',
-        //     phoneNumber: '',
-        //     email: '',
-        //     address: '',
-        //     typeCustomer: ''
-        //   })
-        // }
+    }
   }
 
   getId(id: number) {
@@ -48,7 +51,13 @@ export class CustomerComponent implements OnInit {
     });
   }
 
-  postEmployeeDetail() {
-
+  saveCustomer() {
+    if (this.formValue.invalid) {
+      alert('There was an error!')
+    } else {
+      this.customerService.save(this.formValue.value).subscribe(data => {
+        this.ngOnInit();
+      })
+    }
   }
 }

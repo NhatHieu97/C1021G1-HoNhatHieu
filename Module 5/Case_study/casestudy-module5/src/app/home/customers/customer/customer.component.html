@@ -5,6 +5,8 @@
     <th scope="col">Id</th>
     <th scope="col">Name</th>
     <th scope="col">Date of birth</th>
+    <th scope="col">Id Card</th>
+    <th scope="col">Phone</th>
     <th scope="col">Email</th>
     <th scope="col">Address</th>
     <th scope="col">Customer Type</th>
@@ -17,11 +19,13 @@
       <td>{{customer.id}}</td>
       <td>{{customer.name }}</td>
       <td>{{customer.dateOfBirth}}</td>
+      <td>{{customer.idCard}}</td>
+      <td>{{customer.phoneNumber}}</td>
       <td>{{customer.email}}</td>
       <td>{{customer.address}}</td>
       <td>{{customer.customerType.name}}</td>
       <td>
-        <a class="btn btn-success">view</a>
+        <a  class="btn btn-success" routerLink="/detail/{{customer.id}}">view</a>
       </td>
       <td>
         <a class="btn btn-warning">edit</a>
@@ -59,29 +63,29 @@
     <div class="modal-content">
       <div class="modal-header">
         <h5 class="modal-title" id="exampleModalLabel">Customer Detail</h5>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        <button type="button"  class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
-        <form>
+        <form [formGroup]="formValue">
           <div class="mb-3">
             <label for="exampleInputName1" class="form-label">Name</label>
-            <input type="tex" class="form-control" id="exampleInputName1" aria-describedby="emailHelp">
+            <input type="text" formControlName="name" class="form-control" id="exampleInputName1" aria-describedby="emailHelp">
           </div>
           <div class="mb-3">
             <label for="exampleInputDate1" class="form-label">Date of birth</label>
-            <input type="text" class="form-control" id="exampleInputDate1">
+            <input type="text" formControlName="dateOfBirth" class="form-control" id="exampleInputDate1">
           </div>
           <div class="mb-3">
             <label for="exampleInputEmail1" class="form-label">Email</label>
-            <input type="email" class="form-control" id="exampleInputEmail1">
+            <input type="email" formControlName="email" class="form-control" id="exampleInputEmail1">
           </div>
           <div class="mb-3">
             <label for="exampleInputAddress1" class="form-label">Address</label>
-            <input type="text" class="form-control" id="exampleInputAddress1">
+            <input type="text" formControlName="address" class="form-control" id="exampleInputAddress1">
           </div>
           <div class="mb-3">
             <label for="typeCustomer">Customer type</label>
-            <select id="typeCustomer" class="form-control">
+            <select id="typeCustomer" formControlName="nameCT" class="form-control">
               <option value="Gold">Gold</option>
               <option value="Diamond">Diamond</option>
             </select>
@@ -90,7 +94,7 @@
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary" (click)="postEmployeeDetail()">Add</button>
+        <button type="button" class="btn btn-primary" (click)="saveCustomer()">Add</button>
       </div>
     </div>
   </div>
