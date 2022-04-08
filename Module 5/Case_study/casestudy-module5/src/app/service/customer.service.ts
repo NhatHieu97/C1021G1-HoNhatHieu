@@ -25,7 +25,7 @@ export class CustomerService {
   }
 
   save(customer): Observable<ICustomer> {
-    return this.http.post<ICustomer>(this.baseURL , JSON.stringify(customer))
+    return this.http.post<ICustomer>(this.baseURL , customer)
   }
 
   findById(id): Observable<ICustomer> {
@@ -35,5 +35,9 @@ export class CustomerService {
 
   delete(id) {
     return this.http.delete<ICustomer>(this.baseURL + '/' + id).pipe();
+  }
+
+  update(id,customer) {
+    return this.http.put<ICustomer>(this.baseURL + '/'  + id, customer).pipe();
   }
 }

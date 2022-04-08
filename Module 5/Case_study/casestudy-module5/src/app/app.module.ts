@@ -17,6 +17,7 @@ import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {HttpClientModule} from '@angular/common/http';
 import { DeleteCustomerComponent } from './home/customers/delete-customer/delete-customer.component';
 import { DetailCustomerComponent } from './home/customers/detail-customer/detail-customer.component';
+import { EditCustomerComponent } from './home/customers/edit-customer/edit-customer.component';
 
 
 @NgModule({
@@ -33,7 +34,8 @@ import { DetailCustomerComponent } from './home/customers/detail-customer/detail
     ListVillaComponent,
     CreateCustomerComponent,
     DeleteCustomerComponent,
-    DetailCustomerComponent
+    DetailCustomerComponent,
+    EditCustomerComponent
   ],
     imports: [
         BrowserModule,

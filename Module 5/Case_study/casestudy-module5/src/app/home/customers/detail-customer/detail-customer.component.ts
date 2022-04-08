@@ -27,6 +27,7 @@ export class DetailCustomerComponent implements OnInit {
 
     this.formGroup = this.formBuilder.group({
       id: '',
+      code: '',
       name: '',
       dateOfBirth: '',
       idCard: '',
@@ -40,7 +41,6 @@ export class DetailCustomerComponent implements OnInit {
        this.customerService.findById(this.id).subscribe(value => {
 
          this.customer =value;
-         console.log(value);
          this.formGroup.setValue(this.customer);
       })
   }

@@ -1,8 +1,10 @@
 <div class="container">
-  <a data-bs-toggle="modal" data-bs-target="#exampleModal" style="margin-bottom: 10px" class="btn btn-primary" href="#">Create new Customer</a>
+  <a data-bs-toggle="modal" data-bs-target="#exampleModal" style="margin-bottom: 10px" class="btn btn-primary" href="#">Create
+    new Customer</a>
   <table class="table table-striped">
     <thead class="text-center">
     <th scope="col">Id</th>
+    <th scope="col">Code</th>
     <th scope="col">Name</th>
     <th scope="col">Date of birth</th>
     <th scope="col">Id Card</th>
@@ -17,6 +19,7 @@
     <tbody class="text-center">
     <tr scope="col" *ngFor="let customer of customerList">
       <td>{{customer.id}}</td>
+      <td>{{customer.code}}</td>
       <td>{{customer.name }}</td>
       <td>{{customer.dateOfBirth}}</td>
       <td>{{customer.idCard}}</td>
@@ -25,10 +28,10 @@
       <td>{{customer.address}}</td>
       <td>{{customer.customerType.name}}</td>
       <td>
-        <a  class="btn btn-success" routerLink="/detail/{{customer.id}}">view</a>
+        <a class="btn btn-success" routerLink="/detail/{{customer.id}}">view</a>
       </td>
       <td>
-        <a class="btn btn-warning">edit</a>
+        <a class="btn btn-warning" routerLink="/edit/{{customer.id}}">edit</a>
       </td>
       <td>
         <a class="btn btn-danger" data-toggle="modal" data-target="#modalDelete"
@@ -49,8 +52,8 @@
         delete customer ?
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-secondary"  data-dismiss="modal">Close</button>
-        <button  type="button" class="btn btn-primary" data-dismiss="modal" (click)="delete()">Confirm</button>
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary" data-dismiss="modal" (click)="delete()">Confirm</button>
       </div>
     </div>
   </div>
@@ -63,17 +66,39 @@
     <div class="modal-content">
       <div class="modal-header">
         <h5 class="modal-title" id="exampleModalLabel">Customer Detail</h5>
-        <button type="button"  class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
         <form [formGroup]="formValue">
           <div class="mb-3">
+            <label for="code" class="form-label">code</label>
+            <input type="text" name="code" formControlName="code" class="form-control" id="code"
+                   aria-describedby="emailHelp">
+          </div>
+          <div class="alert alert-danger" role=" alert "
+               *ngIf=" formValue.get('code').invalid && formValue.get('code').touched">
+            Không được bỏ trống!
+          </div>
+          <div class="mb-3">
             <label for="exampleInputName1" class="form-label">Name</label>
-            <input type="text" formControlName="name" class="form-control" id="exampleInputName1" aria-describedby="emailHelp">
+            <input type="text" name="name" formControlName="name" class="form-control" id="exampleInputName1"
+                   aria-describedby="emailHelp">
+          </div>
+          <div class="alert alert-danger" role=" alert "
+               *ngIf=" formValue.get('name').invalid && formValue.get('name').touched">
+            Không được bỏ trống!
           </div>
           <div class="mb-3">
             <label for="exampleInputDate1" class="form-label">Date of birth</label>
             <input type="text" formControlName="dateOfBirth" class="form-control" id="exampleInputDate1">
+          </div>
+          <div class="mb-3">
+            <label for="exampleInputIdCard1" class="form-label">Id Card</label>
+            <input type="text" formControlName="idCard" class="form-control" id="exampleInputIdCard1">
+          </div>
+          <div class="mb-3">
+            <label for="exampleInputPhone1" class="form-label">Phone</label>
+            <input type="text" formControlName="phoneNumber" class="form-control" id="exampleInputPhone1">
           </div>
           <div class="mb-3">
             <label for="exampleInputEmail1" class="form-label">Email</label>
@@ -84,16 +109,19 @@
             <input type="text" formControlName="address" class="form-control" id="exampleInputAddress1">
           </div>
           <div class="mb-3">
-            <label for="typeCustomer">Customer type</label>
-            <select id="typeCustomer" formControlName="nameCT" class="form-control">
-              <option value="Gold">Gold</option>
-              <option value="Diamond">Diamond</option>
+            <label for="customerType">Customer type</label>
+            <select
+              formControlName="customerType" class="form-control" id="customerType">
+              <option disabled selected value="">Loại Khách Hàng</option>
+              <option *ngFor="let customerType of customerTypeList"
+                      [ngValue]="customerType">{{customerType.name}}
+              </option>
             </select>
           </div>
         </form>
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button type="button" id="cancel" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
         <button type="button" class="btn btn-primary" (click)="saveCustomer()">Add</button>
       </div>
     </div>

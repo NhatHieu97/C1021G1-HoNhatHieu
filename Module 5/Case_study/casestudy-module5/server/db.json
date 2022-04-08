@@ -1,56 +1,168 @@
 {
   "customer": [
     {
+      "id": 7,
+      "code": "KH-1234",
+      "name": "Nguyễn văn linh",
+      "dateOfBirth": "1997-11-15",
+      "idCard": "24324",
+      "phoneNumber": "4324324",
+      "email": "honhathieu@gmail.com",
+      "address": "Đà Nẵng",
+      "customerType": {
+        "id": 2,
+        "name": "Diamond"
+      }
+    },
+    {
+      "id": 8,
+      "code": "KH-1234",
+      "name": "Nguyễn văn linh",
+      "dateOfBirth": "1997-11-15",
+      "idCard": "24324",
+      "phoneNumber": "4324324",
+      "email": "honhathieu@gmail.com",
+      "address": "Đà Nẵng",
+      "customerType": {
+        "id": 2,
+        "name": "Diamond"
+      }
+    },
+    {
+      "id": 9,
+      "name": "Nguyễn văn linh",
+      "code": "KH-1234",
+      "dateOfBirth": "1997-11-15",
+      "idCard": "24324",
+      "phoneNumber": "4324324",
+      "email": "honhathieu@gmail.com",
+      "address": "Đà Nẵng",
+      "customerType": {
+        "id": 2,
+        "name": "Dinamod"
+      }
+    },
+    {
+      "id": 10,
+      "name": "Nguyễn văn linh",
+      "code": "KH-1234",
+      "dateOfBirth": "1997-11-15",
+      "idCard": "24324",
+      "phoneNumber": "4324324",
+      "email": "honhathieu@gmail.com",
+      "address": "Đà Nẵng",
+      "customerType": {
+        "id": 2,
+        "name": "Dinamod"
+      }
+    },
+    {
+      "id": 11,
+      "name": "Nguyễn văn linh",
+      "code": "KH-1234",
+      "dateOfBirth": "1997-11-15",
+      "idCard": "24324",
+      "phoneNumber": "4324324",
+      "email": "honhathieu@gmail.com",
+      "address": "Đà Nẵng",
+      "customerType": {
+        "id": 2,
+        "name": "Dinamod"
+      }
+    },
+    {
+      "id": 12,
+      "name": "Nguyễn văn linh",
+      "code": "KH-1234",
+      "dateOfBirth": "1997-11-15",
+      "idCard": "124324324",
+      "phoneNumber": "4324324",
+      "email": "honhathieu@gmail.com",
+      "address": "Đà Nẵng",
+      "customerType": {
+        "id": 2,
+        "name": "Dinamod"
+      }
+    },
+    {
+      "id": 13,
+      "name": "Nguyễn văn linh",
+      "code": "KH-1234",
+      "dateOfBirth": "1997-11-15",
+      "idCard": "24324",
+      "phoneNumber": "4324324",
+      "email": "honhathieu@gmail.com",
+      "address": "Đà Nẵng",
+      "customerType": {
+        "id": 2,
+        "name": "Dinamod"
+      }
+    },
+    {
+      "id": 14,
+      "name": "Nguyễn văn linh",
+      "code": "KH-1234",
+      "dateOfBirth": "1997-11-15",
+      "idCard": "24324",
+      "phoneNumber": "4324324",
+      "email": "honhathieu@gmail.com",
+      "address": "Đà Nẵng",
+      "customerType": {
+        "id": 1,
+        "name": "Gold"
+      }
+    },
+    {
+      "id": 15,
+      "code": "KH-5689",
+      "name": "Hồ Nhật Hiếu",
+      "dateOfBirth": "1997-11-15",
+      "idCard": "24324",
+      "phoneNumber": "4324324",
+      "email": "honhathieu@gmail.com",
+      "address": "Đà Nẵng",
+      "customerType": {
+        "id": 1,
+        "name": "Gold"
+      }
+    },
+    {
+      "id": 16,
+      "code": "KH-4568",
+      "name": "Nguyễn Anh Hoàng",
+      "dateOfBirth": "15-11-1997",
+      "idCard": "206210362",
+      "phoneNumber": "0777691798",
+      "email": "honhathieu@gmail.com",
+      "address": "Đà Nẵng",
+      "customerType": {
+        "id": 1,
+        "name": "Gold"
+      }
+    },
+    {
+      "id": 17,
+      "code": "KH-1234",
+      "name": "Hồ Nhật Hiếu",
+      "dateOfBirth": "1997-11-15",
+      "idCard": "24324",
+      "phoneNumber": "4324324",
+      "email": "honhathieu@gmail.com",
+      "address": "Đà Nẵng",
+      "customerType": {
+        "id": 1,
+        "name": "Gold"
+      }
+    }
+  ],
+  "customerType": [
+    {
+      "id": 1,
+      "name": "Gold"
+    },
+    {
       "id": 2,
-      "name": "Lương Văn Linh",
-      "dateOfBirth": "1997-11-15",
-      "idCard": "206217302",
-      "phoneNumber": "0777691798",
-      "email": "honhathieu@gmail.com",
-      "address": "Quảng Nam",
-      "customerType": {
-        "id": 1,
-        "name": "Gold"
-      }
-    },
-    {
-      "id": 4,
-      "name": "Lương Văn Hoàng",
-      "dateOfBirth": "1997-11-15",
-      "idCard": "206217302",
-      "phoneNumber": "0777691798",
-      "email": "honhathieu@gmail.com",
-      "address": "Quảng Nam",
-      "customerType": {
-        "id": 1,
-        "name": "Gold"
-      }
-    },
-    {
-      "id": 5,
-      "name": "Lương Văn Bảo",
-      "dateOfBirth": "1997-11-15",
-      "idCard": "206217302",
-      "phoneNumber": "0777691798",
-      "email": "honhathieu@gmail.com",
-      "address": "Quảng Nam",
-      "customerType": {
-        "id": 1,
-        "name": "Gold"
-      }
-    },
-    {
-      "id": 6,
-      "name": "Lương Văn Thuận",
-      "dateOfBirth": "1997-11-15",
-      "idCard": "206217302",
-      "phoneNumber": "0777691798",
-      "email": "honhathieu@gmail.com",
-      "address": "Quảng Nam",
-      "customerType": {
-        "id": 1,
-        "name": "Gold"
-      }
+      "name": "Diamond"
     }
   ]
 }

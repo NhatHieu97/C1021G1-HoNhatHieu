@@ -3,6 +3,12 @@
   <form [formGroup]="formGroup">
     <div class="row">
       <div class="form-group col">
+        <label for="code">Code</label>
+        <input
+          formControlName="code"
+          type="text" class="form-control" id="code" readonly>
+      </div>
+      <div class="form-group col">
         <label for="exampleInputEmail1">Name</label>
         <input
           formControlName="name"
@@ -38,7 +44,7 @@
           type="text" class="form-control" id="email" readonly>
       </div>
       <div class="form-group col">
-        <label for="email">Address</label>
+        <label for="address">Address</label>
         <input
           formControlName="address"
           type="text" class="form-control" id="address" readonly>
@@ -47,7 +53,7 @@
     <div class="form-group">
       <label for="customerType">Customer type</label>
       <div formControlName="customerType"
-           type="text" class="form-control" id="customerType" readonly>{{customer.customerType.name}}</div>
+            class="form-control" id="customerType" readonly>{{customer.customerType.name}}</div>
     </div>
   </form>
   <br>

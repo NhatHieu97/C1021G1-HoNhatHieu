@@ -1,0 +1,71 @@
+<div class="container">
+  <div class="row">
+    <form action="" [formGroup]="formValue">
+      <div >
+        <label>Email</label>
+        <input type="text" formControlName="email" placeholder="Input email"><br>
+      </div>
+      <div>
+        <p *ngIf="formValue.controls.email.errors && formValue.controls.email.touched">This field must be email and not
+          null</p>
+
+      </div>
+      <div>
+        <label>Password</label>
+        <input type="text" formControlName="password" placeholder="input password" [(ngModel)]="password"><br>
+      </div>
+      <div>
+        <p *ngIf="formValue.controls.password.errors && formValue.controls.password.touched">This field min length is 6</p>
+      </div>
+      <div>
+        <label>confirm password</label>
+        <input type="text" formControlName="configPassword" placeholder="input password"><br>
+      </div>
+      <div>
+        <p *ngIf="formValue.controls.configPassword?.errors && formValue.controls.configPassword.touched">This field min
+          length is 6 and equal password</p>
+      </div>
+      <div>
+        <label>country</label>
+        <select formControlName="country">
+          <option value="1">VN</option>
+          <option value="2">USA</option>
+          <option value="3">CHINA</option>
+        </select>
+
+      </div>
+      <div>
+        <p *ngIf="formValue.controls.country?.errors && formValue.controls.country.touched">This field must be not null</p>
+      </div>
+      <div>
+        <label>Age</label>
+        <input type="text" formControlName="age" placeholder="input age"><br>
+      </div>
+      <div>
+        <p *ngIf="formValue.controls.age.errors && formValue.controls.age.touched">This field of value must be than 18</p>
+      </div>
+      <div>
+        <label>Gender</label><br>
+        <label> Man</label><input formControlName="gender" value="Man" checked="checked" type="radio">
+        <label> Woman</label><input formControlName="gender" value="Woman" type="radio">
+        <label> Other</label><input formControlName="gender" value="other" type="radio"><br>
+      </div>
+      <div>
+        <p *ngIf="formValue.controls.gender?.errors && formValue.controls.gender?.touched">This field must be not null</p>
+      </div>
+      <div>
+        <label> Phone</label>
+        <input type="text" formControlName="phone"><br>
+      </div>
+      <div>
+        <p *ngIf="formValue.controls.phone?.errors && formValue.controls.phone?.touched">This field must be stared +84 and be
+          end with 9 or 10 digits</p>
+      </div>
+      <button [disabled]="formValue.invalid">Sign up</button>
+
+    </form>
+  </div>
+
+</div>
+
+

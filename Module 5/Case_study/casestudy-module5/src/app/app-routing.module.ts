@@ -7,6 +7,7 @@ import {ListHouseComponent} from './home/service/house/list-house/list-house.com
 import {ListRoomComponent} from './home/service/room/list-room/list-room.component';
 import {ListVillaComponent} from './home/service/villa/list-villa/list-villa.component';
 import {DetailCustomerComponent} from './home/customers/detail-customer/detail-customer.component';
+import {EditCustomerComponent} from './home/customers/edit-customer/edit-customer.component';
 
 const routes: Routes = [
   {
@@ -30,7 +31,11 @@ const routes: Routes = [
   },
   {
     path:"detail/:id",component:DetailCustomerComponent
+  },
+  {
+    path:"edit/:id",component:EditCustomerComponent
   }
+
 ];
 
 @NgModule({
