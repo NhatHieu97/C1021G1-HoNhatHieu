@@ -75,38 +75,70 @@
             <input type="text" name="code" formControlName="code" class="form-control" id="code"
                    aria-describedby="emailHelp">
           </div>
-          <div class="alert alert-danger" role=" alert "
-               *ngIf=" formValue.get('code').invalid && formValue.get('code').touched">
-            Không được bỏ trống!
+          <div *ngFor="let validation of validation_messages.code">
+            <div class="alert alert-danger"
+                 *ngIf="formValue.get('code').hasError(validation.type) && (formValue.get('code').dirty || formValue.get('code').touched)">
+              {{validation.message}}
+            </div>
           </div>
           <div class="mb-3">
             <label for="exampleInputName1" class="form-label">Name</label>
             <input type="text" name="name" formControlName="name" class="form-control" id="exampleInputName1"
                    aria-describedby="emailHelp">
           </div>
-          <div class="alert alert-danger" role=" alert "
-               *ngIf=" formValue.get('name').invalid && formValue.get('name').touched">
-            Không được bỏ trống!
+          <div *ngFor="let validation of validation_messages.name">
+            <div class="alert alert-danger"
+                 *ngIf="formValue.get('name').hasError(validation.type) && (formValue.get('name').dirty || formValue.get('name').touched)">
+              {{validation.message}}
+            </div>
           </div>
           <div class="mb-3">
             <label for="exampleInputDate1" class="form-label">Date of birth</label>
-            <input type="text" formControlName="dateOfBirth" class="form-control" id="exampleInputDate1">
+            <input type="date" formControlName="dateOfBirth" class="form-control" id="exampleInputDate1">
+          </div>
+          <div class="alert alert-danger"
+               *ngIf="formValue.get('dateOfBirth').invalid && (formValue.get('dateOfBirth').dirty || formValue.get('dateOfBirth').touched)">
+            The age must than 18
           </div>
           <div class="mb-3">
             <label for="exampleInputIdCard1" class="form-label">Id Card</label>
             <input type="text" formControlName="idCard" class="form-control" id="exampleInputIdCard1">
           </div>
+          <div *ngFor="let validation of validation_messages.idCard">
+            <div class="alert alert-danger"
+                 *ngIf="formValue.get('idCard').hasError(validation.type) && (formValue.get('idCard').dirty || formValue.get('idCard').touched)">
+              {{validation.message}}
+            </div>
+          </div>
           <div class="mb-3">
             <label for="exampleInputPhone1" class="form-label">Phone</label>
             <input type="text" formControlName="phoneNumber" class="form-control" id="exampleInputPhone1">
+          </div>
+          <div *ngFor="let validation of validation_messages.phoneNumber">
+            <div class="alert alert-danger"
+                 *ngIf="formValue.get('phoneNumber').hasError(validation.type) && (formValue.get('phoneNumber').dirty || formValue.get('phoneNumber').touched)">
+              {{validation.message}}
+            </div>
           </div>
           <div class="mb-3">
             <label for="exampleInputEmail1" class="form-label">Email</label>
             <input type="email" formControlName="email" class="form-control" id="exampleInputEmail1">
           </div>
+          <div *ngFor="let validation of validation_messages.email">
+            <div class="alert alert-danger"
+                 *ngIf="formValue.get('email').hasError(validation.type) && (formValue.get('email').dirty || formValue.get('email').touched)">
+              {{validation.message}}
+            </div>
+          </div>
           <div class="mb-3">
             <label for="exampleInputAddress1" class="form-label">Address</label>
             <input type="text" formControlName="address" class="form-control" id="exampleInputAddress1">
+          </div>
+          <div *ngFor="let validation of validation_messages.address">
+            <div class="alert alert-danger"
+                 *ngIf="formValue.get('address').hasError(validation.type) && (formValue.get('address').dirty || formValue.get('address').touched)">
+              {{validation.message}}
+            </div>
           </div>
           <div class="mb-3">
             <label for="customerType">Customer type</label>
