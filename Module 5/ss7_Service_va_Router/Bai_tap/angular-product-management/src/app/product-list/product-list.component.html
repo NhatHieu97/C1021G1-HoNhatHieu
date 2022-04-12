@@ -13,5 +13,7 @@
     <td>{{product.price}}</td>
     <td>{{product.description}}</td>
     <td><button routerLink="/product/{{product.id}}">chi tiết</button></td>
+    <td><a [routerLink]="['/product/edit',product.id]">Edit</a></td>
+    <td><a [routerLink]="['/product/delete',product.id]">Delete</a></td>
   </tr>
 </table>

@@ -23,7 +23,7 @@ export class ProductCreateComponent implements OnInit {
   submit(productForm: FormGroup) {
     this.service.add(productForm.value);
     console.log(productForm.value);
-    
+    this.ngOnInit();
   }
 
 }

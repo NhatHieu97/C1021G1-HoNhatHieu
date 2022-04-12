@@ -9,29 +9,24 @@ export class ProductService {
   constructor() { }
   products: Product[] = [{
     id: 1,
-    name: 'IPhone 12',
+    name: 'SamSung',
     price: 2400000,
-    description: 'New'
+    description: 'Đẹp'
   }, {
     id: 2,
-    name: 'IPhone 11',
+    name: 'Nokia',
     price: 1560000,
-    description: 'Like new'
+    description: 'Đep'
   }, {
     id: 3,
-    name: 'IPhone X',
+    name: 'Oppo',
     price: 968000,
-    description: '97%'
+    description: 'Sang chảnh'
   }, {
     id: 4,
     name: 'IPhone 8',
     price: 7540000,
-    description: '98%'
-  }, {
-    id: 5,
-    name: 'IPhone 11 Pro',
-    price: 1895000,
-    description: 'Like new'
+    description: 'Gọn nhẹ'
   }];
   getAll() {
     return this.products;
@@ -48,5 +43,24 @@ export class ProductService {
       }
     }
   }
+
+  findById(id: number) {
+    return this.products.find(product => product.id === id);
+  }
+
+  updateProduct(id: number, product: Product) {
+    for (let i = 0; i < this.products.length; i++) {
+      if (this.products[i].id === id) {
+        this.products[i] = product;
+      }
+    }
+  }
+
+  deleteProduct(id: number) {
+    this.products = this.products.filter(product => {
+      return product.id !== id;
+    });
+  }
+
 }
 

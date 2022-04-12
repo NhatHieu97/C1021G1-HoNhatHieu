@@ -17,8 +17,6 @@ export class ProductDetailComponent implements OnInit {
     this.activatedRouter.paramMap.subscribe((param: ParamMap) => {
       this.id = Number(param.get('id'));
       this.product = this.service.getById(this.id);
-      // console.log(this.id);
-      console.log(this.product);
     });
   }
 
