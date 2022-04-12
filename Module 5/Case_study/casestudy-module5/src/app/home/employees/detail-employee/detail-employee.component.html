@@ -1,0 +1,71 @@
+<div class="container-fluid">
+  <h2 class="list-title">Employee Detail</h2>
+  <form [formGroup]="formValue">
+    <div class="row">
+      <div class="col-3"></div>
+      <div class="col-6">
+        <div class="row">
+          <div class="form-group col">
+            <label for="exampleInputEmail1">Name</label>
+            <input formControlName="name" type="text" class="form-control" id="exampleInputEmail1" readonly>
+          </div>
+          <div class="form-group col">
+            <label>Gender</label><br>
+            <label> Man</label><input formControlName="gender" value="Man" checked="checked" type="radio">
+            <label> Woman</label><input formControlName="gender" value="Woman" type="radio">
+            <label> Other</label><input formControlName="gender" value="Other" type="radio"><br>
+          </div>
+        </div>
+        <div class="row">
+          <div class="form-group col">
+            <label for="exampleInputPassword2">Date of birth</label>
+            <input formControlName="birthday" type="text" class="form-control" id="exampleInputPassword2" readonly>
+          </div>
+          <div class="form-group col">
+            <label for="exampleInputPassword2">Id Card</label>
+            <input formControlName="idCard" type="text" class="form-control" id="exampleInputPassword3" readonly>
+          </div>
+        </div>
+        <div class="row">
+          <div class="form-group col">
+            <label for="phoneNumber">Phone Number</label>
+            <input formControlName="phone" type="text" class="form-control" id="phoneNumber" readonly>
+          </div>
+          <div class="form-group col">
+            <label for="email">Email</label>
+            <input formControlName="email" type="text" class="form-control" id="email" readonly>
+          </div>
+        </div>
+        <div class="row">
+          <div class="form-group col">
+            <label for="address">Address</label>
+            <input formControlName="address" type="text" class="form-control" id="address" readonly>
+          </div>
+          <div class="form-group col">
+            <label for="salary">Salary</label>
+            <input formControlName="salary" type="text" class="form-control" id="salary" readonly>
+          </div>
+        </div>
+        <div class="row">
+          <div class="form-group col">
+            <label for="employeePosition">Position</label>
+            <input formControlName="employeePosition" type="text" class="form-control" id="employeePosition" readonly>
+          </div>
+          <div class="form-group col">
+            <label for="employeeEducationDegree">Education Degree</label>
+            <input formControlName="employeeEducationDegree" type="text" class="form-control" id="employeeEducationDegree" readonly>
+          </div>
+        </div>
+      </div>
+      <div class="col-3"></div>
+    </div>
+
+  </form>
+  <br>
+  <div class="text-center">
+    <button type="button" class="btn btn-secondary" routerLink="/employee">Close</button>
+  </div>
+
+</div>
+
+

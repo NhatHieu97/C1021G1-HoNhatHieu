@@ -1,0 +1,30 @@
+<h2>Add new product</h2>
+<form (ngSubmit)="submit(productForm)" action="" [formGroup]="productForm">
+  <table border="1">
+    <tr>
+      <td>Code</td>
+      <td>
+        <input formControlName="id" type="text">
+      </td>
+    </tr>
+    <tr>
+      <td>Name</td>
+      <td>
+        <input formControlName="name" type="text">
+      </td>
+    </tr>
+    <tr>
+      <td>price</td>
+      <td>
+        <input formControlName="price" type="text">
+      </td>
+    </tr>
+    <tr>
+      <td>description</td>
+      <td>
+        <input formControlName="description" type="text">
+      </td>
+    </tr>
+  </table>
+  <button >Submit</button>
+</form>

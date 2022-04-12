@@ -18,6 +18,10 @@ import {HttpClientModule} from '@angular/common/http';
 import { DeleteCustomerComponent } from './home/customers/delete-customer/delete-customer.component';
 import { DetailCustomerComponent } from './home/customers/detail-customer/detail-customer.component';
 import { EditCustomerComponent } from './home/customers/edit-customer/edit-customer.component';
+import { DetailEmployeeComponent } from './home/employees/detail-employee/detail-employee.component';
+import { CreateEmployeeComponent } from './home/employees/create-employee/create-employee.component';
+import { EditEmployeeComponent } from './home/employees/edit-employee/edit-employee.component';
+
 
 
 @NgModule({
@@ -35,14 +39,17 @@ import { EditCustomerComponent } from './home/customers/edit-customer/edit-custo
     CreateCustomerComponent,
     DeleteCustomerComponent,
     DetailCustomerComponent,
-    EditCustomerComponent
+    EditCustomerComponent,
+    DetailEmployeeComponent,
+    CreateEmployeeComponent,
+    EditEmployeeComponent
   ],
     imports: [
         BrowserModule,
         AppRoutingModule,
         FormsModule,
         HttpClientModule,
-        ReactiveFormsModule
+        ReactiveFormsModule,
     ],
   providers: [],
   bootstrap: [AppComponent]

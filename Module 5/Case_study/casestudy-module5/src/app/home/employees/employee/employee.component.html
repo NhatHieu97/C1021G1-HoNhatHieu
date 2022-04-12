@@ -1,89 +1,211 @@
-<table id="myBlog">
-  <tr>
-    <th>Name</th>
-    <th>Birthday</th>
-    <th>Gender</th>
-    <th>Card</th>
-    <th>Phone</th>
-    <th>Email</th>
-    <th>Education Dergee</th>
-    <th>Position</th>
-    <th>Salary</th>
-    <th>Action</th>
-  </tr>
-  <tr>
-    <td>Hồ Nhật Hiếu</td>
-    <td>15/11/1997</td>
-    <td>Nam</td>
-    <td>206217302</td>
-    <td>0777691798</td>
-    <td>honhathieu@gmail.com</td>
-    <td>Tiến sĩ</td>
-    <td>Giám đốc</td>
-    <td>5000</td>
-    <td>
-      <button>Sửa</button>
-      <button>Xóa</button>
-    </td>
-  </tr>
-  <tr>
-    <td>Hồ Nhật Hiếu</td>
-    <td>15/11/1997</td>
-    <td>Nam</td>
-    <td>206217302</td>
-    <td>0777691798</td>
-    <td>honhathieu@gmail.com</td>
-    <td>Tiến sĩ</td>
-    <td>Giám đốc</td>
-    <td>5000</td>
-    <td>
-      <button>Sửa</button>
-      <button>Xóa</button>
-    </td>
-  </tr>
-  <tr>
-    <td>Hồ Nhật Hiếu</td>
-    <td>15/11/1997</td>
-    <td>Nam</td>
-    <td>206217302</td>
-    <td>0777691798</td>
-    <td>honhathieu@gmail.com</td>
-    <td>Tiến sĩ</td>
-    <td>Giám đốc</td>
-    <td>5000</td>
-    <td>
-      <button>Sửa</button>
-      <button>Xóa</button>
-    </td>
-  </tr>
-  <tr>
-    <td>Hồ Nhật Hiếu</td>
-    <td>15/11/1997</td>
-    <td>Nam</td>
-    <td>206217302</td>
-    <td>0777691798</td>
-    <td>honhathieu@gmail.com</td>
-    <td>Tiến sĩ</td>
-    <td>Giám đốc</td>
-    <td>5000</td>
-    <td>
-      <button>Sửa</button>
-      <button>Xóa</button>
-    </td>
-  </tr>
-  <tr>
-    <td>Hồ Nhật Hiếu</td>
-    <td>15/11/1997</td>
-    <td>Nam</td>
-    <td>206217302</td>
-    <td>0777691798</td>
-    <td>honhathieu@gmail.com</td>
-    <td>Tiến sĩ</td>
-    <td>Giám đốc</td>
-    <td>5000</td>
-    <td>
-      <button>Sửa</button>
-      <button>Xóa</button>
-    </td>
-  </tr>
-</table>
+<div class="container" >
+  <a data-bs-toggle="modal" data-bs-target="#exampleModal" style="margin-bottom: 10px" class="btn btn-primary" href="#">Create new Employee</a>
+  <div class="row">
+    <div class="col-lg-3 col-md-4 col-sm-6" *ngFor="let employee of employeeList">
+      <div class="card">
+        <div class="d-flex justify-content-between">
+          <p></p>
+          <p></p>
+          <a class="btn btn-warning" data-toggle="modal" data-target="#exampleModalCenter" >Sửa</a>
+        </div>
+        <img class="card-img-top" src="{{ employee.gender ? 'assets/277920686_1352651938551763_8311865434417586566_n.jpg':
+        'https://coinexpress.net/wp-content/uploads/2021/09/Yua-Mikami-ra-mat-NFT.jpg'}}" alt=""
+             height="200px">
+
+        <div class="card-body">
+          <h6>Tên : {{employee.name}}</h6>
+          <h6>CMND: {{employee.idCard}}</h6>
+          <br>
+          <div class="d-flex justify-content-between">
+            <p></p>
+            <p></p>
+            <a class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter" routerLink="/detail-employee/{{employee.id}}">Xem chi tiết</a>
+            <a class="btn btn-danger "  data-toggle="modal" data-target="#modelId" >Xóa</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+<!--<div class="container">-->
+<!--  <a data-bs-toggle="modal" data-bs-target="#exampleModal" style="margin-bottom: 10px" class="btn btn-primary" href="#">Create-->
+<!--    new Employee</a>-->
+<!--  <table class="table table-striped">-->
+<!--    <thead class="text-center">-->
+<!--    <th scope="col">Id</th>-->
+<!--    <th scope="col">Name</th>-->
+<!--    <th scope="col">Date of birth</th>-->
+<!--    <th scope="col">Id Card</th>-->
+<!--    <th scope="col">Phone</th>-->
+<!--    <th scope="col">Email</th>-->
+<!--    <th scope="col">Address</th>-->
+<!--    <th scope="col">Salary</th>-->
+<!--    <th scope="col">Position</th>-->
+<!--    <th scope="col">Education Degree</th>-->
+<!--    <th></th>-->
+<!--    <th></th>-->
+<!--    <th></th>-->
+<!--    </thead>-->
+<!--    <tbody class="text-center">-->
+<!--    <tr scope="col" *ngFor="let employee of employeeList ">-->
+<!--      <td>{{employee.id}}</td>-->
+<!--      <td>{{employee.name }}</td>-->
+<!--      <td>{{employee.birthday}}</td>-->
+<!--      <td>{{employee.idCard}}</td>-->
+<!--      <td>{{employee.phone}}</td>-->
+<!--      <td>{{employee.email}}</td>-->
+<!--      <td>{{employee.address}}</td>-->
+<!--      <td>{{employee.salary}}</td>-->
+<!--      <td>{{employee.employeePosition.name}}</td>-->
+<!--      <td>{{employee.employeeEducationDegree.name}}</td>-->
+<!--      <td>-->
+<!--        <a class="btn btn-success" routerLink="/detail/{{employee.id}}">view</a>-->
+<!--      </td>-->
+<!--      <td>-->
+<!--        <a class="btn btn-warning" routerLink="/edit/{{employee.id}}">edit</a>-->
+<!--      </td>-->
+<!--      <td>-->
+<!--        <a class="btn btn-danger" data-toggle="modal" data-target="#modalDelete"-->
+<!--           (click)="getId(employee.id)">delete-->
+<!--        </a>-->
+<!--      </td>-->
+<!--    </tr>-->
+<!--    </tbody>-->
+<!--  </table>-->
+<!--</div>-->
+
+
+<div class="modal fade" id="modalDelete" tabindex="-1" role="dialog" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-body" id="modalDeleteCustomerContent">
+        Are you sure want to ID: {{employeeId}}
+        <br><br>
+        delete customer ?
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary" data-dismiss="modal" (click)="delete()">Confirm</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Employee Detail</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <form [formGroup]="formValue">
+          <div class="mb-3">
+            <label for="exampleInputName1" class="form-label">Name</label>
+            <input type="text" name="name" formControlName="name" class="form-control" id="exampleInputName1"
+                   aria-describedby="emailHelp">
+          </div>
+          <div *ngFor="let validation of validation_messages.name">
+            <div class="alert alert-danger"
+                 *ngIf="formValue.get('name').hasError(validation.type) && (formValue.get('name').dirty || formValue.get('name').touched)">
+              {{validation.message}}
+            </div>
+          </div>
+          <div class="mb-3">
+            <label>Gender</label><br>
+            <label> Man</label><input formControlName="gender" value="Man" checked="checked" type="radio">
+            <label> Woman</label><input formControlName="gender" value="Woman" type="radio">
+            <label> Other</label><input formControlName="gender" value="Other" type="radio"><br>
+          </div>
+          <div class="mb-3">
+            <label for="exampleInputDate1" class="form-label">Date of birth</label>
+            <input type="date" formControlName="birthday" class="form-control" id="exampleInputDate1">
+          </div>
+          <div class="alert alert-danger"
+               *ngIf="formValue.get('birthday').invalid && (formValue.get('birthday').dirty || formValue.get('birthday').touched)">
+            The age must than 18
+          </div>
+          <div class="mb-3">
+            <label for="exampleInputIdCard1" class="form-label">Id Card</label>
+            <input type="text" formControlName="idCard" class="form-control" id="exampleInputIdCard1">
+          </div>
+          <div *ngFor="let validation of validation_messages.idCard">
+            <div class="alert alert-danger"
+                 *ngIf="formValue.get('idCard').hasError(validation.type) && (formValue.get('idCard').dirty || formValue.get('idCard').touched)">
+              {{validation.message}}
+            </div>
+          </div>
+          <div class="mb-3">
+            <label for="exampleInputPhone1" class="form-label">Phone</label>
+            <input type="text" formControlName="phone" class="form-control" id="exampleInputPhone1">
+          </div>
+          <div *ngFor="let validation of validation_messages.phoneNumber">
+            <div class="alert alert-danger"
+                 *ngIf="formValue.get('phone').hasError(validation.type) && (formValue.get('phone').dirty || formValue.get('phone').touched)">
+              {{validation.message}}
+            </div>
+          </div>
+          <div class="mb-3">
+            <label for="exampleInputEmail1" class="form-label">Email</label>
+            <input type="email" formControlName="email" class="form-control" id="exampleInputEmail1">
+          </div>
+          <div *ngFor="let validation of validation_messages.email">
+            <div class="alert alert-danger"
+                 *ngIf="formValue.get('email').hasError(validation.type) && (formValue.get('email').dirty || formValue.get('email').touched)">
+              {{validation.message}}
+            </div>
+          </div>
+          <div class="mb-3">
+            <label for="exampleInputAddress1" class="form-label">Address</label>
+            <input type="text" formControlName="address" class="form-control" id="exampleInputAddress1">
+          </div>
+          <div *ngFor="let validation of validation_messages.address">
+            <div class="alert alert-danger"
+                 *ngIf="formValue.get('address').hasError(validation.type) && (formValue.get('address').dirty || formValue.get('address').touched)">
+              {{validation.message}}
+            </div>
+          </div>
+          <div class="mb-3">
+            <label for="salary" class="form-label">Salary</label>
+            <input type="text" formControlName="salary" class="form-control" id="salary">
+          </div>
+          <div *ngFor="let validation of validation_messages.address">
+            <div class="alert alert-danger"
+                 *ngIf="formValue.get('salary').hasError(validation.type) && (formValue.get('salary').dirty || formValue.get('salary').touched)">
+              {{validation.message}}
+            </div>
+          </div>
+          <div class="mb-3">
+            <label for="employeePosition">Position</label>
+            <select
+              formControlName="employeePosition" class="form-control" id="employeePosition">
+              <option disabled selected value="">vị trí</option>
+              <option *ngFor="let position of employeePositionList"
+                      value="{{position.id}}">{{position.name}}
+              </option>
+            </select>
+          </div>
+          <div class="mb-3">
+            <label for="employeeEducationDegree">Education Degree</label>
+            <select
+              formControlName="employeeEducationDegree" class="form-control" id="employeeEducationDegree">
+              <option disabled selected value="">trình độ</option>
+              <option *ngFor="let education of employeeEducationDegreeList"
+                      value="{{education.id}}">{{education.name}}
+              </option>
+            </select>
+          </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" id="cancel" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary" (click)="saveEmployee()">Add</button>
+      </div>
+    </div>
+  </div>
+</div>
