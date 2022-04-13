@@ -39,8 +39,7 @@ export class DetailCustomerComponent implements OnInit {
 
       this.id = this.activatedRoute.snapshot.params.id;
        this.customerService.findById(this.id).subscribe(value => {
-
-         this.customer =value;
+         this.customer = value;
          this.formGroup.setValue(this.customer);
       })
   }

@@ -7,6 +7,7 @@ import {ActivatedRoute, Router} from '@angular/router';
 import {AbstractControl, FormBuilder, FormGroup, Validators} from '@angular/forms';
 import {IEmployeePosition} from '../../../model/IEmployeePosition';
 import {IEmployeeEducationDegree} from '../../../model/IEmployeeEducationDegree';
+import {MatSnackBar, MatSnackBarHorizontalPosition, MatSnackBarVerticalPosition} from '@angular/material/snack-bar';
 
 @Component({
   selector: 'app-employee',
@@ -14,6 +15,7 @@ import {IEmployeeEducationDegree} from '../../../model/IEmployeeEducationDegree'
   styleUrls: ['./employee.component.css']
 })
 export class EmployeeComponent implements OnInit {
+  employeeName: string;
   employeeId: number;
   employeeList:IEmployee[];
   public formValue: FormGroup;
@@ -21,6 +23,11 @@ export class EmployeeComponent implements OnInit {
   public employeeEducationDegreeList: IEmployeeEducationDegree[];
   private id: number;
   public employee: IEmployee = {};
+  term: any;
+  p: any;
+  horizontalPosition: MatSnackBarHorizontalPosition = 'start';
+  verticalPosition: MatSnackBarVerticalPosition = 'bottom';
+
 
 
   constructor(
@@ -29,7 +36,8 @@ export class EmployeeComponent implements OnInit {
     private employeeEducationDegree: EmployeeEducationDegreeService,
     private activatedRoute: ActivatedRoute,
     private formBuilder: FormBuilder,
-    private router: Router
+    private router: Router,
+    private snackBar: MatSnackBar,
   ) { }
 
   ngOnInit(): void {
@@ -56,12 +64,15 @@ export class EmployeeComponent implements OnInit {
         this.employeeEducationDegreeList = data
       })
   }
-  getId(id: number) {
+  getId(id: number,name: string) {
     this.employeeId = id;
+    this.employeeName = name
   }
+
 
   delete() {
     this.employeeService.delete(this.employeeId).subscribe(data => {
+      this.snackBar.open('Đã xóa thành công', 'OK')
       this.ngOnInit();
     });
   }
@@ -70,7 +81,10 @@ export class EmployeeComponent implements OnInit {
   saveEmployee() {
 
     if (this.formValue.invalid) {
-      alert('There was an error!');
+      this.snackBar.open('There was an error!', 'NOT GOOD',{
+        horizontalPosition: this.horizontalPosition,
+        verticalPosition: this.verticalPosition,
+      })
     } else {
       this.employee.name = this.formValue.get("name").value
       this.employee.birthday = this.formValue.get("birthday").value
@@ -90,15 +104,15 @@ export class EmployeeComponent implements OnInit {
         }
       }
 
-      this.formValue.get('gender').setValue(this.employee.gender ? 'Man' : (!this.employee.gender ? 'Woman' : 'Other' ));
+      // this.formValue.get('gender').setValue(this.employee.gender ? 'Man' : (!this.employee.gender ? 'Woman' : 'Other' ));
 
       this.employee.gender = this.formValue.get('gender').value === 'Man' ? true :
         (!(this.formValue.get('gender').value === 'Woman') ? null : false)
 
 
-      console.log(this.employee);
       this.employeeService.save(this.employee).subscribe(
         () => {
+          this.snackBar.open('Đã thêm thành công', 'OK')
           this.ngOnInit();
 
         }

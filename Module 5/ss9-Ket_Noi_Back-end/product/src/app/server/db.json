@@ -1,0 +1,41 @@
+{
+  "categories": [
+    {
+      "id": 1,
+      "name": "SamSung"
+    },
+    {
+      "id": 123,
+      "name": "oppo"
+    }
+  ],
+  "products": [
+    {
+      "id": 3,
+      "name": "dssf",
+      "price": 4343,
+      "category": {
+        "id": 1,
+        "name": "trong"
+      },
+      "description": "dsfsdf"
+    },
+    {
+      "id": 2,
+      "name": "df",
+      "price": 123,
+      "category": "",
+      "description": "fdsf"
+    },
+    {
+      "id": 11,
+      "name": "fdsfds",
+      "price": 6,
+      "category": {
+        "id": 1,
+        "name": "sport"
+      },
+      "description": "dsf"
+    }
+  ]
+}

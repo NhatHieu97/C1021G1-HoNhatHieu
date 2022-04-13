@@ -21,6 +21,9 @@ import { EditCustomerComponent } from './home/customers/edit-customer/edit-custo
 import { DetailEmployeeComponent } from './home/employees/detail-employee/detail-employee.component';
 import { CreateEmployeeComponent } from './home/employees/create-employee/create-employee.component';
 import { EditEmployeeComponent } from './home/employees/edit-employee/edit-employee.component';
+import {NgxPaginationModule} from 'ngx-pagination';
+import {MatSnackBarModule} from '@angular/material/snack-bar';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 
 
 
@@ -42,7 +45,8 @@ import { EditEmployeeComponent } from './home/employees/edit-employee/edit-emplo
     EditCustomerComponent,
     DetailEmployeeComponent,
     CreateEmployeeComponent,
-    EditEmployeeComponent
+    EditEmployeeComponent,
+
   ],
     imports: [
         BrowserModule,
@@ -50,6 +54,10 @@ import { EditEmployeeComponent } from './home/employees/edit-employee/edit-emplo
         FormsModule,
         HttpClientModule,
         ReactiveFormsModule,
+        BrowserModule,
+        NgxPaginationModule,
+        MatSnackBarModule,
+        BrowserAnimationsModule
     ],
   providers: [],
   bootstrap: [AppComponent]

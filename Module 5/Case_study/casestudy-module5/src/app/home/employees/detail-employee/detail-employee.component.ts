@@ -60,7 +60,7 @@ export class DetailEmployeeComponent implements OnInit {
       this.formValue.setValue(this.employee);
       this.formValue.get('employeePosition').setValue(this.employee.employeePosition.name);
       this.formValue.get('employeeEducationDegree').setValue(this.employee.employeeEducationDegree.name);
-      this.formValue.get('gender').setValue(this.employee.gender ? 'Man' : (!this.employee.gender ? 'Woman' : 'Other' ));
+      this.formValue.get('gender').setValue(this.employee.gender ? 'Man' : (this.employee.gender != null ? 'Woman' : 'Other' ));
     })
   }
 
